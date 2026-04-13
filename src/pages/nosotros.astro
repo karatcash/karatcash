@@ -1,0 +1,294 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Sobre Nosotros"
+  description="Conoce la historia detrás de KaratCash. Nacimos para que la comunidad hispana de Phoenix pueda vender su oro de forma justa, segura y en español."
+>
+
+  <!-- HERO DARK -->
+  <section class="hero-nosotros section--dark">
+    <div class="hero-nosotros__glow" aria-hidden="true"></div>
+    <div class="container hero-nosotros__container">
+      <span class="label gs-reveal">NUESTRA HISTORIA</span>
+      <h1 class="hero-nosotros__title gs-reveal">
+        Creemos que vender tu oro<br />
+        <span class="hero-nosotros__title-gold">debería ser simple y justo</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- HISTORIA LIGHT -->
+  <section class="section section--light story">
+    <div class="container">
+      <div class="story__inner gs-reveal">
+        <h2 class="story__heading">Por qué creamos KaratCash</h2>
+        <p class="story__text">
+          Miles de familias hispanas en Phoenix guardan joyas de oro — anillos heredados, collares de regalo, piezas que ya no se usan. Saben que esas piezas tienen valor, pero no saben cuánto exactamente, y desconfían de las opciones disponibles.
+        </p>
+        <p class="story__text">
+          Las casas de empeño ofrecen centavos. Los compradores en línea piden que mandes tu oro por correo sin ninguna garantía real. Y casi nadie ofrece el servicio en español, el idioma en el que la mayoría de nuestra comunidad se siente segura para tomar decisiones importantes.
+        </p>
+        <p class="story__text">
+          KaratCash nació para cambiar eso. Somos un servicio que va a ti, explica todo el proceso, pesa tu oro frente a tus ojos y paga al momento — sin letra chica, sin presión, sin barreras de idioma. Porque vender algo que fue tuyo merece respeto.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALORES DARK -->
+  <section class="section section--dark valores">
+    <div class="container">
+      <div class="valores__header gs-reveal">
+        <span class="label">NUESTROS VALORES</span>
+        <h2 class="valores__title">En lo que creemos</h2>
+      </div>
+
+      <div class="valores__grid">
+
+        <article class="valor-card gs-reveal">
+          <span class="material-symbols-outlined valor-card__icon" aria-hidden="true">visibility</span>
+          <h3 class="valor-card__title">Transparencia</h3>
+          <p class="valor-card__desc">
+            Te mostramos el precio spot del mercado, pesamos tu pieza en tu presencia y explicamos cada paso del cálculo. Nada queda en la oscuridad.
+          </p>
+        </article>
+
+        <article class="valor-card gs-reveal">
+          <span class="material-symbols-outlined valor-card__icon" aria-hidden="true">handshake</span>
+          <h3 class="valor-card__title">Respeto</h3>
+          <p class="valor-card__desc">
+            Tu tiempo y tu oro tienen valor. Llegamos a tiempo, no regateos innecesarios y te tratamos con la dignidad que mereces — siempre.
+          </p>
+        </article>
+
+        <article class="valor-card gs-reveal">
+          <span class="material-symbols-outlined valor-card__icon" aria-hidden="true">shield_with_heart</span>
+          <h3 class="valor-card__title">Seguridad</h3>
+          <p class="valor-card__desc">
+            Nos reunimos en lugares públicos que tú eliges — cafeterías, estacionamientos de centros comerciales, áreas bien iluminadas. Tu seguridad siempre es primero.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ESPAÑOL CALLOUT LIGHT -->
+  <section class="section section--light espanol">
+    <div class="container">
+      <div class="espanol__inner gs-reveal">
+        <span class="label">100% EN ESPAÑOL</span>
+        <h2 class="espanol__title">Hablamos tu idioma</h2>
+        <p class="espanol__text">
+          Todo el proceso — la cotización, la explicación del precio, el pesaje y el pago — lo hacemos en español. Sin confusiones, sin barreras, sin necesitar a alguien que traduzca. Cuando se trata de vender algo que fue tuyo, mereces entender cada palabra.
+        </p>
+        <a href="/contacto" class="btn btn--primary espanol__cta">
+          Contáctanos en español &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray<HTMLElement>('.gs-reveal').forEach((el) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          toggleActions: 'play none none none',
+        },
+      });
+    });
+  });
+</script>
+
+<style>
+  /* ---- Hero ---- */
+  .hero-nosotros {
+    position: relative;
+    padding-top: calc(var(--nav-height) + var(--space-4xl));
+    padding-bottom: var(--space-4xl);
+    overflow: hidden;
+  }
+
+  .hero-nosotros__glow {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    translate: -50% -50%;
+    width: min(600px, 90vw);
+    height: min(400px, 50vh);
+    background: radial-gradient(
+      ellipse at center,
+      rgba(197, 165, 90, 0.07) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-nosotros__container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    max-width: 760px;
+  }
+
+  .hero-nosotros__title {
+    font-size: clamp(2rem, 5.5vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--white);
+  }
+
+  .hero-nosotros__title-gold {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 60%, #E8CC80 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ---- Story ---- */
+  .story__inner {
+    max-width: 700px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .story__heading {
+    color: var(--navy-deep);
+    letter-spacing: -0.02em;
+  }
+
+  .story__text {
+    color: var(--gray-500);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  /* ---- Valores ---- */
+  .valores__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-3xl);
+    text-align: center;
+  }
+
+  .valores__title {
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+
+  .valores__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    justify-items: center;
+  }
+
+  .valor-card {
+    background-color: var(--navy);
+    border: 1px solid rgba(197, 165, 90, 0.2);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    transition:
+      border-color 250ms ease,
+      transform 250ms ease,
+      box-shadow 250ms ease;
+  }
+
+  .valor-card:hover {
+    border-color: rgba(197, 165, 90, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .valor-card__icon {
+    font-size: 2rem;
+    color: var(--gold);
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 32;
+    flex-shrink: 0;
+  }
+
+  .valor-card__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .valor-card__desc {
+    font-size: 0.9rem;
+    color: var(--gray-400);
+    line-height: 1.7;
+  }
+
+  /* ---- Español Callout ---- */
+  .espanol__inner {
+    max-width: 600px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-xl);
+  }
+
+  .espanol__title {
+    color: var(--navy-deep);
+    letter-spacing: -0.02em;
+  }
+
+  .espanol__text {
+    color: var(--gray-500);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .espanol__cta {
+    margin-top: var(--space-sm);
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 768px) {
+    .valores__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-nosotros {
+      padding-top: calc(var(--nav-height) + var(--space-2xl));
+      padding-bottom: var(--space-3xl);
+    }
+
+    .espanol__cta {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
