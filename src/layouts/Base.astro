@@ -117,5 +117,19 @@ const ogImageURL = new URL(ogImage, Astro.site);
     <!-- GSAP CDN -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" is:inline></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" is:inline></script>
+
+    <!-- Global GSAP animation init -->
+    <script>
+      import { initAnimations } from '../scripts/gsap-init';
+
+      function waitForGsap() {
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+          initAnimations();
+        } else {
+          setTimeout(waitForGsap, 50);
+        }
+      }
+      document.addEventListener('DOMContentLoaded', waitForGsap);
+    </script>
   </body>
 </html>
