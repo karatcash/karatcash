@@ -1,0 +1,382 @@
+---
+import Base from '../layouts/Base.astro';
+import GoldCalculator from '../components/GoldCalculator.astro';
+---
+
+<Base
+  title="Calculadora de Oro en Vivo"
+  description="Calcula el valor de tu oro en segundos. Precio spot en tiempo real, selector de kilates y resultado inmediato. Gratis, sin compromiso."
+>
+
+  <!-- HERO -->
+  <section class="calc-hero section section--dark">
+    <div class="container calc-hero__container">
+      <span class="label">HERRAMIENTA GRATUITA</span>
+      <h1 class="calc-hero__title">Calculadora de<br /><span class="calc-hero__title-highlight">Oro en Vivo</span></h1>
+      <p class="calc-hero__subtitle">
+        Descubre cuánto vale tu oro ahora mismo. Usamos el precio spot del mercado actualizado para darte una estimación real en segundos.
+      </p>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <GoldCalculator />
+
+  <!-- EDUCATIONAL SECTION -->
+  <section class="edu-section section section--light">
+    <div class="container edu-container">
+
+      <h2 class="edu-section__title">¿Cómo se calcula el valor?</h2>
+
+      <!-- Precio spot -->
+      <div class="edu-block gs-reveal">
+        <h3 class="edu-block__title">
+          <span class="material-symbols-outlined edu-block__icon" aria-hidden="true">trending_up</span>
+          ¿Qué es el precio spot?
+        </h3>
+        <p class="edu-block__text">
+          El precio spot del oro es el valor de mercado del oro puro (24 kilates) en este momento exacto, cotizado en dólares por onza troy. Este precio cambia constantemente de lunes a viernes según la oferta y demanda global. KaratCash usa este precio como base para calcular lo que te pagamos.
+        </p>
+      </div>
+
+      <!-- Kilates -->
+      <div class="edu-block gs-reveal">
+        <h3 class="edu-block__title">
+          <span class="material-symbols-outlined edu-block__icon" aria-hidden="true">diamond</span>
+          ¿Qué son los kilates?
+        </h3>
+        <p class="edu-block__text">
+          Los kilates indican el porcentaje de oro puro en una joya. Una pieza de 24 kilates es oro casi puro; una de 10 kilates contiene menos oro y más metales de relleno.
+        </p>
+        <div class="edu-karats">
+          <div class="edu-karat-row">
+            <span class="edu-karat-row__k">10k</span>
+            <div class="edu-karat-row__bar">
+              <div class="edu-karat-row__fill" style="width: 41.67%"></div>
+            </div>
+            <span class="edu-karat-row__pct">41.7% oro</span>
+          </div>
+          <div class="edu-karat-row">
+            <span class="edu-karat-row__k">14k</span>
+            <div class="edu-karat-row__bar">
+              <div class="edu-karat-row__fill" style="width: 58.33%"></div>
+            </div>
+            <span class="edu-karat-row__pct">58.3% oro</span>
+          </div>
+          <div class="edu-karat-row">
+            <span class="edu-karat-row__k">18k</span>
+            <div class="edu-karat-row__bar">
+              <div class="edu-karat-row__fill" style="width: 75%"></div>
+            </div>
+            <span class="edu-karat-row__pct">75.0% oro</span>
+          </div>
+          <div class="edu-karat-row">
+            <span class="edu-karat-row__k">24k</span>
+            <div class="edu-karat-row__bar">
+              <div class="edu-karat-row__fill" style="width: 99.9%"></div>
+            </div>
+            <span class="edu-karat-row__pct">99.9% oro</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- La fórmula -->
+      <div class="edu-block gs-reveal">
+        <h3 class="edu-block__title">
+          <span class="material-symbols-outlined edu-block__icon" aria-hidden="true">calculate</span>
+          La fórmula
+        </h3>
+        <p class="edu-block__text">
+          El cálculo es directo y transparente. Tomamos el peso de tu pieza, el precio actual del oro por gramo, y la pureza según los kilates:
+        </p>
+        <div class="edu-formula-box">
+          <span class="edu-formula">Valor = Peso (g) &times; Precio por gramo &times; Pureza</span>
+        </div>
+
+        <!-- Ejemplo -->
+        <div class="edu-example">
+          <p class="edu-example__label">Ejemplo práctico</p>
+          <p class="edu-example__text">
+            Una cadena de <strong>10 gramos</strong> de <strong>14 kilates</strong>, con el oro a <strong>$109 por gramo</strong>:
+          </p>
+          <div class="edu-example__calc">
+            <span class="edu-example__step">10 g &times; $109 &times; 0.5833</span>
+            <span class="edu-example__eq">=</span>
+            <span class="edu-example__result">$636 USD</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DARK CTA -->
+  <section class="calc-cta-section section section--dark">
+    <div class="container calc-cta-container">
+      <span class="label">SIGUIENTE PASO</span>
+      <h2 class="calc-cta-section__title">¿Te gustó el estimado?</h2>
+      <p class="calc-cta-section__subtitle">
+        Contáctanos y te damos una cotización final en minutos. Sin compromiso, sin costo, 100% en español.
+      </p>
+      <div class="calc-cta-section__actions">
+        <a href="/contacto" class="btn btn--primary">Contactar ahora &rarr;</a>
+        <a href="https://wa.me/16025551234" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
+          WhatsApp directo
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  /* ---- Hero ---- */
+  .calc-hero {
+    padding-top: calc(var(--nav-height) + var(--space-3xl));
+    padding-bottom: var(--space-3xl);
+    background-color: var(--navy-deep);
+  }
+
+  .calc-hero__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    max-width: 680px;
+  }
+
+  .calc-hero__title {
+    color: var(--white);
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  .calc-hero__title-highlight {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 60%, #E8CC80 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .calc-hero__subtitle {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    color: var(--gray-300);
+    line-height: 1.75;
+    max-width: 560px;
+  }
+
+  /* ---- Educational section ---- */
+  .edu-section {
+    background-color: var(--white);
+  }
+
+  .edu-container {
+    max-width: 700px;
+  }
+
+  .edu-section__title {
+    color: var(--navy-deep);
+    margin-bottom: var(--space-3xl);
+    letter-spacing: -0.02em;
+  }
+
+  .edu-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    padding-bottom: var(--space-3xl);
+    border-bottom: 1px solid var(--gray-200);
+    margin-bottom: var(--space-3xl);
+  }
+
+  .edu-block:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .edu-block__title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--navy-deep);
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+
+  .edu-block__icon {
+    font-size: 1.3rem;
+    color: var(--gold);
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    flex-shrink: 0;
+  }
+
+  .edu-block__text {
+    color: var(--gray-500);
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  /* Karat bars */
+  .edu-karats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-top: var(--space-sm);
+  }
+
+  .edu-karat-row {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr 5rem;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .edu-karat-row__k {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--navy-deep);
+    text-align: right;
+  }
+
+  .edu-karat-row__bar {
+    height: 10px;
+    background-color: var(--gray-200);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .edu-karat-row__fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
+    border-radius: 999px;
+  }
+
+  .edu-karat-row__pct {
+    font-size: 0.82rem;
+    color: var(--gray-500);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  /* Formula box */
+  .edu-formula-box {
+    background-color: var(--navy-deep);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg) var(--space-xl);
+    text-align: center;
+  }
+
+  .edu-formula {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+    color: var(--gold);
+    letter-spacing: 0.01em;
+  }
+
+  /* Example */
+  .edu-example {
+    background-color: var(--gray-100);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg) var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .edu-example__label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold-dark);
+  }
+
+  .edu-example__text {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+  }
+
+  .edu-example__calc {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .edu-example__step {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.88rem;
+    color: var(--navy);
+    background-color: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    padding: 0.3rem 0.75rem;
+  }
+
+  .edu-example__eq {
+    font-weight: 700;
+    color: var(--gray-400);
+    font-size: 1.1rem;
+  }
+
+  .edu-example__result {
+    font-family: var(--font-headline);
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--green);
+  }
+
+  /* ---- Dark CTA ---- */
+  .calc-cta-section {
+    background-color: var(--navy-deep);
+  }
+
+  .calc-cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-lg);
+    max-width: 640px;
+  }
+
+  .calc-cta-section__title {
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+
+  .calc-cta-section__subtitle {
+    color: var(--gray-400);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .calc-cta-section__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-top: var(--space-sm);
+  }
+
+  @media (max-width: 480px) {
+    .calc-cta-section__actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .calc-cta-section__actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .edu-karat-row {
+      grid-template-columns: 2rem 1fr 4.5rem;
+      gap: var(--space-sm);
+    }
+  }
+</style>

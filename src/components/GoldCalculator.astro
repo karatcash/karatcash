@@ -1,0 +1,400 @@
+---
+// GoldCalculator — Widget de calculadora de oro
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+<section class={`calc-section section section--dark ${compact ? 'calc-section--compact' : ''}`}>
+  <div class="container">
+    <div class="calc-layout">
+
+      <!-- LEFT: Info -->
+      <div class="calc-info gs-reveal">
+        <span class="label">PRECIO EN VIVO</span>
+        <h2 class="calc-info__title">Calculadora de Oro</h2>
+        <p class="calc-info__desc">
+          Ingresa el peso de tu oro y sus kilates para obtener una estimación instantánea basada en el precio spot del mercado.
+        </p>
+
+        {!compact && (
+          <div class="calc-spot-box">
+            <div class="calc-spot-box__inner">
+              <span class="calc-spot-box__price" id="calc-spot-price">—</span>
+              <span class="calc-spot-box__unit">USD por onza troy</span>
+            </div>
+            <div class="calc-spot-box__live">
+              <span class="calc-spot-box__dot" aria-hidden="true"></span>
+              <span>Precio en tiempo real</span>
+            </div>
+          </div>
+        )}
+
+        {compact && (
+          <div class="calc-spot-mini">
+            <span class="calc-spot-mini__label">Precio spot actual:</span>
+            <span class="calc-spot-mini__price" id="calc-spot-price">—</span>
+            <span class="calc-spot-mini__unit">USD/oz</span>
+          </div>
+        )}
+      </div>
+
+      <!-- RIGHT: Calculator card -->
+      <div class="calc-card gs-reveal">
+
+        <!-- Weight input -->
+        <div class="calc-field">
+          <label class="calc-field__label" for="calc-weight">Peso de tu oro (gramos)</label>
+          <div class="calc-field__input-wrap">
+            <input
+              id="calc-weight"
+              type="number"
+              min="0.1"
+              step="0.1"
+              placeholder="Ej: 10.5"
+              class="calc-field__input"
+              inputmode="decimal"
+              autocomplete="off"
+            />
+            <span class="calc-field__unit">g</span>
+          </div>
+        </div>
+
+        <!-- Karat selector -->
+        <div class="calc-field">
+          <span class="calc-field__label">Kilates de tu oro</span>
+          <div class="calc-karats">
+            <button class="calc-karat-btn" data-karat="10" type="button">10k</button>
+            <button class="calc-karat-btn is-active" data-karat="14" type="button">14k</button>
+            <button class="calc-karat-btn" data-karat="18" type="button">18k</button>
+            <button class="calc-karat-btn" data-karat="24" type="button">24k</button>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div id="calc-result-wrapper" class="calc-result" style="display: none;">
+          <div class="calc-result__inner">
+            <span class="calc-result__label">Valor estimado</span>
+            <div class="calc-result__amount">
+              <span class="calc-result__value" id="calc-result">$0</span>
+              <span class="calc-result__currency">USD</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <a href="/contacto" class="btn btn--primary calc-cta">
+          Quiero vender &rarr;
+        </a>
+
+        <!-- Disclaimer -->
+        <p class="calc-disclaimer">
+          Estimado basado en precio spot del mercado. El valor final depende del estado, peso exacto y pureza verificada en persona.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { initCalculator } from '../scripts/calculator.ts';
+  document.addEventListener('DOMContentLoaded', () => {
+    initCalculator();
+  });
+</script>
+
+<style>
+  /* ---- Section ---- */
+  .calc-section {
+    background-color: var(--navy);
+  }
+
+  .calc-section--compact {
+    padding-block: var(--space-3xl);
+  }
+
+  /* ---- Two-column layout ---- */
+  .calc-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+  }
+
+  @media (max-width: 860px) {
+    .calc-layout {
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+  }
+
+  /* ---- Left: Info ---- */
+  .calc-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .calc-info__title {
+    color: var(--white);
+    letter-spacing: -0.02em;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  }
+
+  .calc-info__desc {
+    color: var(--gray-400);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    max-width: 420px;
+  }
+
+  /* Spot price display (full page) */
+  .calc-spot-box {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+  }
+
+  .calc-spot-box__inner {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sm);
+  }
+
+  .calc-spot-box__price {
+    font-family: var(--font-headline);
+    font-weight: 800;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    color: var(--gold);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .calc-spot-box__unit {
+    font-size: 0.85rem;
+    color: var(--gray-400);
+    font-weight: 500;
+  }
+
+  .calc-spot-box__live {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: 0.75rem;
+    color: var(--gray-500);
+    font-weight: 500;
+  }
+
+  .calc-spot-box__dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--green);
+    flex-shrink: 0;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.55; transform: scale(0.8); }
+  }
+
+  /* Spot price mini (compact) */
+  .calc-spot-mini {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+  }
+
+  .calc-spot-mini__label {
+    font-size: 0.82rem;
+    color: var(--gray-500);
+  }
+
+  .calc-spot-mini__price {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--gold);
+  }
+
+  .calc-spot-mini__unit {
+    font-size: 0.78rem;
+    color: var(--gray-500);
+  }
+
+  /* ---- Right: Card ---- */
+  .calc-card {
+    background-color: var(--navy-deep);
+    border: 1px solid rgba(197, 165, 90, 0.25);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  /* ---- Fields ---- */
+  .calc-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .calc-field__label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gray-400);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .calc-field__input-wrap {
+    position: relative;
+  }
+
+  .calc-field__input {
+    width: 100%;
+    padding: 0.85rem 3rem 0.85rem 1rem;
+    background-color: var(--navy);
+    border: 1px solid rgba(197, 165, 90, 0.2);
+    border-radius: var(--radius-md);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+    transition: border-color var(--transition-fast);
+    appearance: textfield;
+    -moz-appearance: textfield;
+  }
+
+  .calc-field__input::-webkit-outer-spin-button,
+  .calc-field__input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .calc-field__input::placeholder {
+    color: var(--gray-600);
+  }
+
+  .calc-field__input:focus {
+    border-color: var(--gold);
+  }
+
+  .calc-field__unit {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    translate: 0 -50%;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gray-500);
+    pointer-events: none;
+  }
+
+  /* ---- Karat buttons ---- */
+  .calc-karats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .calc-karat-btn {
+    padding: 0.65rem 0.5rem;
+    border-radius: var(--radius-md);
+    background-color: var(--navy);
+    border: 1px solid rgba(197, 165, 90, 0.2);
+    color: var(--gray-400);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast),
+      color var(--transition-fast);
+    text-align: center;
+  }
+
+  .calc-karat-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .calc-karat-btn.is-active {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy-deep);
+  }
+
+  /* ---- Result ---- */
+  .calc-result {
+    background: linear-gradient(
+      135deg,
+      rgba(197, 165, 90, 0.08) 0%,
+      rgba(197, 165, 90, 0.04) 100%
+    );
+    border: 1px solid rgba(197, 165, 90, 0.3);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg) var(--space-xl);
+  }
+
+  .calc-result__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .calc-result__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gray-400);
+  }
+
+  .calc-result__amount {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sm);
+  }
+
+  .calc-result__value {
+    font-family: var(--font-headline);
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    color: var(--gold);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .calc-result__currency {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--gray-500);
+  }
+
+  /* ---- CTA ---- */
+  .calc-cta {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  /* ---- Disclaimer ---- */
+  .calc-disclaimer {
+    font-size: 0.72rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+    text-align: center;
+  }
+</style>
