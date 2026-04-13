@@ -1,0 +1,17 @@
+export const ciudades: string[] = [
+  'Phoenix',
+  'Tempe',
+  'Mesa',
+  'Scottsdale',
+  'Chandler',
+  'Gilbert',
+  'Glendale',
+  'Peoria',
+  'Surprise',
+  'Avondale',
+  'Goodyear',
+  'Buckeye',
+  'Laveen',
+  'Ahwatukee',
+  'Cave Creek',
+];

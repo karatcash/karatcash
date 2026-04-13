@@ -1,0 +1,306 @@
+---
+const pathname = Astro.url.pathname;
+
+const links = [
+  { href: '/',               label: 'Inicio' },
+  { href: '/como-funciona',  label: 'Cómo Funciona' },
+  { href: '/calculadora',    label: 'Calculadora' },
+  { href: '/sobre-nosotros', label: 'Nosotros' },
+];
+
+function isActive(href: string): boolean {
+  if (href === '/') return pathname === '/';
+  return pathname.startsWith(href);
+}
+---
+
+<header class="nav">
+  <div class="nav__inner">
+
+    <!-- Brand -->
+    <a href="/" class="nav__brand" aria-label="KaratCash — Inicio">
+      <img
+        src="/logo.webp"
+        alt="KaratCash logo"
+        width="40"
+        height="40"
+        class="nav__logo"
+      />
+      <span class="nav__brand-name">KARAT CASH</span>
+    </a>
+
+    <!-- Desktop Links -->
+    <nav class="nav__links" aria-label="Navegación principal">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class={`nav__link${isActive(link.href) ? ' nav__link--active' : ''}`}
+          aria-current={isActive(link.href) ? 'page' : undefined}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Desktop CTA -->
+    <a href="/contacto" class="btn btn--primary nav__cta">
+      Vender mi oro
+    </a>
+
+    <!-- Mobile Hamburger -->
+    <button
+      class="nav__hamburger"
+      id="nav-hamburger"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="nav-mobile"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+  <nav class="nav-mobile__links" aria-label="Menú móvil">
+    {links.map((link) => (
+      <a
+        href={link.href}
+        class={`nav-mobile__link${isActive(link.href) ? ' nav-mobile__link--active' : ''}`}
+        aria-current={isActive(link.href) ? 'page' : undefined}
+      >
+        {link.label}
+      </a>
+    ))}
+    <a href="/contacto" class="btn btn--primary nav-mobile__cta">
+      Vender mi oro
+    </a>
+  </nav>
+</div>
+
+<style>
+  /* ---- Nav Shell ---- */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: var(--nav-height);
+    background-color: rgba(26, 31, 43, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(197, 165, 90, 0.12);
+  }
+
+  .nav__inner {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: var(--space-lg);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  /* ---- Brand ---- */
+  .nav__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .nav__logo {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    object-fit: contain;
+  }
+
+  .nav__brand-name {
+    font-family: var(--font-headline);
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  /* ---- Desktop Links ---- */
+  .nav__links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    margin-left: auto;
+  }
+
+  .nav__link {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--gray-300);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    white-space: nowrap;
+  }
+
+  .nav__link:hover,
+  .nav__link--active {
+    color: var(--gold);
+  }
+
+  /* ---- Desktop CTA ---- */
+  .nav__cta {
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    padding: 0.6rem 1.25rem;
+    margin-left: var(--space-sm);
+  }
+
+  /* ---- Hamburger ---- */
+  .nav__hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .nav__hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--gray-300);
+    border-radius: 2px;
+    transition: transform var(--transition-base), opacity var(--transition-base), background-color var(--transition-fast);
+  }
+
+  .nav__hamburger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+    background-color: var(--gold);
+  }
+
+  .nav__hamburger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .nav__hamburger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+    background-color: var(--gold);
+  }
+
+  /* ---- Mobile Menu ---- */
+  .nav-mobile {
+    position: fixed;
+    top: var(--nav-height);
+    right: 0;
+    bottom: 0;
+    width: min(320px, 100vw);
+    background-color: var(--navy-deep);
+    border-left: 1px solid rgba(197, 165, 90, 0.12);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-2xl) var(--space-xl);
+    transform: translateX(100%);
+    transition: transform var(--transition-base);
+    visibility: hidden;
+  }
+
+  .nav-mobile[aria-hidden="false"] {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .nav-mobile__links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .nav-mobile__link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--gray-300);
+    text-decoration: none;
+    padding-block: var(--space-sm);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: color var(--transition-fast);
+  }
+
+  .nav-mobile__link:hover,
+  .nav-mobile__link--active {
+    color: var(--gold);
+  }
+
+  .nav-mobile__cta {
+    margin-top: var(--space-lg);
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 768px) {
+    .nav__links,
+    .nav__cta {
+      display: none;
+    }
+
+    .nav__hamburger {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  const hamburger = document.getElementById('nav-hamburger');
+  const mobileMenu = document.getElementById('nav-mobile');
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!isOpen));
+      mobileMenu.setAttribute('aria-hidden', String(isOpen));
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+    });
+
+    // Close on link click
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      const target = e.target as Node;
+      if (
+        hamburger.getAttribute('aria-expanded') === 'true' &&
+        !mobileMenu.contains(target) &&
+        !hamburger.contains(target)
+      ) {
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+</script>

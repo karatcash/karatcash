@@ -1,17 +1,62 @@
 ---
-
+import Base from '../layouts/Base.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base
+  title="Compra de Oro en Phoenix"
+  description="KaratCash compra tu oro al mejor precio en Phoenix y el área metropolitana. Proceso rápido, seguro y transparente. Cotización inmediata."
+>
+  <!-- Hero Placeholder -->
+  <section class="hero section section--dark">
+    <div class="container hero__container">
+      <span class="label">Phoenix, AZ · Área Metropolitana</span>
+      <h1 class="hero__title">
+        KaratCash
+      </h1>
+      <p class="hero__subtitle">En construcción</p>
+      <p class="hero__coming">Próximamente</p>
+      <a href="/contacto" class="btn btn--primary hero__cta">
+        Vender mi oro
+      </a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-block: calc(var(--nav-height) + var(--space-4xl)) var(--space-4xl);
+  }
+
+  .hero__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-lg);
+  }
+
+  .hero__title {
+    color: var(--gold);
+    margin-top: var(--space-sm);
+  }
+
+  .hero__subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: var(--gray-300);
+    font-weight: 500;
+  }
+
+  .hero__coming {
+    font-size: 0.9rem;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+  }
+
+  .hero__cta {
+    margin-top: var(--space-md);
+  }
+</style>

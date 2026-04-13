@@ -1,0 +1,39 @@
+/* =========================================
+   KaratCash — GSAP Animation Base Classes
+   ========================================= */
+
+/* Elements start hidden — GSAP will animate them in */
+
+.gs-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.gs-reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.gs-reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.gs-reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* =========================================
+   REDUCED MOTION — Accessibility
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .gs-reveal,
+  .gs-reveal-left,
+  .gs-reveal-right,
+  .gs-reveal-scale {
+    opacity: 1;
+    transform: none;
+  }
+}
