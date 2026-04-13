@@ -1,0 +1,2217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KaratCash — Plan Maestro de Lanzamiento</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #2D3442;
+  --navy-deep: #1A1F2B;
+  --navy-light: #3D4556;
+  --gold: #C5A55A;
+  --gold-light: #D4B96A;
+  --gold-pale: #F5EFD8;
+  --gold-dark: #9E8444;
+  --white: #FFFFFF;
+  --off-white: #FAFAF8;
+  --gray-50: #F8F8F6;
+  --gray-100: #F0EFED;
+  --gray-200: #E2E1DE;
+  --gray-300: #C8C7C3;
+  --gray-400: #9E9D99;
+  --gray-500: #6E6D69;
+  --gray-600: #4A4944;
+  --green: #2D8F5E;
+  --green-bg: #E8F5EE;
+  --red: #C0392B;
+  --red-bg: #FDECEB;
+  --amber: #D4920B;
+  --amber-bg: #FEF3D8;
+  --blue: #2B6CB0;
+  --blue-bg: #EBF4FF;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,0.1);
+  --shadow-xl: 0 20px 60px rgba(0,0,0,0.12);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--navy);
+  background: var(--off-white);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAVIGATION ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(26,31,43,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(197,165,90,0.15);
+  padding: 0 2rem;
+}
+.nav-inner {
+  max-width: 1300px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.nav-brand {
+  font-family: var(--font-display);
+  font-weight: 700; font-size: 1.2rem;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+}
+.nav-links { display: flex; gap: 0.25rem; flex-wrap: wrap; }
+.nav-links a {
+  color: var(--gray-300); text-decoration: none;
+  font-size: 0.72rem; font-weight: 500;
+  padding: 0.35rem 0.6rem; border-radius: var(--radius-sm);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.nav-links a:hover { color: var(--gold); background: rgba(197,165,90,0.1); }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(145deg, var(--navy-deep) 0%, var(--navy) 50%, #3A3F4D 100%);
+  padding: 8rem 2rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 70% 20%, rgba(197,165,90,0.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 80%, rgba(197,165,90,0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -2px; left: 0; right: 0; height: 80px;
+  background: linear-gradient(to top, var(--off-white), transparent);
+}
+.hero-inner {
+  max-width: 1100px; margin: 0 auto; position: relative; z-index: 1;
+  text-align: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(197,165,90,0.12);
+  border: 1px solid rgba(197,165,90,0.25);
+  padding: 0.4rem 1.2rem;
+  border-radius: 100px;
+  font-size: 0.78rem; font-weight: 600;
+  color: var(--gold-light);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+.hero h1 span { color: var(--gold); }
+.hero-subtitle {
+  font-size: 1.15rem; color: var(--gray-300);
+  max-width: 700px; margin: 0 auto 2.5rem;
+  line-height: 1.8;
+}
+.hero-meta {
+  display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap;
+}
+.hero-meta-item {
+  text-align: center;
+}
+.hero-meta-item .value {
+  font-family: var(--font-display);
+  font-size: 1.5rem; font-weight: 700; color: var(--gold);
+}
+.hero-meta-item .label {
+  font-size: 0.75rem; color: var(--gray-400);
+  text-transform: uppercase; letter-spacing: 1px; margin-top: 0.2rem;
+}
+
+/* ── LAYOUT ── */
+.container {
+  max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+}
+
+/* ── SECTIONS ── */
+.section {
+  padding: 4rem 0;
+}
+.section + .section {
+  border-top: 1px solid var(--gray-200);
+}
+.section-header {
+  margin-bottom: 2.5rem;
+}
+.section-number {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; color: var(--gold);
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.2;
+}
+.section-subtitle {
+  font-size: 1rem; color: var(--gray-500);
+  margin-top: 0.5rem; max-width: 700px;
+}
+
+/* ── CARDS ── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.card-grid {
+  display: grid; gap: 1.5rem;
+}
+.card-grid-2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.card-grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.card-grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+.card-icon {
+  width: 48px; height: 48px;
+  background: var(--gold-pale);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem; font-weight: 700;
+  margin-bottom: 0.6rem; color: var(--navy);
+}
+.card p { color: var(--gray-500); font-size: 0.92rem; line-height: 1.65; }
+
+/* Gold-accent card */
+.card-gold {
+  border-left: 4px solid var(--gold);
+  background: linear-gradient(135deg, var(--white) 0%, var(--gold-pale) 100%);
+}
+
+/* ── CALLOUTS ── */
+.callout {
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  display: flex; gap: 0.75rem;
+  font-size: 0.92rem; line-height: 1.6;
+}
+.callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+.callout-warning { background: var(--amber-bg); border-left: 4px solid var(--amber); }
+.callout-danger { background: var(--red-bg); border-left: 4px solid var(--red); }
+.callout-success { background: var(--green-bg); border-left: 4px solid var(--green); }
+.callout-info { background: var(--blue-bg); border-left: 4px solid var(--blue); }
+.callout-gold {
+  background: var(--gold-pale);
+  border-left: 4px solid var(--gold);
+}
+
+/* ── BADGES ── */
+.badge {
+  display: inline-flex; align-items: center;
+  padding: 0.2rem 0.7rem;
+  border-radius: 100px;
+  font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.badge-gold { background: var(--gold-pale); color: var(--gold-dark); }
+.badge-green { background: var(--green-bg); color: var(--green); }
+.badge-red { background: var(--red-bg); color: var(--red); }
+.badge-blue { background: var(--blue-bg); color: var(--blue); }
+.badge-amber { background: var(--amber-bg); color: var(--amber); }
+.badge-navy { background: rgba(45,52,66,0.1); color: var(--navy); }
+
+/* ── TABLES ── */
+.table-wrap {
+  overflow-x: auto; margin: 1.5rem 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200);
+}
+table {
+  width: 100%; border-collapse: collapse;
+  font-size: 0.88rem;
+}
+th {
+  background: var(--navy);
+  color: var(--white);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tr:last-child td { border-bottom: none; }
+tr:nth-child(even) { background: var(--gray-50); }
+tr:hover { background: var(--gold-pale); }
+
+/* ── TIMELINE ── */
+.timeline { position: relative; padding-left: 3rem; }
+.timeline::before {
+  content: ''; position: absolute;
+  left: 0.9rem; top: 0; bottom: 0;
+  width: 2px; background: linear-gradient(to bottom, var(--gold), var(--gray-200));
+}
+.timeline-item {
+  position: relative; margin-bottom: 2.5rem;
+}
+.timeline-dot {
+  position: absolute; left: -2.35rem; top: 0.3rem;
+  width: 20px; height: 20px;
+  background: var(--gold);
+  border: 3px solid var(--white);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--gold-pale);
+}
+.timeline-dot.completed { background: var(--green); box-shadow: 0 0 0 3px var(--green-bg); }
+.timeline-phase {
+  font-family: var(--font-mono);
+  font-size: 0.72rem; color: var(--gold-dark);
+  font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+.timeline-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem; font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.timeline-desc {
+  color: var(--gray-500); font-size: 0.9rem;
+}
+
+/* ── CHECKLIST ── */
+.checklist { list-style: none; }
+.checklist li {
+  padding: 0.6rem 0;
+  padding-left: 2rem;
+  position: relative;
+  font-size: 0.92rem;
+  border-bottom: 1px solid var(--gray-100);
+}
+.checklist li::before {
+  content: '☐';
+  position: absolute; left: 0; top: 0.6rem;
+  font-size: 1rem; color: var(--gold);
+}
+.checklist li.done::before { content: '✓'; color: var(--green); }
+
+/* ── MATRIX BLOCKS ── */
+.matrix-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.matrix-col {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  overflow: hidden;
+}
+.matrix-header {
+  padding: 1rem 1.5rem;
+  font-weight: 700; font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.matrix-header-green { background: var(--green-bg); color: var(--green); }
+.matrix-header-amber { background: var(--amber-bg); color: var(--amber); }
+.matrix-header-red { background: var(--red-bg); color: var(--red); }
+.matrix-body {
+  padding: 1.25rem 1.5rem;
+}
+.matrix-body ul {
+  list-style: none;
+}
+.matrix-body li {
+  padding: 0.4rem 0;
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  padding-left: 1.2rem;
+  position: relative;
+}
+.matrix-body li::before {
+  content: '›'; position: absolute; left: 0;
+  color: var(--gold); font-weight: 700;
+}
+
+/* ── COLLAPSIBLE ── */
+details {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  margin: 0.75rem 0;
+  overflow: hidden;
+}
+summary {
+  padding: 1rem 1.5rem;
+  font-weight: 600; font-size: 0.95rem;
+  cursor: pointer;
+  display: flex; align-items: center; gap: 0.5rem;
+  transition: background 0.2s;
+  user-select: none;
+}
+summary:hover { background: var(--gray-50); }
+summary::marker { content: ''; }
+summary::before {
+  content: '▸'; color: var(--gold);
+  font-size: 1rem; transition: transform 0.2s;
+}
+details[open] summary::before { transform: rotate(90deg); }
+.details-body {
+  padding: 0 1.5rem 1.25rem;
+  font-size: 0.9rem; color: var(--gray-600);
+  line-height: 1.7;
+}
+
+/* ── PRIORITY BLOCK ── */
+.priority-block {
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin: 1.5rem 0;
+}
+.priority-block h3 {
+  color: var(--gold); font-family: var(--font-display);
+  font-size: 1.2rem; margin-bottom: 0.75rem;
+}
+.priority-block p {
+  color: var(--gray-300); font-size: 0.92rem; line-height: 1.7;
+}
+
+/* ── ACTION BLOCK ── */
+.action-block {
+  background: var(--white);
+  border: 2px solid var(--gold);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  margin: 1.5rem 0;
+  position: relative;
+}
+.action-block::before {
+  content: '⚡ ACCIÓN';
+  position: absolute; top: -0.7rem; left: 1.5rem;
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-size: 0.68rem; font-weight: 700;
+  padding: 0.15rem 0.7rem;
+  border-radius: 100px;
+  letter-spacing: 1px;
+}
+.action-block h4 {
+  font-weight: 700; margin-bottom: 0.5rem; margin-top: 0.3rem;
+}
+.action-block p {
+  font-size: 0.9rem; color: var(--gray-500);
+}
+
+/* ── PROSE ── */
+.prose { max-width: 800px; }
+.prose h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem; font-weight: 700;
+  margin: 2rem 0 0.75rem;
+  color: var(--navy);
+}
+.prose h4 {
+  font-size: 1rem; font-weight: 700;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--navy-light);
+}
+.prose p {
+  color: var(--gray-600);
+  margin-bottom: 1rem;
+  font-size: 0.93rem;
+}
+.prose strong { color: var(--navy); }
+.prose ul, .prose ol {
+  margin: 0.75rem 0 1rem 1.25rem;
+  color: var(--gray-600);
+  font-size: 0.92rem;
+}
+.prose li { margin-bottom: 0.35rem; }
+
+/* ── STATS ROW ── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.stat-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  text-align: center;
+}
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 1.8rem; font-weight: 800;
+  color: var(--gold);
+}
+.stat-label {
+  font-size: 0.78rem; color: var(--gray-400);
+  margin-top: 0.25rem; text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── KPI STRIP ── */
+.kpi-strip {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+.kpi {
+  flex: 1; min-width: 140px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-top: 3px solid var(--gold);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  text-align: center;
+}
+.kpi-val {
+  font-family: var(--font-mono);
+  font-size: 1.3rem; font-weight: 700;
+  color: var(--navy);
+}
+.kpi-label {
+  font-size: 0.72rem; color: var(--gray-400);
+  text-transform: uppercase; letter-spacing: 0.5px;
+  margin-top: 0.2rem;
+}
+
+/* ── COMPARISON HIGHLIGHT ── */
+.vs-row {
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  gap: 1rem; align-items: center;
+  margin: 1.5rem 0;
+}
+.vs-badge {
+  background: var(--navy);
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-weight: 800; font-size: 1rem;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gray-200), transparent);
+  margin: 3rem 0;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--navy-deep);
+  color: var(--gray-400);
+  padding: 3rem 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+.footer strong { color: var(--gold); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hero { padding: 7rem 1.5rem 4rem; }
+  .container { padding: 0 1.25rem; }
+  .section { padding: 3rem 0; }
+  .matrix-row { grid-template-columns: 1fr; }
+  .vs-row { grid-template-columns: 1fr; }
+  .vs-badge { margin: 0 auto; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .card { padding: 1.5rem; }
+  table { font-size: 0.8rem; }
+  th, td { padding: 0.6rem 0.75rem; }
+}
+
+/* ── ANCHOR OFFSET ── */
+[id] { scroll-margin-top: 70px; }
+
+/* ── SUBTLE ANIMATIONS ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.section { animation: fadeIn 0.4s ease-out; }
+
+/* ── PERSONA CARD ── */
+.persona-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.persona-header {
+  background: linear-gradient(135deg, var(--navy-deep), var(--navy-light));
+  padding: 1.5rem;
+  color: var(--white);
+  display: flex; align-items: center; gap: 1rem;
+}
+.persona-avatar {
+  width: 56px; height: 56px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+}
+.persona-name {
+  font-family: var(--font-display);
+  font-weight: 700; font-size: 1.15rem;
+}
+.persona-role { font-size: 0.82rem; color: var(--gray-300); }
+.persona-body { padding: 1.5rem; }
+.persona-body h4 {
+  font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--gold-dark);
+  margin: 1rem 0 0.4rem;
+}
+.persona-body h4:first-child { margin-top: 0; }
+.persona-body p, .persona-body li {
+  font-size: 0.88rem; color: var(--gray-600); line-height: 1.6;
+}
+
+/* ── TAG LIST ── */
+.tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0; }
+.tag {
+  background: var(--gray-100);
+  color: var(--gray-600);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem; font-weight: 500;
+}
+
+/* ── FUNNEL VISUAL ── */
+.funnel { margin: 2rem 0; }
+.funnel-step {
+  padding: 1rem 1.5rem;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  transition: transform 0.2s;
+}
+.funnel-step:hover { transform: scaleX(1.02); }
+.funnel-arrow {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.2rem;
+  margin: 0.15rem 0;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">KC | KaratCash</div>
+    <div class="nav-links">
+      <a href="#resumen">Resumen</a>
+      <a href="#diagnostico">Diagnóstico</a>
+      <a href="#mercado">Mercado</a>
+      <a href="#branding">Branding</a>
+      <a href="#performance">Performance</a>
+      <a href="#fases">Fases</a>
+      <a href="#herramientas">Stack</a>
+      <a href="#matriz">Matriz IA</a>
+      <a href="#riesgos">Riesgos</a>
+      <a href="#checklist">Checklist</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">◆ Documento Estratégico Confidencial</div>
+    <h1>Plan Maestro de Lanzamiento<br><span>KaratCash</span></h1>
+    <p class="hero-subtitle">Investigación estratégica, ruta de desarrollo integral y sistema operativo de ejecución para construir la marca líder de compra y venta de oro en Phoenix, Arizona — con enfoque AI-first.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="value">Phoenix, AZ</div>
+        <div class="label">Mercado objetivo</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="value">$4,400+/oz</div>
+        <div class="label">Precio del oro (Mar 2026)</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="value">30+</div>
+        <div class="label">Competidores activos</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="value">4–5 semanas</div>
+        <div class="label">Lanzamiento AI-first</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+<!-- ═══════════════════ 2. RESUMEN EJECUTIVO ═══════════════════ -->
+<section class="section" id="resumen">
+  <div class="section-header">
+    <div class="section-number">Sección 01</div>
+    <h2 class="section-title">Resumen Ejecutivo</h2>
+    <p class="section-subtitle">La oportunidad, la tesis y las cinco decisiones que definirán el lanzamiento.</p>
+  </div>
+
+  <div class="priority-block">
+    <h3>La tesis central</h3>
+    <p>El mercado de compra y venta de oro en Phoenix está fragmentado, digitalmente inmaduro y dominado por actores complacientes. El oro cotiza en máximos históricos ($4,400+/oz, +64% en 2025), lo que significa que cada joya olvidada en un cajón vale más que nunca. <strong style="color:var(--gold)">Ningún competidor</strong> combina branding moderno, transparencia de precios, marketing digital sólido y automatización en una experiencia integrada. KaratCash puede capturar este espacio.</p>
+  </div>
+
+  <div class="card-grid card-grid-2" style="margin-top:1.5rem;">
+    <div class="card card-gold">
+      <h3>🏆 Oportunidad</h3>
+      <p>Precio del oro en máximos históricos + mercado local fragmentado + vacío digital masivo = ventana de primer movimiento única. Analistas proyectan $5,400–$6,300/oz para finales de 2026.</p>
+    </div>
+    <div class="card card-gold">
+      <h3>⚡ Ventaja AI-First</h3>
+      <p>El stack de IA actual permite comprimir un lanzamiento de 3–6 meses en 4–5 semanas a ~$570/mes en herramientas, vs. $3,000–$8,000/mes con agencias tradicionales.</p>
+    </div>
+  </div>
+
+  <div class="prose" style="margin-top:2rem;">
+    <h3>Las cinco decisiones estratégicas que definen este lanzamiento</h3>
+    <ol>
+      <li><strong>Aplicar la licencia de Secondhand Dealer de Phoenix de inmediato</strong> — el trámite toma ~90 días y bloquea todo lo demás.</li>
+      <li><strong>Liderar con transparencia radical de precios</strong> — publicar precios de compra en tiempo real en web y redes. Solo un competidor lo hace (Gold King Bullion); los demás requieren visita presencial.</li>
+      <li><strong>Adueñarse del vacío digital</strong> — ningún comprador de oro en Phoenix tiene contenido de video consistente, marketing de contenidos ni presencia social seria. Un blitz de 90 días puede establecer autoridad de categoría.</li>
+      <li><strong>Elegir una ubicación geográficamente desatendida</strong> — el East Valley (Gilbert/Mesa) o el West Valley (Surprise/Peoria) tienen opciones limitadas fuera de cadenas de empeño.</li>
+      <li><strong>Desplegar automatización AI desde el día uno</strong> — respuesta a leads en menos de 60 segundos, contenido activado por cambios de precio, y generación de reseñas a escala.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══════════════════ 3. SUPOSICIONES ═══════════════════ -->
+<section class="section" id="suposiciones">
+  <div class="section-header">
+    <div class="section-number">Sección 02</div>
+    <h2 class="section-title">Suposiciones y Contexto de Partida</h2>
+  </div>
+
+  <div class="callout callout-warning">
+    <span class="callout-icon">⚠️</span>
+    <div><strong>Declaración de suposiciones:</strong> Las siguientes hipótesis guían este plan. Cada suposición está etiquetada como tal y debe ser validada antes de la ejecución.</div>
+  </div>
+
+  <div class="card-grid card-grid-2">
+    <div class="card">
+      <h3>Lo que sabemos</h3>
+      <ul style="list-style:none; font-size:0.9rem; color:var(--gray-600);">
+        <li style="padding:0.3rem 0;">✅ El dominio existe y está registrado</li>
+        <li style="padding:0.3rem 0;">✅ El logo está diseñado (KC monograma navy/dorado)</li>
+        <li style="padding:0.3rem 0;">✅ El negocio es compra y venta de oro</li>
+        <li style="padding:0.3rem 0;">✅ El mercado objetivo es Phoenix, AZ y ciudades aledañas</li>
+        <li style="padding:0.3rem 0;">✅ El enfoque de ejecución es AI-first</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Suposiciones clave</h3>
+      <ul style="list-style:none; font-size:0.9rem; color:var(--gray-600);">
+        <li style="padding:0.3rem 0;">🔸 <span class="badge badge-amber">Suposición</span> Presupuesto inicial: $5,000–$15,000 para lanzamiento</li>
+        <li style="padding:0.3rem 0;">🔸 <span class="badge badge-amber">Suposición</span> Se operará con ubicación física (no solo online)</li>
+        <li style="padding:0.3rem 0;">🔸 <span class="badge badge-amber">Suposición</span> El founder/equipo tiene conocimiento básico de metales preciosos</li>
+        <li style="padding:0.3rem 0;">🔸 <span class="badge badge-amber">Suposición</span> Meta Ads será el canal principal de adquisición pagada</li>
+        <li style="padding:0.3rem 0;">🔸 <span class="badge badge-amber">Suposición</span> El equipo inicial es 1–3 personas</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 4. DIAGNÓSTICO INICIAL ═══════════════════ -->
+<section class="section" id="diagnostico">
+  <div class="section-header">
+    <div class="section-number">Sección 03</div>
+    <h2 class="section-title">Diagnóstico Inicial del Proyecto</h2>
+    <p class="section-subtitle">Estado actual: solo dominio y logo. Todo lo demás debe construirse.</p>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--red);">0%</div>
+      <div class="stat-label">Infraestructura Digital</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--red);">0%</div>
+      <div class="stat-label">Presencia Social</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--amber);">~20%</div>
+      <div class="stat-label">Identidad de Marca</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--red);">0%</div>
+      <div class="stat-label">Compliance / Licencias</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--green);">100%</div>
+      <div class="stat-label">Oportunidad de Mercado</div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>KaratCash parte prácticamente desde cero, pero esto no es una desventaja — es la oportunidad de construir todo correctamente desde el inicio, sin deuda técnica ni decisiones heredadas. El diagnóstico revela tres bloqueantes y cinco aceleradores:</p>
+
+    <h3>🚫 Bloqueantes críticos (sin estos no se puede operar)</h3>
+    <ol>
+      <li><strong>Licencia de Secondhand Dealer de Phoenix</strong> — 90 días de procesamiento. El item de ruta crítica más largo. Debe solicitarse en la semana 1.</li>
+      <li><strong>Programa AML escrito</strong> — obligatorio por ley federal (31 CFR Part 1027) para cualquier dealer que compre y venda más de $50,000/año en metales preciosos.</li>
+      <li><strong>Ubicación física con zonificación aprobada</strong> — Arizona exige que las compras se realicen en un lugar fijo de negocios. La verificación de zonificación debe preceder la solicitud de licencia.</li>
+    </ol>
+
+    <h3>🚀 Aceleradores disponibles</h3>
+    <ol>
+      <li><strong>Logo existente de alta calidad</strong> — el monograma KC en navy/dorado transmite profesionalismo y sofisticación, ahorrando 2–3 semanas de branding.</li>
+      <li><strong>Stack AI maduro en 2026</strong> — herramientas de generación de copy, creativos, automatización y CRM permiten velocidad de ejecución sin precedentes.</li>
+      <li><strong>Competidores digitalmente dormidos</strong> — la inmadurez digital del mercado local crea oportunidad de primer movimiento.</li>
+      <li><strong>Precio del oro en máximos históricos</strong> — el valor de propuesta "tu oro viejo nunca ha valido tanto" es factualmente preciso y urgente.</li>
+      <li><strong>Arizona es fiscalmente favorable</strong> — exención total de impuesto sobre ventas para lingotes y bullion monetizado; sin impuesto estatal sobre ganancias de capital en metales preciosos desde 2017.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══════════════════ 5. VISIÓN ESTRATÉGICA + MERCADO ═══════════════════ -->
+<section class="section" id="mercado">
+  <div class="section-header">
+    <div class="section-number">Sección 04</div>
+    <h2 class="section-title">Visión Estratégica y Panorama del Mercado</h2>
+    <p class="section-subtitle">Análisis profundo del mercado de compra y venta de oro en Phoenix, Arizona y ciudades aledañas.</p>
+  </div>
+
+  <div class="callout callout-info">
+    <span class="callout-icon">🔍</span>
+    <div><strong>Investigación en tiempo real:</strong> Este análisis está basado en investigación web actualizada a marzo 2026, incluyendo revisión de sitios web, Google Business Profiles, y fuentes regulatorias oficiales de los competidores del mercado Phoenix-Mesa-Chandler MSA.</div>
+  </div>
+
+  <!-- 5.1 Contexto macro -->
+  <div class="prose">
+    <h3>5.1 Contexto macroeconómico: el mejor momento de la historia para comprar oro</h3>
+    <p>El oro cotiza cerca de <strong>$4,400–$4,500/oz</strong> en marzo de 2026, tras una subida del 64% en 2025 — el mejor rendimiento del metal en décadas. Los principales bancos de inversión han elevado sus objetivos: Wells Fargo proyecta un rango de $3,350–$3,550 como piso, mientras que otros analistas especulan con niveles de $5,400–$6,300 para finales de 2026. Las fuerzas impulsoras incluyen inflación persistente, compras récord de bancos centrales (especialmente China y BRICS), tensiones geopolíticas, y debilidad relativa del dólar.</p>
+    <p><strong>Para KaratCash, esto significa:</strong> cada pieza de joyería olvidada en un cajón tiene el mayor valor nominal de la historia. Este hecho crea urgencia legítima, mensajes publicitarios poderosos, y un flujo natural de vendedores motivados.</p>
+  </div>
+
+  <!-- 5.2 Landscape competitivo -->
+  <div class="prose">
+    <h3>5.2 Panorama competitivo: 30+ actores, ningún líder digital claro</h3>
+    <p>El mercado de Phoenix se organiza en cuatro niveles competitivos distintos, cada uno con vulnerabilidades explotables:</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Nivel</th>
+          <th>Actores clave</th>
+          <th>Fortalezas</th>
+          <th>Debilidades</th>
+          <th>Oportunidad para KC</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-gold">Tier 1</span><br>Joyeros estate/lujo</td>
+          <td>Estate Watch & Jewelry (Watchlink), Southwest Jewelry Buyers, E.D. Marshall</td>
+          <td>1,500+ reviews (4.9★), GIA, BBB A+, 25–45 años</td>
+          <td>Webs transaccionales, sin precios publicados, sin video, concentrados en Scottsdale</td>
+          <td>Competir en transparencia y alcance digital, no en longevidad</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-blue">Tier 2</span><br>Dealers de bullion</td>
+          <td>CMI Gold & Silver, Scottsdale Bullion & Coin, Republic Monetary Exchange</td>
+          <td>Contenido económico, TV ads, IRAs, BBB A+</td>
+          <td>Enfocados en inversión, ignoran joyería/scrap, altos mínimos</td>
+          <td>Capturar el segmento consumer que ellos ignoran</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-green">Tier 3</span><br>Conveniencia multi-local</td>
+          <td>Gold King Bullion (10 locs), Pawn1st (12 locs), Elite Jewelry/The Gold Guy (6 locs)</td>
+          <td>Accesibilidad, horarios amplios, Gold King publica precios</td>
+          <td>Dentro de pawn shops, percepción de precios bajos</td>
+          <td>Ofrecer experiencia premium con la misma conveniencia</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-navy">Tier 4</span><br>Nicho/especialistas</td>
+          <td>Precious Metals Refinery, Valley Goldmine, Copper State Coin, coin shops varios</td>
+          <td>Servicios especializados (refinería, evaluación in-home)</td>
+          <td>Alcance limitado, marketing mínimo</td>
+          <td>Incorporar servicios premium como diferenciador</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="prose">
+    <h3>5.3 Brechas competitivas que KaratCash debe explotar</h3>
+  </div>
+
+  <div class="card-grid card-grid-3">
+    <div class="card">
+      <div class="card-icon">💰</div>
+      <h3>Transparencia de precios</h3>
+      <p>Solo Gold King Bullion publica precios de compra online. Todos los demás requieren visita presencial. Una calculadora interactiva de precios por quilate y peso sería <strong>primera en la categoría</strong> para la mayoría del mercado.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎬</div>
+      <h3>Contenido de video</h3>
+      <p>Cero competidores tienen presencia significativa en YouTube o TikTok. Un programa de video semanal (pruebas XRF, valuaciones en vivo, educación) capturaría un espacio completamente vacío.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📍</div>
+      <h3>Cobertura geográfica</h3>
+      <p>Scottsdale está sobresaturado (8+ compradores). El <strong>East Valley</strong> (Gilbert, Mesa este) y <strong>West Valley</strong> (Surprise, Peoria, Buckeye) tienen opciones limitadas fuera de cadenas de empeño.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📱</div>
+      <h3>Experiencia digital moderna</h3>
+      <p>La mayoría de webs son funcionales pero anticuadas. Ninguna tiene chatbot, booking online, o integración de precio en tiempo real con la experiencia del usuario.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔒</div>
+      <h3>Credenciales diferenciadas</h3>
+      <p>Membresías en asociaciones industriales (PNG, ANA, ICTA) casi nunca se promocionan. KaratCash puede obtener y destacar credenciales que los competidores tienen pero no comunican.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>Velocidad de respuesta</h3>
+      <p>Ningún competidor ofrece respuesta automatizada a leads. El estándar es "llámenos" o "visite la tienda". Responder en <60 segundos vía SMS/chat sería transformador.</p>
+    </div>
+  </div>
+
+  <div class="prose">
+    <h3>5.4 Implicaciones estratégicas para el posicionamiento de KaratCash</h3>
+    <p>Basado en el análisis competitivo, KaratCash <strong>no debe</strong> competir frontalmente con los joyeros estate de Scottsdale en longevidad o reputación acumulada. Tampoco debe posicionarse como pawn shop ni como dealer de inversión institucional.</p>
+    <p>La posición ideal es: <strong>"El comprador de oro más transparente, moderno y justo del Valley"</strong> — combinando la confianza de un joyero establecido, la conveniencia de un servicio multi-canal (presencial + digital), y la transparencia de precios que nadie más ofrece.</p>
+  </div>
+
+  <div class="action-block">
+    <h4>Posicionamiento recomendado</h4>
+    <p><strong>"KaratCash — Precio justo. Proceso claro. Pago inmediato."</strong> Posicionarse como el anti-pawn-shop: profesional, transparente, sin juegos de precios. La propuesta de valor central es: "Ve exactamente cuánto vale tu oro antes de visitarnos."</p>
+  </div>
+
+  <!-- 5.5 Marco regulatorio -->
+  <div class="prose">
+    <h3>5.5 Marco regulatorio: tres capas de cumplimiento</h3>
+    <p>Operar un negocio de compra de oro en Phoenix requiere cumplir con regulaciones a nivel federal, estatal y local. La capa local impone el plazo más largo.</p>
+  </div>
+
+  <div class="card-grid card-grid-3">
+    <div class="card">
+      <h3>🇺🇸 Federal</h3>
+      <p><strong>31 CFR Part 1027:</strong> Programa AML obligatorio para dealers con más de $50K/año. Incluye: oficial de cumplimiento, evaluación de riesgos, capacitación, pruebas independientes.</p>
+      <p style="margin-top:0.5rem;"><strong>IRS Form 8300:</strong> para transacciones en efectivo &gt;$10,000. <strong>Form 1099-B:</strong> para ventas de bullion específico (1 kilo de barras ≥.995, 25+ monedas tipo Krugerrand).</p>
+      <p style="margin-top:0.5rem;"><strong>OFAC:</strong> verificación de lista SDN antes de cada transacción. <strong>FTC 16 CFR Part 23:</strong> uso correcto de terminología de pureza.</p>
+    </div>
+    <div class="card">
+      <h3>🏜️ Arizona (ARS § 44-1602)</h3>
+      <p>Antes de comprar: recopilar nombre, dirección, fecha de nacimiento, firma, descripción física e ID del vendedor. Registros retenidos 6 meses. Reporte semanal a policía local.</p>
+      <p style="margin-top:0.5rem;"><strong>Ventaja fiscal:</strong> Exención total de Transaction Privilege Tax para bullion. Sin impuesto estatal sobre ganancias de capital en metales preciosos (desde 2017).</p>
+      <p style="margin-top:0.5rem;">Básculas deben tener certificación NTEP y licencia del AZ Dept. of Agriculture.</p>
+    </div>
+    <div class="card">
+      <h3>🏛️ Phoenix local</h3>
+      <p><strong>Secondhand Dealer License:</strong> procesamiento de ~90 días. Requiere huellas dactilares vía DPS. Cada ubicación necesita licencia separada.</p>
+      <p style="margin-top:0.5rem;">Reporte a policía de Phoenix en 24hrs para items &gt;$100 FMV. Período de retención de 10 días calendario.</p>
+      <p style="margin-top:0.5rem;"><strong>Exención crítica:</strong> el bullion asayado y marcado está exento del reporte 24hrs y la retención de 10 días — las transacciones de bullion pueden completarse inmediatamente.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-danger">
+    <span class="callout-icon">🔴</span>
+    <div><strong>Decisión humana obligatoria:</strong> Todo el marco de compliance debe ser revisado por un abogado licenciado en Arizona antes de la primera transacción. Este plan provee orientación informativa, no asesoría legal. La aplicación de la licencia, el programa AML y la configuración de reportes policiales son tareas que requieren intervención manual sí o sí.</div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 6. FRENTE A: BRANDING + PRESENCIA DIGITAL ═══════════════════ -->
+<section class="section" id="branding">
+  <div class="section-header">
+    <div class="section-number">Sección 05</div>
+    <h2 class="section-title">Frente A: Branding + Presencia Digital</h2>
+    <p class="section-subtitle">Toda la base estratégica y digital para que KaratCash tenga presencia sólida y profesional.</p>
+  </div>
+
+  <!-- Identidad de marca -->
+  <div class="prose">
+    <h3>6.1 Identidad de marca</h3>
+  </div>
+
+  <div class="card-grid card-grid-2">
+    <div class="card card-gold">
+      <h3>Propuesta de valor</h3>
+      <p><strong>"Ve cuánto vale tu oro antes de visitarnos. Precio justo. Proceso claro. Pago inmediato."</strong></p>
+      <p style="margin-top:0.75rem;">KaratCash existe para eliminar la incertidumbre de vender oro. En un mercado donde la norma es "tráelo y te decimos", KaratCash muestra precios transparentes online, ofrece evaluación profesional con XRF, y paga en el momento — sin presión, sin juegos, sin letras pequeñas.</p>
+    </div>
+    <div class="card card-gold">
+      <h3>Diferenciación central</h3>
+      <p>Tres pilares que ningún competidor combina:</p>
+      <ol style="margin-top:0.5rem; font-size:0.9rem; color:var(--gray-600);">
+        <li><strong>Transparencia de precios</strong> — calculadora online con precios por quilate actualizados cada 30 min</li>
+        <li><strong>Experiencia moderna</strong> — booking online, respuesta en &lt;60s, proceso documentado en video</li>
+        <li><strong>Accesibilidad inteligente</strong> — ubicación en corredor desatendido + opción de evaluación a domicilio para estates</li>
+      </ol>
+    </div>
+  </div>
+
+  <details style="margin-top:1.5rem;">
+    <summary>📋 Narrativa de marca completa</summary>
+    <div class="details-body">
+      <p><strong>Narrativa fundacional:</strong> "KaratCash nació de una frustración real: el proceso de vender oro está roto. Precios opacos, tiendas intimidantes, y la sensación constante de que te están robando. Creamos KaratCash para cambiar eso. Mostramos nuestros precios de compra en tiempo real. Usamos tecnología XRF para evaluaciones precisas frente a ti. Y pagamos en el acto, sin rodeos. Porque vender tu oro debería sentirse bien, no como una apuesta."</p>
+      <p style="margin-top:0.75rem;"><strong>Misión:</strong> Hacer que vender oro sea transparente, justo y digno de confianza.</p>
+      <p><strong>Visión:</strong> Ser el estándar de confianza en compra de oro del Valley de Phoenix.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>🗣️ Tono de voz e identidad verbal</summary>
+    <div class="details-body">
+      <p><strong>Tono general:</strong> Directo, confiable, accesible. Ni pomposo ni informal. Como un profesional financiero que habla claro.</p>
+      <p style="margin-top:0.5rem;"><strong>Principios verbales:</strong></p>
+      <ul>
+        <li><strong>Claro sobre elegante:</strong> "Te pagamos hoy" en vez de "Liquidez inmediata garantizada"</li>
+        <li><strong>Específico sobre vago:</strong> "Pagamos 90–95% del precio spot por oro 24K" en vez de "Los mejores precios"</li>
+        <li><strong>Educativo sobre persuasivo:</strong> "El oro de 14K contiene 58.3% de oro puro" en vez de "¡Traiga su oro!"</li>
+        <li><strong>Confianza sobre urgencia:</strong> "Sin presión, sin compromiso" en vez de "¡Oferta por tiempo limitado!"</li>
+      </ul>
+      <p style="margin-top:0.5rem;"><strong>Palabras que sí:</strong> transparente, justo, profesional, preciso, inmediato, seguro, certificado</p>
+      <p><strong>Palabras que no:</strong> garantizado (riesgo legal), el mejor precio (no verificable), urgente, liquidación, oportunidad única</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>🎨 Lineamientos visuales base</summary>
+    <div class="details-body">
+      <p><strong>Paleta principal</strong> (derivada del logo existente):</p>
+      <div style="display:flex; gap:0.5rem; margin:0.75rem 0; flex-wrap:wrap;">
+        <div style="width:80px; height:50px; background:#2D3442; border-radius:6px; display:flex; align-items:flex-end; padding:4px;"><span style="color:white; font-size:0.65rem;">#2D3442</span></div>
+        <div style="width:80px; height:50px; background:#C5A55A; border-radius:6px; display:flex; align-items:flex-end; padding:4px;"><span style="color:white; font-size:0.65rem;">#C5A55A</span></div>
+        <div style="width:80px; height:50px; background:#F5EFD8; border-radius:6px; display:flex; align-items:flex-end; padding:4px;"><span style="color:#333; font-size:0.65rem;">#F5EFD8</span></div>
+        <div style="width:80px; height:50px; background:#FFFFFF; border:1px solid #ddd; border-radius:6px; display:flex; align-items:flex-end; padding:4px;"><span style="color:#333; font-size:0.65rem;">#FFFFFF</span></div>
+        <div style="width:80px; height:50px; background:#2D8F5E; border-radius:6px; display:flex; align-items:flex-end; padding:4px;"><span style="color:white; font-size:0.65rem;">#2D8F5E</span></div>
+      </div>
+      <p><strong>Tipografía recomendada:</strong> Playfair Display para títulos (elegancia, confianza), DM Sans para cuerpo (claridad, modernidad). Equivalente web: Google Fonts (gratis).</p>
+      <p><strong>Fotografía:</strong> Tomas reales, no stock. Priorizar: primer plano de oro siendo evaluado, manos profesionales con guantes, equipo XRF en acción, clientes reales (con permiso), interior limpio y profesional del local.</p>
+      <p><strong>Iconografía:</strong> Línea fina, monocromática navy o dorada. Estilo: Lucide o Phosphor Icons.</p>
+    </div>
+  </details>
+
+  <!-- Mensajes clave -->
+  <div class="prose">
+    <h3>6.2 Mensajes clave por audiencia</h3>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Audiencia</th>
+          <th>Mensaje principal</th>
+          <th>Proof point</th>
+          <th>CTA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vendedor casual (joyería heredada/antigua)</td>
+          <td>"Tu joyería olvidada vale más hoy que nunca"</td>
+          <td>Calculadora online + precio del oro en máximos</td>
+          <td>"Ve cuánto vale → Calculadora gratis"</td>
+        </tr>
+        <tr>
+          <td>Persona en necesidad financiera</td>
+          <td>"Convierte tu oro en efectivo hoy, sin complicaciones"</td>
+          <td>Pago inmediato, proceso de 15 min</td>
+          <td>"Agenda tu cita → Pago el mismo día"</td>
+        </tr>
+        <tr>
+          <td>Estate/herencia (albacea o heredero)</td>
+          <td>"Evaluación profesional y confidencial de herencias"</td>
+          <td>Evaluación a domicilio, itemización detallada</td>
+          <td>"Solicita evaluación privada"</td>
+        </tr>
+        <tr>
+          <td>Inversionista (venta de bullion)</td>
+          <td>"Precios competitivos basados en spot, pago inmediato"</td>
+          <td>Precios publicados en tiempo real, sin retención (bullion exento)</td>
+          <td>"Cotiza tu bullion ahora"</td>
+        </tr>
+        <tr>
+          <td>Escéptico / primera vez</td>
+          <td>"Sin presión, sin compromiso. Ven a ver cómo funciona"</td>
+          <td>Video del proceso completo, reviews reales</td>
+          <td>"Mira cómo funciona → Video de 2 min"</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Estructura web -->
+  <div class="prose">
+    <h3>6.3 Arquitectura del sitio web</h3>
+    <p>El sitio debe cumplir cinco funciones simultáneas: educar, generar confianza, capturar leads, convertir visitas en citas, y posicionar orgánicamente en buscadores.</p>
+  </div>
+
+  <div class="card-grid card-grid-2">
+    <div class="card">
+      <h3>Páginas esenciales (MVP)</h3>
+      <ul style="font-size:0.88rem; color:var(--gray-600);">
+        <li><strong>Home:</strong> Hero con precio del oro en vivo + calculadora + CTA dual (llamar / agendar)</li>
+        <li><strong>Cómo funciona:</strong> Proceso en 3 pasos con video</li>
+        <li><strong>Calculadora de precios:</strong> Input por quilate y peso, estimado instantáneo</li>
+        <li><strong>Sobre nosotros:</strong> Historia, credenciales, equipo</li>
+        <li><strong>Contacto / Agendar cita:</strong> Formulario + mapa + horarios</li>
+        <li><strong>FAQ:</strong> 15–20 preguntas frecuentes (SEO gold mine)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Páginas de expansión (Fase 2)</h3>
+      <ul style="font-size:0.88rem; color:var(--gray-600);">
+        <li><strong>Landing por ciudad:</strong> "Sell Gold [City]" × 8–10 ciudades del Valley</li>
+        <li><strong>Blog/Recursos:</strong> Artículos SEO + market updates</li>
+        <li><strong>Testimonios:</strong> Página dedicada con video testimonials</li>
+        <li><strong>Servicios especiales:</strong> Evaluaciones de estates, bullion</li>
+        <li><strong>Gold Market Watch:</strong> Precio actualizado + análisis semanal</li>
+        <li><strong>Programa de referidos:</strong> (cuando el volumen lo justifique)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-gold">
+    <span class="callout-icon">💡</span>
+    <div><strong>Elementos de confianza obligatorios en cada página:</strong> Precio del oro en vivo (header), reviews de Google (widget), badge BBB, badge "Licensed & Insured", "No obligation" messaging, número de teléfono click-to-call visible, chat en vivo (Tidio).</div>
+  </div>
+
+  <!-- SEO -->
+  <div class="prose">
+    <h3>6.4 SEO y palabras clave prioritarias</h3>
+    <p>El panorama SEO para compradores de oro es sorprendentemente poco competitivo, con términos de alto volumen en competencia baja a media:</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Keyword</th><th>Vol. mensual (US)</th><th>Competencia</th><th>Prioridad KC</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>gold buyers near me</td><td>40,500</td><td>Media</td><td><span class="badge badge-red">Máxima</span></td></tr>
+        <tr><td>sell gold near me</td><td>27,100</td><td>Baja</td><td><span class="badge badge-red">Máxima</span></td></tr>
+        <tr><td>cash for gold</td><td>22,200</td><td>Baja</td><td><span class="badge badge-red">Máxima</span></td></tr>
+        <tr><td>how much is 14k gold worth</td><td>14,800</td><td>Baja</td><td><span class="badge badge-amber">Alta</span></td></tr>
+        <tr><td>gold price per gram</td><td>12,100</td><td>Media</td><td><span class="badge badge-amber">Alta</span></td></tr>
+        <tr><td>sell gold Phoenix AZ</td><td>~1,000–2,000</td><td>Baja</td><td><span class="badge badge-red">Máxima</span></td></tr>
+        <tr><td>gold buyers Scottsdale / Mesa / Gilbert</td><td>~300–800 c/u</td><td>Baja</td><td><span class="badge badge-amber">Alta</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Google Business Profile -->
+  <div class="prose">
+    <h3>6.5 Google Business Profile: la jugada de mayor ROI local</h3>
+    <p>Para un negocio local de oro, el GBP es potencialmente más importante que el sitio web. Configuración recomendada:</p>
+    <ul>
+      <li><strong>Categoría primaria:</strong> "Gold Dealer" o "Precious Metal Dealer"</li>
+      <li><strong>Categorías secundarias:</strong> Coin Dealer, Jewelry Buyer, Estate Jewelry Store</li>
+      <li><strong>Fotos geoetiquetadas:</strong> 100+ en el primer año (interior, exterior, equipo, proceso, equipo humano)</li>
+      <li><strong>Google Posts semanales:</strong> Actualización de precios del oro + contenido educativo</li>
+      <li><strong>Q&A pre-poblado:</strong> 15–20 preguntas frecuentes con respuestas detalladas</li>
+      <li><strong>Meta de reseñas Año 1:</strong> 100+ reviews con promedio 4.8+★</li>
+      <li><strong>Cada reseña respondida en &lt;24hrs</strong> con variaciones naturales de keywords</li>
+    </ul>
+  </div>
+
+  <!-- Redes sociales -->
+  <div class="prose">
+    <h3>6.6 Presencia en redes sociales</h3>
+  </div>
+
+  <div class="card-grid card-grid-3">
+    <div class="card">
+      <h3>Facebook <span class="badge badge-red">Prioridad #1</span></h3>
+      <p>Plataforma principal para el demográfico 35–65+. Business Page completa, ads, community building. Publicar diario: precio del oro, educación, testimonios, behind-the-scenes.</p>
+    </div>
+    <div class="card">
+      <h3>Instagram <span class="badge badge-amber">Prioridad #2</span></h3>
+      <p>Reels de valuaciones, transformaciones (joya vieja → efectivo), tips rápidos. Feed curado con estética navy/dorada consistente. Stories diarias con precio del oro.</p>
+    </div>
+    <div class="card">
+      <h3>YouTube <span class="badge badge-amber">Prioridad #2</span></h3>
+      <p>Videos semanales: market updates (2–3 min), demos XRF, "¿Cuánto vale esto?", FAQ en video. Espacio 100% vacío — primer movimiento garantizado.</p>
+    </div>
+    <div class="card">
+      <h3>TikTok <span class="badge badge-blue">Prioridad #3</span></h3>
+      <p>Clips cortos de valuaciones sorpresivas, gold myths, testing process. Audiencia más joven que hereda joyería. Bajo esfuerzo, alto potencial viral.</p>
+    </div>
+    <div class="card">
+      <h3>Google Business <span class="badge badge-red">Prioridad #1</span></h3>
+      <p>Posts semanales, fotos constantes, respuesta a reseñas. El canal con mayor impacto directo en conversión local.</p>
+    </div>
+    <div class="card">
+      <h3>LinkedIn <span class="badge badge-green">Opcional</span></h3>
+      <p>Solo si se busca posicionar al founder como experto en metales preciosos. No prioritario para captación de leads.</p>
+    </div>
+  </div>
+
+  <div class="prose" style="margin-top:1rem;">
+    <p><strong>Mix de contenido recomendado:</strong> 30% actualizaciones de mercado (gráfico diario precio del oro) · 25% educación (quilates, métodos de prueba, tipos de oro) · 20% historias de clientes · 15% detrás de escena (proceso, equipo) · 10% promocional.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════ 7. FRENTE B: PERFORMANCE MARKETING ═══════════════════ -->
+<section class="section" id="performance">
+  <div class="section-header">
+    <div class="section-number">Sección 06</div>
+    <h2 class="section-title">Frente B: Performance Marketing + Meta Ads</h2>
+    <p class="section-subtitle">Estrategia completa de adquisición pagada, desde buyer persona hasta configuración en Meta Business Manager.</p>
+  </div>
+
+  <!-- Buyer Personas -->
+  <div class="prose"><h3>7.1 Buyer Personas</h3></div>
+
+  <div class="card-grid card-grid-2">
+    <div class="persona-card">
+      <div class="persona-header">
+        <div class="persona-avatar">👩</div>
+        <div>
+          <div class="persona-name">María "La Heredera"</div>
+          <div class="persona-role">45–65 años · Scottsdale/Mesa · Ingresos medios-altos</div>
+        </div>
+      </div>
+      <div class="persona-body">
+        <h4>Situación</h4>
+        <p>Heredó joyería de su madre o abuela. No la usa. Sabe que "vale algo" pero no cuánto. No quiere ir a un pawn shop.</p>
+        <h4>Pain points</h4>
+        <p>No sabe cuánto vale realmente, teme que le paguen menos, no confía en el proceso, quiere tratar con alguien profesional.</p>
+        <h4>Triggers de compra</h4>
+        <div class="tag-list">
+          <span class="tag">Noticia sobre precio del oro</span>
+          <span class="tag">Necesidad de liquidez</span>
+          <span class="tag">Mudanza/downsizing</span>
+          <span class="tag">Recomendación de amiga</span>
+        </div>
+        <h4>Canal preferido</h4>
+        <p>Facebook, búsqueda Google, recomendación personal.</p>
+      </div>
+    </div>
+
+    <div class="persona-card">
+      <div class="persona-header">
+        <div class="persona-avatar">👨</div>
+        <div>
+          <div class="persona-name">Carlos "El Práctico"</div>
+          <div class="persona-role">30–50 años · Phoenix/Gilbert · Ingresos medios</div>
+        </div>
+      </div>
+      <div class="persona-body">
+        <h4>Situación</h4>
+        <p>Tiene cadenas, anillos o relojes que no usa. Necesita dinero extra para un gasto específico (reparación de auto, vacaciones, deudas). Busca la opción más rápida y justa.</p>
+        <h4>Pain points</h4>
+        <p>No quiere perder tiempo, quiere saber el precio antes de ir, desconfía de pawn shops, quiere pago inmediato en efectivo.</p>
+        <h4>Triggers de compra</h4>
+        <div class="tag-list">
+          <span class="tag">Gasto inesperado</span>
+          <span class="tag">Ad en Facebook/Instagram</span>
+          <span class="tag">Búsqueda "sell gold near me"</span>
+          <span class="tag">Precio del oro en noticias</span>
+        </div>
+        <h4>Canal preferido</h4>
+        <p>Instagram, Google Search, direct walk-in.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Customer journey -->
+  <div class="prose"><h3>7.2 Customer Journey y niveles de conciencia</h3></div>
+
+  <div class="funnel">
+    <div class="funnel-step" style="background:var(--navy); color:white; max-width:100%;">
+      <strong>INCONSCIENTE</strong> — "Tengo joyería vieja pero nunca he pensado en venderla"
+    </div>
+    <div class="funnel-arrow">▼</div>
+    <div class="funnel-step" style="background:var(--navy-light); color:white; max-width:90%;">
+      <strong>CONSCIENTE DEL PROBLEMA</strong> — "Debería hacer algo con este oro que no uso"
+    </div>
+    <div class="funnel-arrow">▼</div>
+    <div class="funnel-step" style="background:var(--gold); color:var(--navy-deep); max-width:78%;">
+      <strong>CONSCIENTE DE LA SOLUCIÓN</strong> — "Podría vender mi oro por efectivo"
+    </div>
+    <div class="funnel-arrow">▼</div>
+    <div class="funnel-step" style="background:var(--gold-light); color:var(--navy-deep); max-width:64%;">
+      <strong>CONSCIENTE DEL PRODUCTO</strong> — "KaratCash compra oro con precios transparentes"
+    </div>
+    <div class="funnel-arrow">▼</div>
+    <div class="funnel-step" style="background:var(--green); color:white; max-width:50%;">
+      <strong>MÁS CONSCIENTE</strong> — "Quiero agendar una cita con KaratCash"
+    </div>
+  </div>
+
+  <!-- Estructura de campañas -->
+  <div class="prose"><h3>7.3 Estructura de campañas Meta Ads</h3></div>
+
+  <div class="callout callout-warning">
+    <span class="callout-icon">⚠️</span>
+    <div><strong>Categoría especial obligatoria:</strong> Desde enero 2025, los anuncios de compra/venta de oro deben clasificarse bajo "Financial Products and Services" Special Ad Category en Meta. Esto elimina segmentación por edad (solo 18–65+), género, código postal (mínimo radio 15 millas), y reemplaza Lookalike Audiences con Special Ad Audiences menos precisas. <strong>La calidad creativa se convierte en el mecanismo principal de targeting.</strong></div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Campaña</th>
+          <th>Objetivo Meta</th>
+          <th>Audiencia</th>
+          <th>Formato</th>
+          <th>Presupuesto %</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-blue">TOFU</span> Awareness</td>
+          <td>Video Views / Reach</td>
+          <td>Phoenix MSA, 25–65+, broad (dejando que el algoritmo optimice)</td>
+          <td>Video UGC 15–30s mostrando proceso</td>
+          <td>20%</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-amber">MOFU</span> Consideración</td>
+          <td>Traffic / Engagement</td>
+          <td>Engagement con videos previos + intereses: joyería, finanzas personales</td>
+          <td>Carousel con items + valores reales</td>
+          <td>25%</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-green">BOFU</span> Conversión</td>
+          <td>Lead Generation (Lead Forms)</td>
+          <td>Website visitors, video viewers 75%+, engagement audiences</td>
+          <td>Lead Form Ad con incentivo ("evaluación gratuita")</td>
+          <td>45%</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-gold">RETGT</span> Remarketing</td>
+          <td>Conversions</td>
+          <td>Visitantes web no convertidos, formularios abandonados</td>
+          <td>Testimonial video + urgencia de precio</td>
+          <td>10%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Hooks y copys -->
+  <div class="prose"><h3>7.4 Hooks, copys y CTAs probados</h3></div>
+
+  <div class="card-grid card-grid-2">
+    <div class="card">
+      <h3>🎣 Top 5 hooks por efectividad</h3>
+      <ol style="font-size:0.88rem; color:var(--gray-600);">
+        <li><strong>Urgencia de precio:</strong> "Gold is over $4,400/oz — your old jewelry could be worth more than you think"</li>
+        <li><strong>Conveniencia:</strong> "Turn unused gold into cash in 15 minutes — no appointment needed"</li>
+        <li><strong>Transparencia:</strong> "See exactly what your gold is worth — free, no-obligation appraisal"</li>
+        <li><strong>Evento de vida:</strong> "Downsizing? Inherited jewelry? Your old gold has real value today"</li>
+        <li><strong>Anti-pawn:</strong> "We pay more than pawn shops. Here's why → [video]"</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>📝 CTAs por nivel de funnel</h3>
+      <ul style="font-size:0.88rem; color:var(--gray-600); list-style:none;">
+        <li><span class="badge badge-blue">TOFU</span> "See how it works" / "Watch a real appraisal"</li>
+        <li style="margin-top:0.4rem;"><span class="badge badge-amber">MOFU</span> "Check what your gold is worth" / "Use our free calculator"</li>
+        <li style="margin-top:0.4rem;"><span class="badge badge-green">BOFU</span> "Get your free appraisal" / "Book your appointment"</li>
+        <li style="margin-top:0.4rem;"><span class="badge badge-gold">RETGT</span> "Gold prices won't stay this high — get your quote today"</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-info">
+    <span class="callout-icon">💡</span>
+    <div><strong>Nota sobre idioma de anuncios:</strong> Los ads deben estar en inglés ya que el mercado objetivo es Phoenix, AZ. El contenido en español puede ser una segunda línea de ads para capturar la significativa población hispana del Valley (30%+ del MSA), pero como fase 2.</div>
+  </div>
+
+  <!-- Creativos -->
+  <div class="prose"><h3>7.5 Ideas de creativos y formatos</h3></div>
+
+  <div class="card-grid card-grid-3">
+    <div class="card">
+      <div class="card-icon">🎥</div>
+      <h3>Video UGC (15–30s)</h3>
+      <p>Persona real entra con joyería, se evalúa con XRF, recibe pago. Estilo casual, filmado con iPhone. <strong>Formato con mayor conversión en esta vertical.</strong></p>
+      <p style="margin-top:0.5rem;"><span class="badge badge-green">Alto impacto</span> <span class="badge badge-gold">Bajo costo</span></p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🖼️</div>
+      <h3>Carousel de valuaciones</h3>
+      <p>4–6 slides, cada una mostrando una pieza con su valor: "Esta cadena? $340. Este anillo? $890." Genera curiosidad y engagement.</p>
+      <p style="margin-top:0.5rem;"><span class="badge badge-green">Alto impacto</span> <span class="badge badge-gold">Bajo costo</span></p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>Gráfico de precio del oro</h3>
+      <p>Imagen con chart de precio de 12 meses + headline "Your gold has never been worth more." Simple, factual, urgente sin ser manipulativo.</p>
+      <p style="margin-top:0.5rem;"><span class="badge badge-amber">Medio impacto</span> <span class="badge badge-gold">Bajo costo</span></p>
+    </div>
+  </div>
+
+  <!-- Presupuesto y KPIs -->
+  <div class="prose"><h3>7.6 Presupuesto por fase y KPIs objetivo</h3></div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Fase</th><th>Meses</th><th>Budget/mes</th><th>CPL objetivo</th><th>Leads/mes</th><th>Foco</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-blue">Testing</span></td>
+          <td>1–2</td>
+          <td>$2,000–$3,000</td>
+          <td>$40–$60</td>
+          <td>40–100</td>
+          <td>3–4 audiencias, 5–8 creativos, encontrar winners</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-amber">Optimización</span></td>
+          <td>3–4</td>
+          <td>$3,000–$5,000</td>
+          <td>$25–$40</td>
+          <td>75–200</td>
+          <td>Escalar winners, matar perdedores, expandir creativos</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-green">Escala</span></td>
+          <td>5+</td>
+          <td>$5,000–$10,000</td>
+          <td>$20–$35</td>
+          <td>150–400+</td>
+          <td>ROAS 3–5x, remarketing, ciudades adicionales</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="kpi-strip">
+    <div class="kpi">
+      <div class="kpi-val">$35</div>
+      <div class="kpi-label">CPL objetivo (maduro)</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val">35%</div>
+      <div class="kpi-label">Lead → Cita</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val">65%</div>
+      <div class="kpi-label">Cita → Transacción</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val">~$154</div>
+      <div class="kpi-label">Costo por transacción</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val">$100–$300</div>
+      <div class="kpi-label">Margen bruto/transacción</div>
+    </div>
+  </div>
+
+  <!-- Pixel y tracking -->
+  <div class="prose"><h3>7.7 Tracking, Pixel y configuración técnica</h3></div>
+
+  <details>
+    <summary>🔧 Configuración de Meta Pixel y eventos de conversión</summary>
+    <div class="details-body">
+      <p><strong>Eventos estándar a configurar:</strong></p>
+      <ul>
+        <li><strong>PageView</strong> — automático en todas las páginas</li>
+        <li><strong>ViewContent</strong> — en página de calculadora de precios y página "Cómo funciona"</li>
+        <li><strong>Lead</strong> — al enviar formulario de contacto o lead form</li>
+        <li><strong>Schedule</strong> — al completar booking de cita (Cal.com o Calendly)</li>
+        <li><strong>Contact</strong> — al hacer click en botón click-to-call</li>
+      </ul>
+      <p style="margin-top:0.75rem;"><strong>Conversions API (CAPI):</strong> Obligatorio en 2026 para datos confiables. Implementar server-side tracking vía GTM Server-Side o Stape.io ($10/mes). El Pixel del navegador ya no captura ~30% de conversiones por restricciones de cookies y ad blockers.</p>
+      <p style="margin-top:0.75rem;"><strong>UTM structure:</strong> utm_source=meta · utm_medium=paid · utm_campaign=[campaign-name] · utm_content=[ad-name] · utm_term=[audience-name]</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>🔄 Configuración dentro de Meta Business Manager (paso a paso)</summary>
+    <div class="details-body">
+      <ol>
+        <li><strong>Crear Business Manager</strong> → business.facebook.com → verificar negocio (requiere documentos reales)</li>
+        <li><strong>Crear Ad Account</strong> → moneda USD, zona horaria MST</li>
+        <li><strong>Instalar Meta Pixel</strong> → en &lt;head&gt; del sitio → verificar con Meta Pixel Helper (extensión Chrome)</li>
+        <li><strong>Configurar Conversions API</strong> → vía Stape.io o GTM Server-Side</li>
+        <li><strong>Configurar eventos</strong> → Events Manager → test con Test Events tool</li>
+        <li><strong>Crear Custom Audiences</strong> → Website Visitors (180 días), Video Viewers (75%), Lead Form Openers</li>
+        <li><strong>Marcar Special Ad Category</strong> → "Financial Products and Services" en CADA campaña</li>
+        <li><strong>Configurar Lead Forms</strong> → con campos: nombre, teléfono, email, "¿Qué quieres vender?" (dropdown)</li>
+        <li><strong>Conectar CRM</strong> → Integrar leads con HubSpot vía Zapier o n8n</li>
+        <li><strong>Configurar reglas automáticas</strong> → Pausar anuncios con CPL &gt;$60, escalar con CPL &lt;$30</li>
+      </ol>
+      <p style="margin-top:0.75rem; color:var(--red);"><strong>⚠️ Requiere intervención humana:</strong> La creación de Business Manager, verificación de negocio, configuración de cuenta publicitaria, y conexión de método de pago deben hacerse manualmente por el founder o un administrador autorizado.</p>
+    </div>
+  </details>
+
+  <!-- Errores comunes -->
+  <div class="prose"><h3>7.8 Errores comunes a evitar</h3></div>
+
+  <div class="card-grid card-grid-2">
+    <div class="card" style="border-left:4px solid var(--red);">
+      <h3>❌ No hacer</h3>
+      <ul style="font-size:0.88rem; color:var(--gray-600);">
+        <li>No usar "guaranteed best price" — no verificable, riesgo de rechazo</li>
+        <li>No usar fear-based marketing ("economy is crashing, sell now!")</li>
+        <li>No hacer politically charged content — Meta lo bloquea en Special Category</li>
+        <li>No lanzar sin Conversions API — perderás ~30% de datos</li>
+        <li>No escalar antes de tener datos (mínimo 50 conversiones)</li>
+        <li>No ignorar la fase de aprendizaje del algoritmo (5–7 días)</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid var(--green);">
+      <h3>✅ Sí hacer</h3>
+      <ul style="font-size:0.88rem; color:var(--gray-600);">
+        <li>Usar "based on today's market price" — factual, transparente</li>
+        <li>Incluir disclaimer de no-obligación en cada ad</li>
+        <li>Testear al menos 3 creativos por ad set antes de decidir</li>
+        <li>Implementar speed-to-lead: responder en &lt;60 segundos</li>
+        <li>Usar Lead Form Ads (mantienen al usuario en Meta, 83%+ mobile)</li>
+        <li>Publicar precios reales en creativos — genera confianza instantánea</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 8. RUTA POR FASES ═══════════════════ -->
+<section class="section" id="fases">
+  <div class="section-header">
+    <div class="section-number">Sección 07</div>
+    <h2 class="section-title">Ruta de Desarrollo por Fases</h2>
+    <p class="section-subtitle">Roadmap detallado con dependencias, paralelización y criterios de avance.</p>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-phase">Fase 0 · Semana 1–2</div>
+      <div class="timeline-title">Fundación Legal + Licencia (RUTA CRÍTICA)</div>
+      <div class="timeline-desc">
+        <p><strong>Bloquea todo lo demás.</strong> Sin esto no hay negocio.</p>
+        <ul style="margin:0.5rem 0; font-size:0.88rem; color:var(--gray-500);">
+          <li>Formar LLC en Arizona (Arizona Corporation Commission) + obtener EIN</li>
+          <li>Verificar zonificación de la ubicación elegida</li>
+          <li>Aplicar para Secondhand Dealer License (Phoenix City Clerk) — <strong>90 días de procesamiento</strong></li>
+          <li>Registrar Transaction Privilege Tax license</li>
+          <li>Iniciar redacción del programa AML</li>
+          <li>Contratar revisión legal del programa de compliance</li>
+        </ul>
+        <span class="badge badge-red">Decisión humana</span> <span class="badge badge-amber">90 días de espera</span>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-phase">Fase 1 · Semana 1–2 (paralela)</div>
+      <div class="timeline-title">Identidad de Marca + Fundación Digital</div>
+      <div class="timeline-desc">
+        <p>Se ejecuta en paralelo con Fase 0 mientras se espera la licencia.</p>
+        <ul style="margin:0.5rem 0; font-size:0.88rem; color:var(--gray-500);">
+          <li>Expandir brand kit desde logo existente (Canva Pro) — colores, tipografía, plantillas</li>
+          <li>Generar copy del sitio web completo (Claude + ChatGPT) — home, about, FAQ, cómo funciona</li>
+          <li>Definir tono de voz y messaging framework (doc interno)</li>
+          <li>Registrar perfiles sociales (FB, IG, YouTube, TikTok, Google Business)</li>
+          <li>Configurar dominio y hosting</li>
+          <li>Diseñar y construir sitio web MVP con calculadora de precios</li>
+        </ul>
+        <span class="badge badge-green">IA ~80%</span> <span class="badge badge-amber">Revisión humana 20%</span>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-phase">Fase 2 · Semana 3–4</div>
+      <div class="timeline-title">Infraestructura de Conversión + Automatización</div>
+      <div class="timeline-desc">
+        <ul style="margin:0.5rem 0; font-size:0.88rem; color:var(--gray-500);">
+          <li>Integrar precio del oro en vivo (GoldAPI.io)</li>
+          <li>Configurar chatbot (Tidio) para calificación de leads 24/7</li>
+          <li>Implementar CRM (HubSpot Free) + pipeline de ventas</li>
+          <li>Configurar n8n para automatizaciones: lead routing, SMS (Twilio), email nurture</li>
+          <li>Instalar booking system (Cal.com) con recordatorios automáticos</li>
+          <li>Configurar Meta Pixel + Conversions API</li>
+          <li>Instalar Google Analytics 4 + Search Console</li>
+        </ul>
+        <span class="badge badge-green">IA ~60%</span> <span class="badge badge-amber">Configuración técnica 40%</span>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-phase">Fase 3 · Semana 4–5</div>
+      <div class="timeline-title">Contenido + Pre-lanzamiento</div>
+      <div class="timeline-desc">
+        <ul style="margin:0.5rem 0; font-size:0.88rem; color:var(--gray-500);">
+          <li>Crear banco de 30+ posts para redes sociales (Canva + AI copy)</li>
+          <li>Producir 3–5 videos fundacionales (proceso, about us, FAQ top)</li>
+          <li>Escribir primeros 5–8 artículos SEO para el blog</li>
+          <li>Diseñar primeros creativos publicitarios (AdCreative.ai + Canva)</li>
+          <li>Escribir secuencias de email nurture (5–7 emails)</li>
+          <li>Optimizar Google Business Profile al 100%</li>
+          <li>Soft launch de redes sociales (2–3 posts/día durante 1 semana pre-apertura)</li>
+        </ul>
+        <span class="badge badge-green">IA ~85%</span> <span class="badge badge-amber">Revisión humana 15%</span>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-phase">Fase 4 · Semana ~12–14 (post-licencia)</div>
+      <div class="timeline-title">Apertura + Lanzamiento de Campañas</div>
+      <div class="timeline-desc">
+        <p><strong>Se activa cuando llega la licencia de Secondhand Dealer.</strong></p>
+        <ul style="margin:0.5rem 0; font-size:0.88rem; color:var(--gray-500);">
+          <li>Gran apertura con evento + cobertura social</li>
+          <li>Lanzar campañas Meta Ads (Fase Testing: $2,000–$3,000/mes)</li>
+          <li>Activar todas las automatizaciones en producción</li>
+          <li>Implementar sistema de solicitud de reseñas post-transacción</li>
+          <li>Comenzar programa de contenido semanal (blog + video + social)</li>
+          <li>Monitoreo diario de KPIs y ajuste de campañas</li>
+        </ul>
+        <span class="badge badge-red">Decisión humana</span> <span class="badge badge-amber">Ejecución mixta</span>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-phase">Fase 5 · Mes 3–6</div>
+      <div class="timeline-title">Optimización y Escala</div>
+      <div class="timeline-desc">
+        <ul style="margin:0.5rem 0; font-size:0.88rem; color:var(--gray-500);">
+          <li>Optimizar campañas basado en datos reales (escalar winners a $5K–$10K/mes)</li>
+          <li>Expandir landing pages por ciudad (8–10 páginas geo-optimizadas)</li>
+          <li>Lanzar línea de ads en español para audiencia hispana</li>
+          <li>Implementar programa de referidos</li>
+          <li>Evaluar segunda ubicación en corredor desatendido</li>
+          <li>Comenzar Google Ads (search) como canal complementario</li>
+        </ul>
+        <span class="badge badge-amber">Análisis humano + IA</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold">
+    <span class="callout-icon">📌</span>
+    <div><strong>Dependencia crítica:</strong> Las Fases 1–3 se ejecutan en paralelo con la espera de 90 días de la licencia. Esto maximiza el uso del tiempo muerto regulatorio. Cuando la licencia llegue (~Semana 12–14), toda la infraestructura digital, contenido y campañas estarán listas para activarse inmediatamente.</div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 10. STACK DE HERRAMIENTAS ═══════════════════ -->
+<section class="section" id="herramientas">
+  <div class="section-header">
+    <div class="section-number">Sección 08</div>
+    <h2 class="section-title">Stack de Herramientas Recomendado</h2>
+    <p class="section-subtitle">Cada herramienta justificada: por qué esta y no otra, costo, y nivel de automatización.</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Función</th>
+          <th>Herramienta principal</th>
+          <th>Costo/mes</th>
+          <th>Alternativa</th>
+          <th>Por qué esta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Generación de copy/estrategia</td>
+          <td><strong>Claude Pro + ChatGPT Plus</strong></td>
+          <td>$20 + $20</td>
+          <td>Gemini Advanced ($20)</td>
+          <td>Claude para estrategia y documentos largos, GPT para variaciones rápidas</td>
+        </tr>
+        <tr>
+          <td>Diseño gráfico</td>
+          <td><strong>Canva Pro</strong></td>
+          <td>$13</td>
+          <td>Figma (gratis)</td>
+          <td>Templates, brand kit, publicaciones sociales, presentaciones — todo en uno</td>
+        </tr>
+        <tr>
+          <td>Sitio web</td>
+          <td><strong>WordPress + Elementor</strong></td>
+          <td>$15–$30 (hosting)</td>
+          <td>Webflow ($14–$39), Carrd ($19/yr)</td>
+          <td>Control total, SEO superior, ecosistema de plugins para calculadora y chat</td>
+        </tr>
+        <tr>
+          <td>Precio del oro en vivo</td>
+          <td><strong>GoldAPI.io</strong></td>
+          <td>Gratis (300 calls/mes)</td>
+          <td>nFusion Solutions ($50–100)</td>
+          <td>Gratis para MVP, upgrade cuando se necesite más volumen</td>
+        </tr>
+        <tr>
+          <td>CRM</td>
+          <td><strong>HubSpot Free</strong></td>
+          <td>$0</td>
+          <td>GoHighLevel ($97)</td>
+          <td>Gratis, potente, escalable. GHL si se quiere todo-en-uno</td>
+        </tr>
+        <tr>
+          <td>Automatización</td>
+          <td><strong>n8n (cloud)</strong></td>
+          <td>$24</td>
+          <td>Make.com ($9), Zapier ($20)</td>
+          <td>Ya lo usas — máxima flexibilidad, self-hostable, ideal para workflows complejos</td>
+        </tr>
+        <tr>
+          <td>Chatbot web</td>
+          <td><strong>Tidio</strong></td>
+          <td>$29</td>
+          <td>Landbot ($40), Drift</td>
+          <td>AI chatbot + live chat + Shopify-grade UX, fácil de configurar</td>
+        </tr>
+        <tr>
+          <td>SMS / Notificaciones</td>
+          <td><strong>Twilio</strong></td>
+          <td>~$30 (pay-per-use)</td>
+          <td>Vonage, MessageBird</td>
+          <td>Integración nativa con n8n, pricing por uso, escalable</td>
+        </tr>
+        <tr>
+          <td>Booking / Citas</td>
+          <td><strong>Cal.com</strong></td>
+          <td>$0 (self-hosted) / $12</td>
+          <td>Calendly ($10)</td>
+          <td>Open source, personalizable, embeddable en web</td>
+        </tr>
+        <tr>
+          <td>Creativos publicitarios</td>
+          <td><strong>AdCreative.ai</strong></td>
+          <td>$39</td>
+          <td>Predis.ai ($29), Canva</td>
+          <td>Genera creativos con scoring de rendimiento predictivo</td>
+        </tr>
+        <tr>
+          <td>Video AI</td>
+          <td><strong>HeyGen</strong></td>
+          <td>$24</td>
+          <td>Synthesia ($22), InVideo</td>
+          <td>Avatares realistas para ads en video, multi-idioma</td>
+        </tr>
+        <tr>
+          <td>SEO tracking</td>
+          <td><strong>Nightwatch</strong></td>
+          <td>$39</td>
+          <td>SE Ranking ($44), Ubersuggest ($29)</td>
+          <td>Tracking local por ZIP, API friendly, dashboards claros</td>
+        </tr>
+        <tr>
+          <td>IA telefónica</td>
+          <td><strong>Goodcall / Synthflow</strong></td>
+          <td>$29–$50</td>
+          <td>Bland AI, Air AI</td>
+          <td>Automatiza 60–70% de llamadas rutinarias (horarios, precios, booking)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="vs-row" style="margin-top:2rem;">
+    <div class="stat-card" style="text-align:center;">
+      <div class="stat-value" style="font-size:1.5rem;">~$570/mes</div>
+      <div class="stat-label">Stack AI-First Completo</div>
+    </div>
+    <div class="vs-badge">vs</div>
+    <div class="stat-card" style="text-align:center;">
+      <div class="stat-value" style="font-size:1.5rem; color:var(--red);">$3K–$8K/mes</div>
+      <div class="stat-label">Agencia Tradicional</div>
+    </div>
+  </div>
+
+  <!-- OpenClaw assessment -->
+  <div class="prose">
+    <h3>Evaluación de OpenClaw y plataformas de agentes AI</h3>
+  </div>
+
+  <div class="card" style="border-left:4px solid var(--red); margin-top:1rem;">
+    <h3>OpenClaw — Veredicto: <span class="badge badge-red">No recomendado para producción</span></h3>
+    <p>OpenClaw (247K+ estrellas en GitHub, partnership con NVIDIA) es la plataforma de agentes AI más mediática de 2026. Puede ejecutar tareas autónomas en CRM, email, calendario y mensajería. Sin embargo:</p>
+    <ul style="margin:0.75rem 0; font-size:0.9rem; color:var(--gray-600);">
+      <li><strong>Riesgo demostrado:</strong> Una investigadora de seguridad de Meta documentó que un agente borró su inbox completo después de recibir instrucción de "confirmar antes de actuar"</li>
+      <li><strong>Acceso no autorizado:</strong> Cisco encontró que skills de terceros realizan acceso a datos no autorizado</li>
+      <li><strong>Restricciones gubernamentales:</strong> China restringió su uso en agencias gubernamentales por razones de seguridad</li>
+      <li><strong>Complejidad de implementación:</strong> Requiere Docker sandboxing, configuración técnica significativa</li>
+    </ul>
+    <p><strong>Recomendación:</strong> Útil para experimentación interna con sandboxing estricto. No apostar interacciones con clientes en él. Reevaluar en 2027. Las alternativas específicas (Tidio, Goodcall, n8n) resuelven las mismas necesidades con menor riesgo.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════ 11. MATRIZ DE TAREAS IA ═══════════════════ -->
+<section class="section" id="matriz">
+  <div class="section-header">
+    <div class="section-number">Sección 09</div>
+    <h2 class="section-title">Matriz de Tareas: IA vs. Humano</h2>
+    <p class="section-subtitle">Separación clara de qué puede hacer la IA, qué necesita supervisión, y qué requiere intervención humana obligatoria.</p>
+  </div>
+
+  <div class="matrix-row">
+    <div class="matrix-col">
+      <div class="matrix-header matrix-header-green">🤖 IA puede hacerlo casi completo (~80–95%)</div>
+      <div class="matrix-body">
+        <ul>
+          <li>Research preliminar de mercado y competencia</li>
+          <li>Estructuración estratégica y frameworks</li>
+          <li>Borradores de copy para web (home, about, FAQ)</li>
+          <li>Generación de variaciones de ad copy (hooks, CTAs)</li>
+          <li>Creación de posts para redes sociales (texto + imagen base)</li>
+          <li>Diseño de creativos publicitarios (AdCreative.ai + Canva)</li>
+          <li>Secuencias de email nurture (borradores)</li>
+          <li>Artículos SEO para el blog (estructura + borrador)</li>
+          <li>Documentación interna y SOPs</li>
+          <li>Generación de Q&A para Google Business Profile</li>
+          <li>Clustering de audiencias e hipótesis de testing</li>
+          <li>Respuestas automáticas a reseñas positivas (4–5★)</li>
+          <li>Monitoreo de precios del oro y alertas</li>
+          <li>Lead scoring y routing automático</li>
+          <li>Recordatorios de citas y follow-ups</li>
+          <li>Informes periódicos de KPIs</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="matrix-col">
+      <div class="matrix-header matrix-header-amber">🤖+👤 IA acelera pero requiere revisión humana</div>
+      <div class="matrix-body">
+        <ul>
+          <li>Posicionamiento final de marca y propuesta de valor</li>
+          <li>Copy final del sitio web (revisión de claims sensibles)</li>
+          <li>Tono definitivo de marca y messaging framework</li>
+          <li>Selección de mensajes y creativos ganadores</li>
+          <li>Revisión de artículos SEO (precisión técnica sobre quilates, pureza)</li>
+          <li>Contenido educativo sobre regulaciones (verificar con abogado)</li>
+          <li>Configuración de chatbot (lógica de flujo y respuestas)</li>
+          <li>Análisis de resultados de campañas y decisiones de escala</li>
+          <li>Respuestas a reseñas negativas (tono, solución)</li>
+          <li>Scripts para videos (verificar claims)</li>
+          <li>Diseño de landing pages (UX y flujo de conversión)</li>
+          <li>Programa AML (borrador AI + revisión legal obligatoria)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="matrix-col">
+      <div class="matrix-header matrix-header-red">👤 Requiere intervención humana sí o sí</div>
+      <div class="matrix-body">
+        <ul>
+          <li>Decisiones estratégicas finales (posicionamiento, ubicación, precio)</li>
+          <li>Aplicación y seguimiento de licencia de Secondhand Dealer</li>
+          <li>Aprobación legal del programa AML</li>
+          <li>Creación de cuentas en plataformas (Meta BM, Google BM, bancos)</li>
+          <li>Verificación de negocio en Meta Business Manager</li>
+          <li>Configuración de métodos de pago en ad accounts</li>
+          <li>Negociación y firma de contrato de arrendamiento</li>
+          <li>Compra y calibración de equipos (XRF, básculas NTEP)</li>
+          <li>Evaluaciones presenciales de oro (el momento de verdad)</li>
+          <li>Negociaciones con clientes de alto valor</li>
+          <li>Reportes policiales semanales (ARS § 44-1602)</li>
+          <li>Verificación OFAC antes de cada transacción</li>
+          <li>Decisiones de pricing y márgenes</li>
+          <li>Revisión final de campañas antes de publicar</li>
+          <li>Manejo de disputas, devoluciones, quejas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold">
+    <span class="callout-icon">💡</span>
+    <div><strong>Principio rector:</strong> La IA acelera la producción; el humano controla la calidad, la legalidad y las decisiones estratégicas. El momento de la evaluación presencial — donde un cliente te confía su oro — es donde se construye o destruye la confianza. Ninguna IA debe tocar ese momento.</div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 12. COMPARATIVA DE HERRAMIENTAS ═══════════════════ -->
+<section class="section" id="comparativa">
+  <div class="section-header">
+    <div class="section-number">Sección 10</div>
+    <h2 class="section-title">Comparativa de Herramientas y Tecnologías</h2>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Categoría</th>
+          <th>Opción A (Recomendada)</th>
+          <th>Opción B</th>
+          <th>Trade-off</th>
+          <th>Veredicto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Automatización</td>
+          <td><strong>n8n</strong> ($24/mes cloud)</td>
+          <td>Make.com ($9/mes)</td>
+          <td>n8n: más flexible, self-hostable, curva más alta. Make: más visual, más fácil, menos control</td>
+          <td><span class="badge badge-green">n8n</span> — ya lo conoces, máxima flexibilidad</td>
+        </tr>
+        <tr>
+          <td>CRM</td>
+          <td><strong>HubSpot Free</strong></td>
+          <td>GoHighLevel ($97/mes)</td>
+          <td>HubSpot: gratis, ecosistema enorme, escalable. GHL: todo-en-uno (CRM+funnel+SMS+booking) pero costoso</td>
+          <td><span class="badge badge-green">HubSpot</span> — empezar gratis, migrar si escala justifica</td>
+        </tr>
+        <tr>
+          <td>Web builder</td>
+          <td><strong>WordPress + Elementor</strong></td>
+          <td>Webflow ($14–$39)</td>
+          <td>WP: SEO superior, plugins, control total, requiere mantenimiento. Webflow: diseño superior, hosting incluido, menos plugins</td>
+          <td><span class="badge badge-green">WordPress</span> — mejor para SEO local y escalabilidad de contenido</td>
+        </tr>
+        <tr>
+          <td>AI para copy</td>
+          <td><strong>Claude + ChatGPT</strong></td>
+          <td>Jasper ($49/mes)</td>
+          <td>Claude/GPT: más baratos, más flexibles, prompting directo. Jasper: templates específicos, brand voice settings</td>
+          <td><span class="badge badge-green">Claude + GPT</span> — mejor calidad, menor costo, más versátil</td>
+        </tr>
+        <tr>
+          <td>Agentes AI</td>
+          <td><strong>Herramientas específicas</strong> (Tidio, Goodcall, n8n)</td>
+          <td>OpenClaw</td>
+          <td>Específicas: probadas, estables, especializadas. OpenClaw: potente pero riesgoso, complejo, inmaduro</td>
+          <td><span class="badge badge-green">Específicas</span> — menor riesgo, misma funcionalidad</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════════ 13. RIESGOS ═══════════════════ -->
+<section class="section" id="riesgos">
+  <div class="section-header">
+    <div class="section-number">Sección 11</div>
+    <h2 class="section-title">Riesgos, Dependencias y Cuellos de Botella</h2>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Riesgo</th>
+          <th>Probabilidad</th>
+          <th>Impacto</th>
+          <th>Mitigación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Retraso en licencia de Secondhand Dealer (&gt;90 días)</td>
+          <td><span class="badge badge-amber">Media</span></td>
+          <td><span class="badge badge-red">Crítico</span></td>
+          <td>Aplicar en semana 1. Hacer follow-up cada 2 semanas. Usar tiempo de espera para construir todo lo digital.</td>
+        </tr>
+        <tr>
+          <td>Rechazo de anuncios por Meta (Financial Services category)</td>
+          <td><span class="badge badge-amber">Media</span></td>
+          <td><span class="badge badge-amber">Alto</span></td>
+          <td>Evitar claims no verificables, lenguaje de urgencia extrema, contenido político. Tener 2–3 versiones de backup por creative.</td>
+        </tr>
+        <tr>
+          <td>CPL mayor al esperado (&gt;$60)</td>
+          <td><span class="badge badge-amber">Media</span></td>
+          <td><span class="badge badge-amber">Alto</span></td>
+          <td>Testear 8+ creativos en fase inicial. No escalar hasta tener 50+ conversiones. Probar Lead Forms vs. Landing Pages.</td>
+        </tr>
+        <tr>
+          <td>Regulación adicional o cambio normativo</td>
+          <td><span class="badge badge-blue">Baja</span></td>
+          <td><span class="badge badge-red">Crítico</span></td>
+          <td>Consultar abogado antes del lanzamiento. Monitorear cambios regulatorios trimestralmente.</td>
+        </tr>
+        <tr>
+          <td>Competidor fuerte reacciona (guerra de precios)</td>
+          <td><span class="badge badge-blue">Baja</span></td>
+          <td><span class="badge badge-amber">Alto</span></td>
+          <td>No competir en precio — competir en experiencia, transparencia y velocidad. La marca es la defensa.</td>
+        </tr>
+        <tr>
+          <td>Compra de oro robado (riesgo operacional)</td>
+          <td><span class="badge badge-amber">Media</span></td>
+          <td><span class="badge badge-red">Crítico</span></td>
+          <td>Cumplir al 100% con ARS § 44-1602 (ID, reportes policiales, período de retención). Nunca comprar sin ID válido.</td>
+        </tr>
+        <tr>
+          <td>Caída abrupta del precio del oro</td>
+          <td><span class="badge badge-blue">Baja</span></td>
+          <td><span class="badge badge-amber">Alto</span></td>
+          <td>Mantener inventario bajo, vender/refinar rápidamente. El negocio de compra se beneficia de precios altos pero es viable en cualquier nivel.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-danger">
+    <span class="callout-icon">🔴</span>
+    <div><strong>Cuello de botella #1 — La licencia de 90 días:</strong> Todo el lanzamiento está gated por este trámite. No hay workaround legal. La estrategia de mitigación es simple: aplicar en el día 1 y usar cada día de espera para construir la infraestructura digital completa.</div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 14. QUICK WINS ═══════════════════ -->
+<section class="section" id="quickwins">
+  <div class="section-header">
+    <div class="section-number">Sección 12</div>
+    <h2 class="section-title">Quick Wins Prioritarios</h2>
+    <p class="section-subtitle">Acciones de alto impacto que pueden ejecutarse en los primeros 7 días.</p>
+  </div>
+
+  <div class="card-grid card-grid-2">
+    <div class="card card-gold">
+      <h3>🥇 Día 1: Aplicar para la licencia</h3>
+      <p>Agendar cita con City Clerk de Phoenix. Preparar documentos. Cada día de retraso = un día más sin poder operar. <strong>Esto es lo primero que se hace.</strong></p>
+    </div>
+    <div class="card card-gold">
+      <h3>🥈 Día 1–2: Registrar perfiles sociales</h3>
+      <p>Asegurar @KaratCash en Facebook, Instagram, YouTube, TikTok, Google Business. El nombre podría ser tomado mañana.</p>
+    </div>
+    <div class="card card-gold">
+      <h3>🥉 Día 2–3: Generar todo el copy del sitio web</h3>
+      <p>Usando Claude + ChatGPT, generar borrador completo de todas las páginas del sitio en un solo día. Revisión humana al día siguiente.</p>
+    </div>
+    <div class="card card-gold">
+      <h3>📋 Día 3–5: Construir sitio web MVP</h3>
+      <p>Con WordPress + Elementor + theme premium ($60), un sitio funcional con calculadora de precios puede estar live en 48 horas.</p>
+    </div>
+    <div class="card card-gold">
+      <h3>📊 Día 5–7: Configurar Google Business Profile</h3>
+      <p>Perfil completo con fotos, categorías, Q&A, y primer Google Post. Empezar a acumular presencia local antes de abrir.</p>
+    </div>
+    <div class="card card-gold">
+      <h3>⚡ Día 5–7: Preparar primer batch de creativos</h3>
+      <p>5–8 variaciones de anuncios listos para publicar el día que la licencia se apruebe. No perder ni un día post-aprobación.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 15. CHECKLIST MAESTRO ═══════════════════ -->
+<section class="section" id="checklist">
+  <div class="section-header">
+    <div class="section-number">Sección 13</div>
+    <h2 class="section-title">Checklist Maestro de Ejecución</h2>
+  </div>
+
+  <div class="card-grid card-grid-2">
+    <div class="card">
+      <h3>📋 Legal y Compliance</h3>
+      <ul class="checklist">
+        <li>Formar LLC en Arizona</li>
+        <li>Obtener EIN federal</li>
+        <li>Verificar zonificación de ubicación</li>
+        <li>Aplicar Secondhand Dealer License (Phoenix)</li>
+        <li>Registrar Transaction Privilege Tax</li>
+        <li>Redactar programa AML escrito</li>
+        <li>Revisión legal del programa AML</li>
+        <li>Nombrar oficial de cumplimiento AML</li>
+        <li>Comprar/licenciar báscula NTEP</li>
+        <li>Registrar báscula con AZ Dept. Agriculture</li>
+        <li>Establecer proceso de reportes policiales semanales</li>
+        <li>Configurar verificación OFAC para cada transacción</li>
+        <li>Obtener seguro comercial</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>📋 Marca e Identidad</h3>
+      <ul class="checklist">
+        <li>Expandir brand kit desde logo (Canva Pro)</li>
+        <li>Definir paleta de colores, tipografías, iconografía</li>
+        <li>Documentar tono de voz y messaging framework</li>
+        <li>Crear propuesta de valor y tagline final</li>
+        <li>Diseñar tarjetas de presentación</li>
+        <li>Crear plantillas de social media</li>
+        <li>Diseñar signage para ubicación física</li>
+        <li>Crear email templates (branded)</li>
+        <li>Producir foto/video del equipo y proceso</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>📋 Presencia Digital</h3>
+      <ul class="checklist">
+        <li>Configurar hosting + SSL en dominio</li>
+        <li>Construir sitio web MVP (5–6 páginas)</li>
+        <li>Integrar calculadora de precios con gold API</li>
+        <li>Instalar chatbot (Tidio)</li>
+        <li>Instalar booking system (Cal.com)</li>
+        <li>Configurar Google Analytics 4</li>
+        <li>Configurar Google Search Console</li>
+        <li>Instalar Meta Pixel + Conversions API</li>
+        <li>Registrar y optimizar Google Business Profile</li>
+        <li>Crear páginas en Facebook, Instagram, YouTube, TikTok</li>
+        <li>Configurar CRM (HubSpot Free)</li>
+        <li>Crear landing pages por ciudad (8–10)</li>
+        <li>Publicar primeros 5 artículos SEO</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>📋 Campañas y Marketing</h3>
+      <ul class="checklist">
+        <li>Crear Meta Business Manager + verificar negocio</li>
+        <li>Crear Ad Account + configurar pago</li>
+        <li>Configurar Custom Audiences</li>
+        <li>Diseñar 8+ creativos publicitarios</li>
+        <li>Escribir 10+ variaciones de ad copy</li>
+        <li>Configurar Lead Form Ads con campos apropiados</li>
+        <li>Conectar leads a CRM vía n8n</li>
+        <li>Configurar automatización SMS speed-to-lead</li>
+        <li>Escribir secuencia de email nurture (5–7 emails)</li>
+        <li>Crear banco de 30+ posts sociales</li>
+        <li>Producir 3–5 videos fundacionales</li>
+        <li>Lanzar campañas fase Testing ($2–3K/mes)</li>
+        <li>Implementar solicitud automática de reseñas post-transacción</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 16. RECOMENDACIÓN PRINCIPAL ═══════════════════ -->
+<section class="section" id="recomendacion">
+  <div class="section-header">
+    <div class="section-number">Sección 14</div>
+    <h2 class="section-title">Recomendación Principal</h2>
+  </div>
+
+  <div class="priority-block">
+    <h3>La ruta recomendada: "Build Fast, Launch Ready"</h3>
+    <p>Ejecutar las Fases 0–3 en paralelo durante las 12–14 semanas de espera de la licencia. Cuando la licencia llegue, todo está listo: web live, campañas pre-cargadas, automatizaciones probadas, contenido acumulado, perfiles sociales con historial. El día que la licencia se apruebe, se enciende todo simultáneamente — ads, booking, chat, contenido — con una "gran apertura" que genera momentum inmediato.</p>
+    <p style="margin-top:1rem;"><strong>Inversión inicial estimada:</strong> $3,000–$5,000 (setup one-time: hosting, themes, equipos, brand kit) + ~$570/mes en herramientas + $2,000–$3,000/mes en ad spend inicial. Total primer trimestre operativo: <strong>~$12,000–$18,000</strong> incluyendo publicidad.</p>
+  </div>
+
+  <div class="prose">
+    <h3>Ruta alternativa: "Lean Minimum"</h3>
+    <p>Si el presupuesto es más limitado (&lt;$5,000 total), la ruta alternativa prioriza solo tres canales: Google Business Profile (gratis), sitio web de una sola página tipo Carrd ($19/año), y Google Ads search (en vez de Meta) con $500–$1,000/mes enfocado en keywords de intención alta como "sell gold Phoenix." Esta ruta sacrifica escala y velocidad de marca pero puede generar leads desde el día uno a menor costo.</p>
+    <p><strong>Trade-off:</strong> Menor costo = menor volumen de leads, menor construcción de marca, y dependencia total de búsqueda intent-based. No construye activos de marca a largo plazo. Recomendada solo si el presupuesto es genuinamente restrictivo.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════ 17. RUTA ALTERNATIVA ═══════════════════ -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-number">Sección 15</div>
+    <h2 class="section-title">Consideraciones Adicionales</h2>
+  </div>
+
+  <div class="card-grid card-grid-2">
+    <div class="card">
+      <h3>🌐 Expansión hispana (Fase 2)</h3>
+      <p>El Valle de Phoenix tiene una población hispana del 30%+. Una línea secundaria de ads y contenido en español (landing page dedicada, ads segmentados) puede capturar un segmento desatendido. Ningún competidor tiene presencia seria en español. <strong>Ventaja competitiva natural si el equipo es bilingüe.</strong></p>
+    </div>
+    <div class="card">
+      <h3>📦 Servicio de evaluación a domicilio</h3>
+      <p>Precious Metals Refinery ofrece evaluaciones in-home para estates. Este servicio premium puede capturar transacciones de alto valor ($5,000–$50,000+) con márgenes superiores. Requiere seguro adicional y protocolo de seguridad, pero diferencia significativamente.</p>
+    </div>
+    <div class="card">
+      <h3>📊 Google Ads como canal #2 (Mes 3+)</h3>
+      <p>Google Search Ads para keywords de intención alta ("sell gold near me") complementa Meta Ads. Google captura demanda existente; Meta crea demanda nueva. Juntos forman un sistema de adquisición completo.</p>
+    </div>
+    <div class="card">
+      <h3>🤝 Programa de referidos (Mes 4+)</h3>
+      <p>Cuando el volumen de transacciones justifique, un programa de referidos ($25–$50 por referido que transaccione) puede reducir el CAC significativamente. El gold buying es inherentemente referible — "mi vecina fue y le pagaron bien."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 18. CONCLUSIÓN ═══════════════════ -->
+<section class="section" id="conclusion">
+  <div class="section-header">
+    <div class="section-number">Sección 16</div>
+    <h2 class="section-title">Conclusión Estratégica Final</h2>
+  </div>
+
+  <div class="prose">
+    <p>KaratCash tiene una ventana de oportunidad inusualmente favorable: el precio del oro en máximos históricos genera urgencia legítima del lado del vendedor, mientras que la inmadurez digital de los competidores locales deja un vacío masivo del lado de la adquisición. Ningún actor en el mercado Phoenix combina las tres cosas que los consumidores modernos esperan: transparencia de precios online, experiencia digital fluida, y profesionalismo presencial de alto nivel.</p>
+
+    <p>La ruta de ejecución recomendada explota el período de espera regulatoria de 90 días para construir toda la infraestructura digital en paralelo, de modo que cuando la licencia de Secondhand Dealer se apruebe, KaratCash pueda encender su presencia completa — web, ads, automatizaciones, contenido — en un solo movimiento coordinado.</p>
+
+    <p>El enfoque AI-first reduce costos de ~$3,000–$8,000/mes (agencia) a ~$570/mes (herramientas), comprime plazos de 3–6 meses a 4–5 semanas, y permite a un equipo de 1–3 personas operar con la productividad de un equipo de 8–10. La clave es mantener al humano en control de las decisiones estratégicas, la experiencia del cliente, y el compliance — y dejar que la IA acelere todo lo demás.</p>
+  </div>
+
+  <div class="action-block" style="margin-top:2rem;">
+    <h4>Próximo paso inmediato</h4>
+    <p><strong>Mañana mismo:</strong> Agendar cita con City Clerk de Phoenix para aplicar a la Secondhand Dealer License. Mientras esperas la cita, registrar @KaratCash en todas las plataformas sociales y empezar a generar el copy del sitio web con Claude.</p>
+  </div>
+
+  <div style="text-align:center; margin-top:3rem; padding:2rem;">
+    <p style="font-family:var(--font-display); font-size:1.5rem; font-weight:700; color:var(--navy);">
+      El mercado está esperando.<br>
+      <span style="color:var(--gold);">Los competidores están dormidos.</span><br>
+      Las herramientas están listas.
+    </p>
+    <p style="color:var(--gray-400); margin-top:1rem; font-size:0.9rem;">
+      Es momento de construir KaratCash.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="footer">
+  <p><strong>KaratCash</strong> — Plan Maestro de Lanzamiento</p>
+  <p style="margin-top:0.5rem;">Documento estratégico confidencial · Marzo 2026</p>
+  <p style="margin-top:0.25rem; font-size:0.78rem; color:var(--gray-500);">Este documento contiene orientación estratégica e informativa. No constituye asesoría legal, financiera ni de inversión. Consulte profesionales licenciados para decisiones regulatorias y legales.</p>
+</footer>
+
+</body>
+</html>

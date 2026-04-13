@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KARAT CASH | Compra de Oro en Phoenix</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;family=Manrope:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#ffdad6",
+                        "on-primary-container": "#4f3b00",
+                        "on-secondary-fixed-variant": "#424754",
+                        "background": "#0e131f",
+                        "tertiary-fixed": "#9df898",
+                        "on-surface-variant": "#d0c5b4",
+                        "primary": "#e5c374",
+                        "on-error": "#690005",
+                        "surface-bright": "#343946",
+                        "inverse-surface": "#dee2f3",
+                        "primary-fixed": "#ffdf99",
+                        "on-tertiary-container": "#00490f",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#82db7e",
+                        "on-surface": "#dee2f3",
+                        "on-background": "#dee2f3",
+                        "secondary-container": "#444956",
+                        "primary-fixed-dim": "#e5c374",
+                        "on-tertiary-fixed": "#002204",
+                        "secondary-fixed-dim": "#c2c6d6",
+                        "surface-dim": "#0e131f",
+                        "outline": "#99907f",
+                        "on-secondary-container": "#b4b8c8",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#4d4639",
+                        "surface-container": "#1a1f2b",
+                        "surface-container-low": "#161b27",
+                        "on-tertiary-fixed-variant": "#005312",
+                        "secondary": "#c2c6d6",
+                        "on-primary-fixed": "#251a00",
+                        "inverse-on-surface": "#2b303d",
+                        "surface-container-high": "#252a36",
+                        "surface-container-lowest": "#090e19",
+                        "surface-container-highest": "#303541",
+                        "surface": "#0e131f",
+                        "on-primary-fixed-variant": "#5a4300",
+                        "primary-container": "#c5a55a",
+                        "surface-tint": "#e5c374",
+                        "tertiary-container": "#65bc64",
+                        "surface-variant": "#303541",
+                        "tertiary": "#82db7e",
+                        "on-secondary": "#2b303d",
+                        "on-tertiary": "#00390a",
+                        "on-primary": "#3f2e00",
+                        "on-secondary-fixed": "#161b27",
+                        "inverse-primary": "#745b17",
+                        "secondary-fixed": "#dee2f3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>body {
+    background-color: #0e131f;
+    color: #dee2f3;
+    font-family: "Manrope", sans-serif
+    }
+.grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.05;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDo8UXdnmC6GYYQuaNtwC9PbhLCV6uS0dXHtLx6_WedN41DQXwd_3q7p-1_6PIH2cTKG0b1b8NXeL9EL44KElR8l1lBpgrzB5xF1fxpdUpqBpTc62x_idujNGMkQ0BO1sil3DJ1komgs0EyL5HEyrICdWt6j6snzuDfM6jtvyhWBI_PtB-T9t8I_NjRYS627ED3K_9Gr8Zk8CUFV_lwlTF5Ahhbjz0185JM57ouwXKk_Fh7HjNMHsl6DJtjrt_3-y_GDDoCc9e9oZg)
+    }
+.gold-shimmer {
+    background: linear-gradient(135deg, #e5c374 0%, #c5a55a 100%)
+    }
+.hard-cut-transition {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }</style>
+</head>
+<body class="bg-surface dark:bg-surface selection:bg-primary-container selection:text-on-primary-container">
+<div class="grain"></div>
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 rounded-none border-b border-[#c5a55a] bg-[#0e131f] flex justify-between items-center px-8 h-20 w-full max-w-full">
+<div class="text-2xl font-black text-[#c5a55a] tracking-tighter">KARAT CASH</div>
+<div class="hidden md:flex space-x-12 items-center">
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-sm font-bold text-[#c5a55a] border-b-2 border-[#c5a55a] pb-1" href="#">Inicio</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-sm font-bold text-[#d0c5b4] hover:text-white transition-colors duration-200" href="#">Cómo Funciona</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-sm font-bold text-[#d0c5b4] hover:text-white transition-colors duration-200" href="#">Calculadora</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-sm font-bold text-[#d0c5b4] hover:text-white transition-colors duration-200" href="#">Nosotros</a>
+</div>
+<button class="bg-[#c5a55a] text-[#3f2e00] font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-xs font-bold px-6 py-3 hover:bg-primary transition-all duration-300 active:scale-95">Vender mi oro</button>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 bg-surface-container-low overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-20">
+<div class="absolute inset-0 bg-gradient-to-r from-surface to-transparent z-10"></div>
+<img class="w-full h-full object-cover grayscale" data-alt="Close-up of raw gold nuggets and bars on a dark textured background with dramatic side lighting and high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIg0rAHgGbsuFsMrMYZDicDuCxWgGZ6hYS0l9MoOOc5M6F2UnIixcXnUQYd1S8XRtLg6m2TmkmantqiS6qtJOBqkoPgCcA5OxU9eq1ofA5zL8npszU-ORRzO11Y4mKCC9FkMbzWijwcmAyh7obb_juv3B08_Rz2nicpL5IZUbuO6AhrJBEhXmSdE6PSAIxNRadZwp9mquct0aLzrxxbXOQ093p79eo_H2hjm7wYModV3ZfxN8iqbYQmlrM_erju-tR_tDYAn4PyB8"/>
+</div>
+<div class="container mx-auto px-8 md:px-12 relative z-20">
+<div class="max-w-4xl">
+<span class="inline-block font-label uppercase tracking-[0.2em] text-[#c5a55a] text-sm font-bold mb-6">COMPRA DE ORO EN TODO PHOENIX</span>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface leading-none mb-8">
+                    El precio del oro está en <span class="text-[#c5a55a]">máximos históricos</span>
+</h1>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl mb-12 leading-relaxed">
+                    Ese anillo, esa cadena, esos aretes que no usas — hoy valen más que nunca. Convierte tus joyas en efectivo de forma segura y profesional.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 mb-16">
+<button class="gold-shimmer text-on-primary font-headline font-bold uppercase tracking-widest px-10 py-5 hover:translate-y-[-2px] transition-all duration-300 shadow-[0_4px_0_0_#4f3b00] active:translate-y-[2px] active:shadow-none">
+                        Obtén tu cotización gratis
+                    </button>
+<button class="border-2 border-primary-container text-primary font-headline font-bold uppercase tracking-widest px-10 py-5 hover:bg-primary-container/10 transition-all duration-300">
+                        Ver precio del oro hoy
+                    </button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 border-t border-outline-variant/30">
+<div class="flex items-center gap-3">
+<div class="bg-tertiary/10 p-1">
+<span class="material-symbols-outlined text-tertiary font-bold" data-weight="fill">check</span>
+</div>
+<span class="font-label text-sm uppercase tracking-wider text-on-surface-variant">Pago inmediato</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="bg-tertiary/10 p-1">
+<span class="material-symbols-outlined text-tertiary font-bold" data-weight="fill">check</span>
+</div>
+<span class="font-label text-sm uppercase tracking-wider text-on-surface-variant">Lugar público y seguro</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="bg-tertiary/10 p-1">
+<span class="material-symbols-outlined text-tertiary font-bold" data-weight="fill">check</span>
+</div>
+<span class="font-label text-sm uppercase tracking-wider text-on-surface-variant">Todo el Valle de Phoenix</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="bg-tertiary/10 p-1">
+<span class="material-symbols-outlined text-tertiary font-bold" data-weight="fill">check</span>
+</div>
+<span class="font-label text-sm uppercase tracking-wider text-on-surface-variant">100% transparente</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="bg-[#FAFAF8] py-32 hard-cut-transition">
+<div class="container mx-auto px-8 md:px-12">
+<div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+<div>
+<span class="font-label uppercase tracking-widest text-primary-container font-bold mb-4 block">NUESTRO MÉTODO</span>
+<h2 class="font-headline text-5xl md:text-6xl font-black tracking-tighter text-[#0e131f] leading-none">
+                        Tres pasos,<br/>cero complicaciones
+                    </h2>
+</div>
+<p class="font-body text-[#1a1f2b] text-xl max-w-md leading-relaxed">
+                    Hemos diseñado un proceso que prioriza tu tiempo y seguridad, eliminando intermediarios y esperas innecesarias.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+<!-- Step 1 -->
+<div class="bg-white border border-[#e5e5e0] p-12 relative group hover:bg-[#0e131f] transition-all duration-500">
+<span class="absolute top-0 right-0 text-9xl font-black text-[#0e131f]/5 select-none pointer-events-none group-hover:text-primary/10 transition-colors">1</span>
+<div class="bg-primary-container/20 w-16 h-16 flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary-container text-3xl group-hover:text-on-primary">chat_bubble</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-[#0e131f] mb-4 group-hover:text-white">1 - Contáctanos</h3>
+<p class="font-body text-[#444956] leading-relaxed group-hover:text-on-surface-variant">
+                        Envíanos un mensaje por WhatsApp o llámanos. Danos una breve descripción de lo que deseas vender para darte un estimado preliminar basado en el mercado actual.
+                    </p>
+</div>
+<!-- Step 2 -->
+<div class="bg-[#f2f2ef] border border-[#e5e5e0] p-12 relative group hover:bg-[#0e131f] transition-all duration-500">
+<span class="absolute top-0 right-0 text-9xl font-black text-[#0e131f]/5 select-none pointer-events-none group-hover:text-primary/10 transition-colors">2</span>
+<div class="bg-primary-container/20 w-16 h-16 flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary-container text-3xl group-hover:text-on-primary">location_on</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-[#0e131f] mb-4 group-hover:text-white">2 - Nos encontramos</h3>
+<p class="font-body text-[#444956] leading-relaxed group-hover:text-on-surface-variant">
+                        Acordamos una cita en un lugar público y seguro dentro del Valle de Phoenix. Evaluamos tus piezas frente a ti con equipo profesional y precisión absoluta.
+                    </p>
+</div>
+<!-- Step 3 -->
+<div class="bg-white border border-[#e5e5e0] p-12 relative group hover:bg-[#0e131f] transition-all duration-500">
+<span class="absolute top-0 right-0 text-9xl font-black text-[#0e131f]/5 select-none pointer-events-none group-hover:text-primary/10 transition-colors">3</span>
+<div class="bg-primary-container/20 w-16 h-16 flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary-container text-3xl group-hover:text-on-primary">payments</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-[#0e131f] mb-4 group-hover:text-white">3 - Cobra al instante</h3>
+<p class="font-body text-[#444956] leading-relaxed group-hover:text-on-surface-variant">
+                        Si estás de acuerdo con la oferta final, recibes tu pago en ese mismo momento mediante efectivo, Zelle o transferencia bancaria. Sin trámites lentos.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Calculator Section -->
+<section class="bg-[#2D3442] py-32 hard-cut-transition">
+<div class="container mx-auto px-8 md:px-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<!-- Left Column -->
+<div>
+<span class="font-label uppercase tracking-widest text-[#e5c374] font-bold mb-4 block">PRECIO EN VIVO</span>
+<h2 class="font-headline text-5xl md:text-6xl font-black tracking-tighter text-white leading-none mb-8">
+                        Calculadora de Oro
+                    </h2>
+<p class="font-body text-on-surface-variant text-xl leading-relaxed mb-12">
+                        Utiliza nuestra herramienta para obtener una estimación inmediata del valor de tus piezas basada en el mercado global en tiempo real.
+                    </p>
+<div class="pt-8 border-t border-outline-variant/30">
+<div class="text-5xl font-black text-[#e5c374] tracking-tighter mb-2">$3,412</div>
+<div class="font-label uppercase tracking-widest text-on-surface-variant text-sm font-bold">USD por onza troy</div>
+</div>
+</div>
+<!-- Right Column (Calculator Card) -->
+<div class="bg-[#1a1f2b] border border-[#c5a55a]/30 p-8 md:p-10 shadow-2xl relative">
+<div class="space-y-8">
+<div>
+<label class="block font-label uppercase tracking-widest text-xs font-bold text-on-surface-variant mb-3">Peso (gramos)</label>
+<input class="w-full bg-[#0e131f] border-outline-variant text-white p-4 font-body focus:ring-primary focus:border-primary" placeholder="Ej: 10.5" type="text"/>
+</div>
+<div>
+<label class="block font-label uppercase tracking-widest text-xs font-bold text-on-surface-variant mb-3">Kilataje (Karat)</label>
+<div class="grid grid-cols-4 gap-2">
+<button class="py-3 border border-outline-variant text-on-surface-variant font-bold hover:bg-surface-variant transition-colors">10k</button>
+<button class="py-3 bg-[#c5a55a] text-[#3f2e00] font-bold">14k</button>
+<button class="py-3 border border-outline-variant text-on-surface-variant font-bold hover:bg-surface-variant transition-colors">18k</button>
+<button class="py-3 border border-outline-variant text-on-surface-variant font-bold hover:bg-surface-variant transition-colors">24k</button>
+</div>
+</div>
+<hr class="border-outline-variant/30"/>
+<div class="flex flex-col items-center text-center">
+<span class="font-label uppercase tracking-widest text-xs text-on-surface-variant mb-2">Valor estimado</span>
+<div class="flex items-baseline gap-2">
+<span class="text-6xl font-black text-[#e5c374] tracking-tighter">$285</span>
+<span class="text-xl font-bold text-on-surface-variant">USD</span>
+</div>
+</div>
+<button class="w-full bg-[#c5a55a] text-[#3f2e00] font-headline font-black uppercase tracking-widest py-5 hover:bg-primary transition-all flex items-center justify-center gap-2">
+                        Quiero vender <span class="material-symbols-outlined">trending_flat</span>
+</button>
+<p class="text-center font-body text-[10px] text-on-surface-variant/60 uppercase tracking-wider">
+                        Estimado basado en precio spot actual. El valor final se confirma en persona.
+                    </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Section -->
+<section class="py-32 bg-surface">
+<div class="container mx-auto px-8 md:px-12">
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 min-h-[600px]">
+<div class="md:col-span-2 md:row-span-2 bg-surface-container flex flex-col justify-end p-10 relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover opacity-40 grayscale" data-alt="Professional jeweler examining a gold ring with a magnifying loupe in a high-end luxury studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKy9TJQ_KtHuBuu6yJ7GGTR2uzTpEDMs5eG6xL7TEl2g6PkpMmW7Ff5Q4vqJKcMIbSqdx8WL5rUgzZmxJkIZKL7IhHWlEPc1NBuOWpIIjgL7iZET9ldD4HCzN2uiG4Zv73YTCQvY_skVZZhSJHos21SngGYMJXPR4s-0WuERvO13FypOtLlCgKj8ei_S2x96zcNnThzOeTPL-Ks3fPU8hOzTL_aEmCh8RpPbtLs8NBpAcjcXxOekkcLbUS2W1DPvYnRz76fC6-T3w"/>
+<div class="relative z-10">
+<h4 class="font-headline text-3xl font-bold text-white mb-4">Tasación Profesional</h4>
+<p class="font-body text-on-surface-variant">Equipos de precisión alemana para garantizar que recibas hasta el último centavo del valor de tu oro.</p>
+</div>
+</div>
+<div class="md:col-span-2 bg-[#c5a55a] p-10 flex flex-col justify-center">
+<h4 class="font-headline text-3xl font-bold text-[#3f2e00] mb-2">Compramos todo tipo de oro</h4>
+<p class="font-body text-[#3f2e00]/80">Joyas rotas, monedas, lingotes, relojes de alta gama y pedacería de 10k hasta 24k.</p>
+</div>
+<div class="md:col-span-1 bg-surface-container-high p-8 flex flex-col items-center text-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">verified_user</span>
+<h5 class="font-headline font-bold mb-2">Seguridad Total</h5>
+<p class="font-label text-xs uppercase tracking-tight text-on-surface-variant">Encuentros en zonas vigiladas</p>
+</div>
+<div class="md:col-span-1 bg-surface-container-high p-8 flex flex-col items-center text-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">update</span>
+<h5 class="font-headline font-bold mb-2">Precio en Vivo</h5>
+<p class="font-label text-xs uppercase tracking-tight text-on-surface-variant">Basado en NYMEX/COMEX</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#090e19] w-full rounded-none border-t border-[#1a1f2b] flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full">
+<div class="flex flex-col gap-4 mb-8 md:mb-0">
+<div class="text-lg font-bold text-[#c5a55a]">KARAT CASH</div>
+<p class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#d0c5b4]">© 2024 KaratCash. Todos los derechos reservados.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#d0c5b4] hover:text-[#c5a55a] transition-colors" href="#">Privacidad</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#d0c5b4] hover:text-[#c5a55a] transition-colors" href="#">Términos y Condiciones</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#d0c5b4] hover:text-[#c5a55a] transition-colors" href="#">Contacto</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#d0c5b4] hover:text-[#c5a55a] transition-colors" href="#">Seguridad</a>
+</div>
+<div class="mt-8 md:mt-0 flex gap-4">
+<div class="w-10 h-10 border border-outline-variant flex items-center justify-center hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-sm text-[#d0c5b4]">public</span>
+</div>
+<div class="w-10 h-10 border border-outline-variant flex items-center justify-center hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-sm text-[#d0c5b4]">share</span>
+</div>
+</div>
+</footer>
+<!-- FAB for direct contact -->
+<div class="fixed bottom-8 right-8 z-40">
+<button class="bg-[#25D366] text-white w-16 h-16 flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+</button>
+</div>
+</body></html>

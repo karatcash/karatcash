@@ -1,0 +1,30 @@
+# Dependencias
+node_modules/
+
+# Build
+dist/
+
+# Entorno
+.env
+.env.local
+.env.production
+
+# Claude Code (personal)
+.claude.local.md
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Astro
+.astro/
+
+# Vercel
+.vercel/
+
+# Superpowers (brainstorm state)
+.superpowers/
