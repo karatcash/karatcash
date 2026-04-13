@@ -1,0 +1,199 @@
+---
+// ComoFunciona — Sección "Tres pasos" (light)
+---
+
+<section class="section section--light como-funciona">
+  <div class="container">
+
+    <div class="como-funciona__header gs-reveal">
+      <span class="label">NUESTRO MÉTODO</span>
+      <h2 class="como-funciona__title">Tres pasos, cero complicaciones</h2>
+    </div>
+
+    <div class="como-funciona__grid">
+
+      <!-- Paso 1 -->
+      <article class="cf-card gs-reveal">
+        <div class="cf-card__top">
+          <span class="cf-card__number" aria-hidden="true">1</span>
+          <span class="material-symbols-outlined cf-card__icon" aria-hidden="true">chat_bubble</span>
+        </div>
+        <h3 class="cf-card__title">Contáctanos</h3>
+        <p class="cf-card__desc">
+          Escríbenos por WhatsApp, llámanos o llena el formulario. Cuéntanos qué tienes y te damos una estimación sin compromiso en minutos.
+        </p>
+        <div class="cf-card__tags">
+          <span class="badge badge--green">WhatsApp</span>
+          <span class="badge badge--blue">Llamada</span>
+          <span class="badge badge--gold">Formulario</span>
+        </div>
+      </article>
+
+      <!-- Paso 2 -->
+      <article class="cf-card gs-reveal">
+        <div class="cf-card__top">
+          <span class="cf-card__number" aria-hidden="true">2</span>
+          <span class="material-symbols-outlined cf-card__icon" aria-hidden="true">location_on</span>
+        </div>
+        <h3 class="cf-card__title">Nos encontramos</h3>
+        <p class="cf-card__desc">
+          Acordamos un lugar público y seguro en el Valle de Phoenix — una cafetería, un banco, donde te sientas cómodo. Pesamos y verificamos tu oro frente a ti.
+        </p>
+        <div class="cf-card__tags">
+          <span class="badge badge--green">Báscula certificada</span>
+          <span class="badge badge--green">Test de pureza</span>
+        </div>
+      </article>
+
+      <!-- Paso 3 -->
+      <article class="cf-card gs-reveal">
+        <div class="cf-card__top">
+          <span class="cf-card__number" aria-hidden="true">3</span>
+          <span class="material-symbols-outlined cf-card__icon" aria-hidden="true">payments</span>
+        </div>
+        <h3 class="cf-card__title">Cobra al instante</h3>
+        <p class="cf-card__desc">
+          Si el precio te convence, te pagamos en el momento. Sin demoras, sin cheques que esperar, sin sorpresas.
+        </p>
+        <div class="cf-card__tags">
+          <span class="badge badge--green">Efectivo</span>
+          <span class="badge badge--blue">Transferencia</span>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .como-funciona__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-3xl);
+  }
+
+  .como-funciona__title {
+    color: var(--navy-deep);
+    letter-spacing: -0.02em;
+  }
+
+  /* Grid */
+  .como-funciona__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+
+  @media (max-width: 900px) {
+    .como-funciona__grid {
+      grid-template-columns: 1fr;
+      max-width: 480px;
+    }
+  }
+
+  /* Card */
+  .cf-card {
+    background-color: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    transition:
+      background-color 280ms ease,
+      border-color 280ms ease,
+      box-shadow 280ms ease,
+      transform 280ms ease;
+    cursor: default;
+  }
+
+  .cf-card:hover {
+    background-color: var(--navy-deep);
+    border-color: rgba(197, 165, 90, 0.3);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+    transform: translateY(-4px);
+  }
+
+  /* Card top row */
+  .cf-card__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .cf-card__number {
+    font-family: var(--font-headline);
+    font-weight: 800;
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--gray-200);
+    transition: color 280ms ease;
+  }
+
+  .cf-card:hover .cf-card__number {
+    color: rgba(197, 165, 90, 0.25);
+  }
+
+  .cf-card__icon {
+    font-size: 2rem;
+    color: var(--gold);
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 32;
+    transition: color 280ms ease;
+  }
+
+  .cf-card:hover .cf-card__icon {
+    color: var(--gold-light);
+  }
+
+  /* Card title */
+  .cf-card__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--navy-deep);
+    letter-spacing: -0.01em;
+    transition: color 280ms ease;
+  }
+
+  .cf-card:hover .cf-card__title {
+    color: var(--white);
+  }
+
+  /* Card description */
+  .cf-card__desc {
+    font-size: 0.92rem;
+    color: var(--gray-500);
+    line-height: 1.7;
+    flex: 1;
+    transition: color 280ms ease;
+  }
+
+  .cf-card:hover .cf-card__desc {
+    color: var(--gray-300);
+  }
+
+  /* Tags */
+  .cf-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  /* Badge color tweaks on hover */
+  .cf-card:hover .badge--green {
+    background-color: rgba(45, 143, 94, 0.2);
+    color: #6FCF97;
+  }
+
+  .cf-card:hover .badge--blue {
+    background-color: rgba(43, 108, 176, 0.2);
+    color: #90CDF4;
+  }
+
+  .cf-card:hover .badge--gold {
+    background-color: rgba(197, 165, 90, 0.15);
+    color: var(--gold-light);
+  }
+</style>

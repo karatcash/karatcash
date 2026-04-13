@@ -1,0 +1,156 @@
+---
+// CtaFinal — Llamado a acción final (dark)
+const phone = '16231234567';
+const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent('Hola, me interesa vender mi oro. ¿Pueden darme una cotización?')}`;
+const telUrl = `tel:+${phone}`;
+---
+
+<section class="section section--dark cta-final">
+  <div class="container cta-final__container">
+
+    <div class="cta-final__text gs-reveal">
+      <h2 class="cta-final__headline">
+        <span class="cta-final__line-white">¿Tienes oro que no usas?</span>
+        <span class="cta-final__line-gold">Hoy vale más que nunca.</span>
+      </h2>
+      <p class="cta-final__sub">Contáctanos sin compromiso.</p>
+    </div>
+
+    <div class="cta-final__actions gs-reveal">
+
+      <!-- WhatsApp -->
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn--primary cta-final__btn"
+        aria-label="Contáctanos por WhatsApp"
+      >
+        <svg class="cta-final__wa-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+        </svg>
+        Escribir por WhatsApp
+      </a>
+
+      <!-- Llamar -->
+      <a
+        href={telUrl}
+        class="btn btn--outline cta-final__btn"
+        aria-label="Llamar ahora"
+      >
+        <span class="material-symbols-outlined cta-final__btn-icon" aria-hidden="true">call</span>
+        Llamar ahora
+      </a>
+
+      <!-- Formulario -->
+      <a
+        href="/contacto"
+        class="btn btn--outline cta-final__btn"
+        aria-label="Ir al formulario de contacto"
+      >
+        <span class="material-symbols-outlined cta-final__btn-icon" aria-hidden="true">edit_note</span>
+        Formulario
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .cta-final {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-final::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at 60% 50%,
+      rgba(197, 165, 90, 0.06) 0%,
+      transparent 65%
+    );
+    pointer-events: none;
+  }
+
+  .cta-final__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-3xl);
+  }
+
+  .cta-final__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .cta-final__headline {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+  }
+
+  .cta-final__line-white {
+    color: var(--white);
+  }
+
+  .cta-final__line-gold {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 60%, #E8CC80 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .cta-final__sub {
+    font-size: 1.1rem;
+    color: var(--gray-400);
+    font-weight: 400;
+  }
+
+  /* Actions row */
+  .cta-final__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+  }
+
+  .cta-final__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .cta-final__wa-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  .cta-final__btn-icon {
+    font-size: 1.1rem;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+  }
+
+  @media (max-width: 480px) {
+    .cta-final__actions {
+      flex-direction: column;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .cta-final__btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

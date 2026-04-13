@@ -1,0 +1,192 @@
+---
+// HeroHome — sección principal de la landing page
+---
+
+<section class="hero section--dark">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="container hero__container">
+
+    <span class="label hero__label">COMPRA DE ORO EN TODO PHOENIX</span>
+
+    <h1 class="hero__title">
+      El precio del oro está en<br />
+      <span class="hero__title-highlight">máximos históricos</span>
+    </h1>
+
+    <p class="hero__subtitle">
+      Ese anillo, esa cadena, esos aretes que no usas — hoy valen más que nunca.
+      Te mostramos cuánto y te pagamos al momento.
+    </p>
+
+    <div class="hero__actions">
+      <a href="/contacto" class="btn btn--primary">
+        Obtén tu cotización gratis &rarr;
+      </a>
+      <a href="/calculadora" class="btn btn--outline">
+        Ver precio del oro hoy
+      </a>
+    </div>
+
+    <div class="hero__trust">
+      <div class="hero__trust-separator" aria-hidden="true"></div>
+      <ul class="hero__badges" role="list">
+        <li class="hero__badge">
+          <span class="hero__check" aria-hidden="true">✓</span>
+          Pago inmediato
+        </li>
+        <li class="hero__badge">
+          <span class="hero__check" aria-hidden="true">✓</span>
+          Lugar público y seguro
+        </li>
+        <li class="hero__badge">
+          <span class="hero__check" aria-hidden="true">✓</span>
+          Todo el Valle de Phoenix
+        </li>
+        <li class="hero__badge">
+          <span class="hero__check" aria-hidden="true">✓</span>
+          Proceso 100% transparente
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: calc(var(--nav-height) + var(--space-4xl));
+    padding-bottom: var(--space-4xl);
+    overflow: hidden;
+  }
+
+  /* Subtle gold glow behind the headline */
+  .hero__glow {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    translate: -50% -50%;
+    width: min(700px, 90vw);
+    height: min(500px, 60vh);
+    background: radial-gradient(
+      ellipse at center,
+      rgba(197, 165, 90, 0.07) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero__container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xl);
+    max-width: 740px;
+  }
+
+  .hero__label {
+    margin-bottom: calc(-1 * var(--space-sm));
+  }
+
+  .hero__title {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--white);
+  }
+
+  .hero__title-highlight {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 60%, #E8CC80 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero__subtitle {
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    color: var(--gray-300);
+    font-weight: 400;
+    line-height: 1.75;
+    max-width: 560px;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    align-items: center;
+  }
+
+  /* Trust badges */
+  .hero__trust {
+    width: 100%;
+    margin-top: var(--space-sm);
+  }
+
+  .hero__trust-separator {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero__badges {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg) var(--space-2xl);
+  }
+
+  .hero__badge {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gray-300);
+    letter-spacing: 0.01em;
+  }
+
+  .hero__check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--green);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding-top: calc(var(--nav-height) + var(--space-2xl));
+      padding-bottom: var(--space-3xl);
+    }
+
+    .hero__actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .hero__actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .hero__badges {
+      gap: var(--space-md) var(--space-xl);
+    }
+  }
+</style>
