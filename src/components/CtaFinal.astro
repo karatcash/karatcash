@@ -1,12 +1,23 @@
 ---
-// CtaFinal — Llamado a acción final (dark)
+// CtaFinal — Premium final CTA with decorative elements and animated border
 const phone = '16231234567';
 const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent('Hi, I\'m interested in selling my gold. Can you give me a quote?')}`;
 const telUrl = `tel:+${phone}`;
 ---
 
 <section class="section section--dark cta-final">
+  <!-- Animated gold gradient border -->
+  <div class="cta-final__border-glow" aria-hidden="true"></div>
+
+  <!-- Texture background -->
   <div class="cta-final__texture" aria-hidden="true"></div>
+
+  <!-- Decorative floating elements -->
+  <img src="/images/gold-ring.svg" alt="" class="cta-final__deco cta-final__deco-ring" aria-hidden="true" />
+  <img src="/images/gold-chain.svg" alt="" class="cta-final__deco cta-final__deco-chain" aria-hidden="true" />
+
+  <div class="cta-final__glow" aria-hidden="true"></div>
+
   <div class="container cta-final__container">
 
     <div class="cta-final__text gs-reveal">
@@ -33,7 +44,7 @@ const telUrl = `tel:+${phone}`;
         Message on WhatsApp
       </a>
 
-      <!-- Llamar -->
+      <!-- Call -->
       <a
         href={telUrl}
         class="btn btn--outline cta-final__btn"
@@ -43,7 +54,7 @@ const telUrl = `tel:+${phone}`;
         Call Now
       </a>
 
-      <!-- Formulario -->
+      <!-- Form -->
       <a
         href="/contacto"
         class="btn btn--outline cta-final__btn"
@@ -64,31 +75,88 @@ const telUrl = `tel:+${phone}`;
     overflow: hidden;
   }
 
+  /* Animated gold gradient border */
+  .cta-final__border-glow {
+    position: absolute;
+    inset: 0;
+    border: 1px solid transparent;
+    border-image: linear-gradient(
+      var(--cta-border-angle, 0deg),
+      rgba(197, 165, 90, 0.4) 0%,
+      rgba(197, 165, 90, 0.05) 30%,
+      rgba(197, 165, 90, 0.3) 60%,
+      rgba(197, 165, 90, 0.05) 100%
+    ) 1;
+    pointer-events: none;
+    z-index: 1;
+    animation: cta-border-rotate 8s linear infinite;
+  }
+
+  @keyframes cta-border-rotate {
+    to {
+      --cta-border-angle: 360deg;
+    }
+  }
+
+  @property --cta-border-angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+  }
+
   .cta-final__texture {
     position: absolute;
     inset: 0;
-    background-image: url('/images/gold-bar-pattern.svg');
+    background-image: url('/images/gold-texture.svg');
     background-repeat: repeat;
-    background-size: 180px;
-    opacity: 0.05;
+    background-size: 200px;
+    opacity: 0.04;
     pointer-events: none;
     z-index: 0;
   }
 
-  .cta-final::before {
-    content: '';
+  .cta-final__glow {
     position: absolute;
-    inset: 0;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: min(700px, 90vw);
+    height: 350px;
     background: radial-gradient(
-      ellipse at 60% 50%,
-      rgba(197, 165, 90, 0.06) 0%,
+      ellipse at center,
+      rgba(197, 165, 90, 0.07) 0%,
       transparent 65%
     );
     pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Decorative floating SVGs */
+  .cta-final__deco {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .cta-final__deco-ring {
+    width: 220px;
+    height: 220px;
+    top: -40px;
+    right: -30px;
+    opacity: 0.06;
+  }
+
+  .cta-final__deco-chain {
+    width: 160px;
+    height: 160px;
+    bottom: -20px;
+    left: -20px;
+    opacity: 0.04;
   }
 
   .cta-final__container {
     position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -106,9 +174,9 @@ const telUrl = `tel:+${phone}`;
     display: flex;
     flex-direction: column;
     gap: 0.2em;
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2.2rem, 5.5vw, 3.8rem);
     letter-spacing: -0.03em;
-    line-height: 1.15;
+    line-height: 1.1;
   }
 
   .cta-final__line-white {
@@ -140,6 +208,11 @@ const telUrl = `tel:+${phone}`;
     display: inline-flex;
     align-items: center;
     gap: var(--space-sm);
+    transition: all 700ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .cta-final__btn:active {
+    transform: scale(0.98) !important;
   }
 
   .cta-final__wa-icon {
@@ -151,6 +224,12 @@ const telUrl = `tel:+${phone}`;
   .cta-final__btn-icon {
     font-size: 1.1rem;
     font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+  }
+
+  @media (max-width: 768px) {
+    .cta-final__deco {
+      display: none;
+    }
   }
 
   @media (max-width: 480px) {

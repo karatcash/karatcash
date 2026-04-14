@@ -1,5 +1,5 @@
 ---
-// HeroHome — sección principal de la landing page
+// HeroHome — Split-layout hero with premium glass card
 ---
 
 <section class="hero section--dark bg-image-section">
@@ -11,58 +11,95 @@
     style="opacity: 0.15; filter: grayscale(1);"
     loading="eager"
   />
-  <!-- Dark overlay with gradient -->
-  <div class="bg-image-section__overlay" style="background: linear-gradient(90deg, var(--navy-deep) 30%, rgba(26,31,43,0.7) 70%, rgba(26,31,43,0.4) 100%);"></div>
-
-  <!-- Floating decorative elements -->
-  <img src="/images/gold-ring.svg" alt="" class="deco-float deco-float--gold hero__deco-ring" aria-hidden="true" />
-  <img src="/images/gold-chain.svg" alt="" class="deco-float deco-float--gold hero__deco-chain" aria-hidden="true" />
+  <!-- Dark overlay — centered gradient -->
+  <div class="bg-image-section__overlay" style="background: linear-gradient(180deg, rgba(26,31,43,0.92) 0%, rgba(26,31,43,0.7) 50%, rgba(26,31,43,0.88) 100%);"></div>
 
   <div class="hero__glow" aria-hidden="true"></div>
   <div class="bg-image-section__content">
-    <div class="container hero__container">
+    <div class="container hero__split">
 
-      <span class="label hero__label">GOLD BUYERS IN ALL OF PHOENIX</span>
+      <!-- LEFT SIDE — Text content -->
+      <div class="hero__left">
+        <span class="hero__pill">GOLD BUYERS IN ALL OF PHOENIX</span>
 
-      <h1 class="hero__title">
-        Gold prices are at<br />
-        <span class="hero__title-highlight">all-time highs</span>
-      </h1>
+        <h1 class="hero__title">
+          Gold prices are at<br />
+          <span class="hero__title-highlight">all-time highs</span>
+        </h1>
 
-      <p class="hero__subtitle">
-        That ring, that chain, those earrings you never wear — they're worth more than ever.
-        We'll show you how much and pay you on the spot.
-      </p>
+        <p class="hero__subtitle">
+          That ring, that chain, those earrings you never wear — they're worth more than ever.
+          We'll show you how much and pay you on the spot.
+        </p>
 
-      <div class="hero__actions">
-        <a href="/contacto" class="btn btn--primary">
-          Get Your Free Quote &rarr;
-        </a>
-        <a href="/calculadora" class="btn btn--outline">
-          See Today's Gold Price
-        </a>
+        <div class="hero__actions">
+          <a href="/contacto" class="btn btn--primary hero__btn">
+            Get Your Free Quote &rarr;
+          </a>
+          <a href="/calculadora" class="btn btn--outline hero__btn">
+            See Today's Gold Price
+          </a>
+        </div>
+
+        <div class="hero__trust">
+          <div class="hero__trust-separator" aria-hidden="true"></div>
+          <ul class="hero__badges" role="list">
+            <li class="hero__badge">
+              <span class="hero__check" aria-hidden="true">&#10003;</span>
+              Immediate Payment
+            </li>
+            <li class="hero__badge">
+              <span class="hero__check" aria-hidden="true">&#10003;</span>
+              Safe Public Location
+            </li>
+            <li class="hero__badge">
+              <span class="hero__check" aria-hidden="true">&#10003;</span>
+              All of Phoenix Valley
+            </li>
+            <li class="hero__badge">
+              <span class="hero__check" aria-hidden="true">&#10003;</span>
+              100% Transparent Process
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <div class="hero__trust">
-        <div class="hero__trust-separator" aria-hidden="true"></div>
-        <ul class="hero__badges" role="list">
-          <li class="hero__badge">
-            <span class="hero__check" aria-hidden="true">✓</span>
-            Immediate Payment
-          </li>
-          <li class="hero__badge">
-            <span class="hero__check" aria-hidden="true">✓</span>
-            Safe Public Location
-          </li>
-          <li class="hero__badge">
-            <span class="hero__check" aria-hidden="true">✓</span>
-            All of Phoenix Valley
-          </li>
-          <li class="hero__badge">
-            <span class="hero__check" aria-hidden="true">✓</span>
-            100% Transparent Process
-          </li>
-        </ul>
+      <!-- RIGHT SIDE — Visual composition -->
+      <div class="hero__right">
+        <!-- Decorative SVGs -->
+        <img src="/images/gold-coins.svg" alt="" class="hero__deco hero__deco-coins" aria-hidden="true" />
+        <img src="/images/scale-icon.svg" alt="" class="hero__deco hero__deco-scale" aria-hidden="true" />
+
+        <!-- Live Gold Price — Double-bezel glass card -->
+        <div class="hero__price-shell">
+          <div class="hero__price-card">
+            <div class="hero__price-header">
+              <span class="hero__price-label">Gold Spot Price</span>
+              <span class="hero__live-badge">
+                <span class="hero__live-dot" aria-hidden="true"></span>
+                LIVE
+              </span>
+            </div>
+            <div class="hero__price-value">$3,400<span class="hero__price-plus">+</span></div>
+            <span class="hero__price-unit">per troy ounce</span>
+          </div>
+        </div>
+
+        <!-- Stat cards row -->
+        <div class="hero__stats">
+          <div class="hero__stat-card">
+            <span class="hero__stat-value">15 min</span>
+            <span class="hero__stat-label">Process Time</span>
+          </div>
+          <div class="hero__stat-card">
+            <span class="hero__stat-value">24K</span>
+            <span class="hero__stat-label">We Buy Up To</span>
+          </div>
+          <div class="hero__stat-card">
+            <span class="hero__stat-value">100%</span>
+            <span class="hero__stat-label">Transparent</span>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -72,7 +109,7 @@
 <style>
   .hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     padding-top: calc(var(--nav-height) + var(--space-4xl));
@@ -80,35 +117,53 @@
     overflow: hidden;
   }
 
-  /* Subtle gold glow behind the headline */
+  /* Subtle gold glow */
   .hero__glow {
     position: absolute;
-    top: 30%;
-    left: 50%;
+    top: 35%;
+    left: 40%;
     translate: -50% -50%;
-    width: min(700px, 90vw);
-    height: min(500px, 60vh);
+    width: min(800px, 100vw);
+    height: min(600px, 70vh);
     background: radial-gradient(
       ellipse at center,
-      rgba(197, 165, 90, 0.07) 0%,
+      rgba(197, 165, 90, 0.06) 0%,
       transparent 70%
     );
     pointer-events: none;
     z-index: 0;
   }
 
-  .hero__container {
+  /* Split grid layout */
+  .hero__split {
     position: relative;
     z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-xl);
-    max-width: 740px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: center;
   }
 
-  .hero__label {
-    margin-bottom: calc(-1 * var(--space-sm));
+  /* ---- LEFT SIDE ---- */
+  .hero__left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  /* Pill eyebrow */
+  .hero__pill {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 0.4rem 1.1rem;
+    border-radius: 999px;
+    background: rgba(197, 165, 90, 0.1);
+    color: var(--gold);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid rgba(197, 165, 90, 0.15);
   }
 
   .hero__title {
@@ -128,11 +183,11 @@
   }
 
   .hero__subtitle {
-    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
     color: var(--gray-300);
     font-weight: 400;
     line-height: 1.75;
-    max-width: 560px;
+    max-width: 520px;
   }
 
   .hero__actions {
@@ -140,6 +195,19 @@
     flex-wrap: wrap;
     gap: var(--space-md);
     align-items: center;
+  }
+
+  /* Premium button transitions */
+  .hero__btn {
+    transition: all 700ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .hero__btn:active {
+    transform: scale(0.98) !important;
+  }
+
+  .hero__btn.btn--primary:hover {
+    box-shadow: 0 8px 32px rgba(197, 165, 90, 0.3);
   }
 
   /* Trust badges */
@@ -151,7 +219,7 @@
   .hero__trust-separator {
     width: 100%;
     height: 1px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     margin-bottom: var(--space-xl);
   }
 
@@ -186,21 +254,182 @@
     flex-shrink: 0;
   }
 
-  /* Floating decorative SVGs */
-  .hero__deco-ring {
-    width: 180px;
-    height: 180px;
-    top: 15%;
-    right: 5%;
-    opacity: 0.07;
+  /* ---- RIGHT SIDE ---- */
+  .hero__right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    align-items: center;
   }
 
-  .hero__deco-chain {
+  /* Decorative SVGs */
+  .hero__deco {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.08;
+    z-index: 0;
+  }
+
+  .hero__deco-coins {
     width: 140px;
     height: 140px;
-    bottom: 10%;
-    right: 12%;
-    opacity: 0.05;
+    top: -30px;
+    right: -20px;
+  }
+
+  .hero__deco-scale {
+    width: 100px;
+    height: 100px;
+    bottom: -10px;
+    left: -15px;
+  }
+
+  /* Double-bezel price card — outer shell */
+  .hero__price-shell {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 360px;
+    padding: 2px;
+    border-radius: 1.5rem;
+    background: linear-gradient(
+      135deg,
+      rgba(197, 165, 90, 0.35) 0%,
+      rgba(197, 165, 90, 0.08) 50%,
+      rgba(197, 165, 90, 0.25) 100%
+    );
+  }
+
+  /* Inner card */
+  .hero__price-card {
+    background: rgba(26, 31, 43, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: calc(1.5rem - 2px);
+    padding: var(--space-xl) var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    border: 1px solid rgba(197, 165, 90, 0.1);
+  }
+
+  .hero__price-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero__price-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--gray-400);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .hero__live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #4ADE80;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .hero__live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #4ADE80;
+    animation: hero-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes hero-pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4); }
+    50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(74, 222, 128, 0); }
+  }
+
+  .hero__price-value {
+    font-family: var(--font-headline);
+    font-size: clamp(2.8rem, 5vw, 3.6rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 60%, #E8CC80 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero__price-plus {
+    font-size: 0.65em;
+  }
+
+  .hero__price-unit {
+    font-size: 0.82rem;
+    color: var(--gray-400);
+    font-weight: 500;
+  }
+
+  /* Stat cards row */
+  .hero__stats {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .hero__stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: var(--space-md) var(--space-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .hero__stat-value {
+    font-family: var(--font-headline);
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+
+  .hero__stat-label {
+    font-size: 0.62rem;
+    color: var(--gray-400);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 900px) {
+    .hero__split {
+      grid-template-columns: 1fr;
+      gap: var(--space-3xl);
+    }
+
+    .hero__right {
+      align-items: center;
+    }
+
+    .hero__price-shell,
+    .hero__stats {
+      max-width: 340px;
+    }
   }
 
   @media (max-width: 640px) {
@@ -221,6 +450,10 @@
 
     .hero__badges {
       gap: var(--space-md) var(--space-xl);
+    }
+
+    .hero__deco {
+      display: none;
     }
   }
 </style>

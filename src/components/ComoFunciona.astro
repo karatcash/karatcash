@@ -1,5 +1,5 @@
 ---
-// ComoFunciona — Sección "Tres pasos" (light)
+// ComoFunciona — Three steps with premium card design
 ---
 
 <section class="section section--light como-funciona">
@@ -14,6 +14,10 @@
 
       <!-- Step 1 -->
       <article class="cf-card gs-reveal">
+        <div class="cf-card__bg-number" aria-hidden="true">1</div>
+        <div class="cf-card__visual">
+          <img src="/images/gold-chain.svg" alt="" class="cf-card__visual-img" aria-hidden="true" />
+        </div>
         <div class="cf-card__top">
           <span class="cf-card__number" aria-hidden="true">1</span>
           <span class="material-symbols-outlined cf-card__icon" aria-hidden="true">chat_bubble</span>
@@ -31,6 +35,10 @@
 
       <!-- Step 2 -->
       <article class="cf-card gs-reveal">
+        <div class="cf-card__bg-number" aria-hidden="true">2</div>
+        <div class="cf-card__visual">
+          <img src="/images/scale-icon.svg" alt="" class="cf-card__visual-img" aria-hidden="true" />
+        </div>
         <div class="cf-card__top">
           <span class="cf-card__number" aria-hidden="true">2</span>
           <span class="material-symbols-outlined cf-card__icon" aria-hidden="true">location_on</span>
@@ -47,6 +55,10 @@
 
       <!-- Step 3 -->
       <article class="cf-card gs-reveal">
+        <div class="cf-card__bg-number" aria-hidden="true">3</div>
+        <div class="cf-card__visual">
+          <img src="/images/gold-coins.svg" alt="" class="cf-card__visual-img" aria-hidden="true" />
+        </div>
         <div class="cf-card__top">
           <span class="cf-card__number" aria-hidden="true">3</span>
           <span class="material-symbols-outlined cf-card__icon" aria-hidden="true">payments</span>
@@ -67,6 +79,10 @@
 </section>
 
 <style>
+  .como-funciona {
+    padding-block: var(--space-4xl);
+  }
+
   .como-funciona__header {
     display: flex;
     flex-direction: column;
@@ -95,6 +111,7 @@
 
   /* Card */
   .cf-card {
+    position: relative;
     background-color: var(--white);
     border: 1px solid var(--gray-200);
     border-radius: var(--radius-lg);
@@ -102,11 +119,12 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-lg);
+    overflow: hidden;
     transition:
-      background-color 280ms ease,
-      border-color 280ms ease,
-      box-shadow 280ms ease,
-      transform 280ms ease;
+      background-color 700ms cubic-bezier(0.32, 0.72, 0, 1),
+      border-color 700ms cubic-bezier(0.32, 0.72, 0, 1),
+      box-shadow 700ms cubic-bezier(0.32, 0.72, 0, 1),
+      transform 700ms cubic-bezier(0.32, 0.72, 0, 1);
     cursor: default;
   }
 
@@ -117,8 +135,51 @@
     transform: translateY(-4px);
   }
 
+  /* Large faded background number */
+  .cf-card__bg-number {
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    font-family: var(--font-headline);
+    font-weight: 900;
+    font-size: 10rem;
+    line-height: 1;
+    color: var(--gray-100);
+    pointer-events: none;
+    z-index: 0;
+    transition: color 700ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .cf-card:hover .cf-card__bg-number {
+    color: rgba(197, 165, 90, 0.07);
+  }
+
+  /* Visual illustration above card content */
+  .cf-card__visual {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 72px;
+    margin-bottom: calc(-1 * var(--space-sm));
+  }
+
+  .cf-card__visual-img {
+    width: 56px;
+    height: 56px;
+    opacity: 0.2;
+    transition: opacity 700ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .cf-card:hover .cf-card__visual-img {
+    opacity: 0.35;
+  }
+
   /* Card top row */
   .cf-card__top {
+    position: relative;
+    z-index: 1;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -127,21 +188,31 @@
   .cf-card__number {
     font-family: var(--font-headline);
     font-weight: 800;
-    font-size: 3rem;
+    font-size: 1.4rem;
     line-height: 1;
-    color: var(--gray-200);
-    transition: color 280ms ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    background: var(--gray-100);
+    color: var(--navy-deep);
+    transition:
+      color 700ms cubic-bezier(0.32, 0.72, 0, 1),
+      background-color 700ms cubic-bezier(0.32, 0.72, 0, 1);
   }
 
   .cf-card:hover .cf-card__number {
-    color: rgba(197, 165, 90, 0.25);
+    background: rgba(197, 165, 90, 0.15);
+    color: var(--gold);
   }
 
   .cf-card__icon {
     font-size: 2rem;
     color: var(--gold);
     font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 32;
-    transition: color 280ms ease;
+    transition: color 700ms cubic-bezier(0.32, 0.72, 0, 1);
   }
 
   .cf-card:hover .cf-card__icon {
@@ -150,11 +221,13 @@
 
   /* Card title */
   .cf-card__title {
+    position: relative;
+    z-index: 1;
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--navy-deep);
     letter-spacing: -0.01em;
-    transition: color 280ms ease;
+    transition: color 700ms cubic-bezier(0.32, 0.72, 0, 1);
   }
 
   .cf-card:hover .cf-card__title {
@@ -163,11 +236,13 @@
 
   /* Card description */
   .cf-card__desc {
+    position: relative;
+    z-index: 1;
     font-size: 0.92rem;
     color: var(--gray-500);
     line-height: 1.7;
     flex: 1;
-    transition: color 280ms ease;
+    transition: color 700ms cubic-bezier(0.32, 0.72, 0, 1);
   }
 
   .cf-card:hover .cf-card__desc {
@@ -176,6 +251,8 @@
 
   /* Tags */
   .cf-card__tags {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-sm);

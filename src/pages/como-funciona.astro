@@ -29,7 +29,8 @@ import FaqAccordion from '../components/FaqAccordion.astro';
   <!-- =============================================
        2. STEP 1 — CONTACT US (light)
        ============================================= -->
-  <section class="section section--light cf-step">
+  <section class="section section--light cf-step cf-step--deco">
+    <img src="/images/gold-chain.svg" alt="" class="deco-float deco-float--gold cf-deco-step1" aria-hidden="true" />
     <div class="container cf-step__container">
 
       <div class="cf-step__number-col gs-reveal-left">
@@ -109,6 +110,18 @@ import FaqAccordion from '../components/FaqAccordion.astro';
             Live gold spot price
           </li>
         </ul>
+
+        <!-- Jeweler image in double-bezel frame -->
+        <div class="cf-step__image-shell">
+          <div class="cf-step__image-frame">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKy9TJQ_KtHuBuu6yJ7GGTR2uzTpEDMs5eG6xL7TEl2g6PkpMmW7Ff5Q4vqJKcMIbSqdx8WL5rUgzZmxJkIZKL7IhHWlEPc1NBuOWpIIjgL7iZET9ldD4HCzN2uiG4Zv73YTCQvY_skVZZhSJHos21SngGYMJXPR4s-0WuERvO13FypOtLlCgKj8ei_S2x96zcNnThzOeTPL-Ks3fPU8hOzTL_aEmCh8RpPbtLs8NBpAcjcXxOekkcLbUS2W1DPvYnRz76fC6-T3w"
+              alt="Professional gold evaluation"
+              class="cf-step__image"
+              loading="lazy"
+            />
+          </div>
+        </div>
       </div>
 
     </div>
@@ -117,7 +130,8 @@ import FaqAccordion from '../components/FaqAccordion.astro';
   <!-- =============================================
        4. STEP 3 — GET PAID INSTANTLY (light)
        ============================================= -->
-  <section class="section section--light cf-step">
+  <section class="section section--light cf-step cf-step--deco">
+    <img src="/images/gold-coins.svg" alt="" class="deco-float deco-float--gold cf-deco-step3" aria-hidden="true" />
     <div class="container cf-step__container">
 
       <div class="cf-step__number-col gs-reveal-left">
@@ -748,6 +762,49 @@ import FaqAccordion from '../components/FaqAccordion.astro';
     bottom: 8%;
     left: 3%;
     opacity: 0.05;
+  }
+
+  .cf-deco-step1 {
+    width: 180px;
+    height: 180px;
+    top: 8%;
+    right: 4%;
+    opacity: 0.05;
+  }
+
+  .cf-deco-step3 {
+    width: 160px;
+    height: 160px;
+    bottom: 8%;
+    right: 5%;
+    opacity: 0.06;
+  }
+
+  /* Double-bezel image frame */
+  .cf-step__image-shell {
+    padding: 2px;
+    border-radius: 1rem;
+    background: linear-gradient(
+      135deg,
+      rgba(197, 165, 90, 0.3) 0%,
+      rgba(197, 165, 90, 0.08) 50%,
+      rgba(197, 165, 90, 0.2) 100%
+    );
+    max-width: 400px;
+    margin-top: var(--space-md);
+  }
+
+  .cf-step__image-frame {
+    border-radius: calc(1rem - 2px);
+    overflow: hidden;
+    border: 1px solid rgba(197, 165, 90, 0.1);
+  }
+
+  .cf-step__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(0.3);
   }
 
   /* =============================================

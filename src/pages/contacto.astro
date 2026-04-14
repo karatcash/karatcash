@@ -91,6 +91,8 @@ import ContactForm from '../components/ContactForm.astro';
 
         <!-- RIGHT COLUMN — Form -->
         <div class="contacto-form-card gs-reveal">
+          <img src="/images/gold-texture.svg" alt="" class="contacto-form-card__bg-deco" aria-hidden="true" />
+          <img src="/images/karat-badge.svg" alt="" class="contacto-form-card__badge-deco" aria-hidden="true" />
           <h2 class="contacto-form-card__title">Send Us a Message</h2>
           <p class="contacto-form-card__subtitle">
             Fill out the form and we'll contact you via WhatsApp to schedule the appointment.
@@ -272,6 +274,8 @@ import ContactForm from '../components/ContactForm.astro';
 
   /* ---- Form card ---- */
   .contacto-form-card {
+    position: relative;
+    overflow: hidden;
     background-color: var(--white);
     border: 1.5px solid var(--gray-200);
     border-radius: var(--radius-lg);
@@ -280,6 +284,28 @@ import ContactForm from '../components/ContactForm.astro';
     display: flex;
     flex-direction: column;
     gap: var(--space-lg);
+  }
+
+  .contacto-form-card__bg-deco {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 180px;
+    height: 180px;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .contacto-form-card__badge-deco {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 80px;
+    height: 80px;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
   }
 
   .contacto-form-card__title {

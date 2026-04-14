@@ -1,0 +1,130 @@
+---
+// SocialProof — Impressive numbers section with double-bezel container
+---
+
+<section class="section section--dark social-proof">
+  <div class="container">
+
+    <!-- Double-bezel outer shell -->
+    <div class="sp__shell gs-reveal">
+      <div class="sp__inner">
+
+        <div class="sp__stat">
+          <span class="sp__value gs-counter" data-target="3400">$3,400+</span>
+          <span class="sp__label">Gold per Ounce Today</span>
+        </div>
+
+        <div class="sp__divider" aria-hidden="true"></div>
+
+        <div class="sp__stat">
+          <span class="sp__value">15 min</span>
+          <span class="sp__label">Average Process Time</span>
+        </div>
+
+        <div class="sp__divider" aria-hidden="true"></div>
+
+        <div class="sp__stat">
+          <span class="sp__value">100%</span>
+          <span class="sp__label">Transparent Pricing</span>
+        </div>
+
+        <div class="sp__divider" aria-hidden="true"></div>
+
+        <div class="sp__stat">
+          <span class="sp__value">24/7</span>
+          <span class="sp__label">WhatsApp Support</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .social-proof {
+    padding-block: var(--space-3xl);
+  }
+
+  /* Double-bezel outer shell */
+  .sp__shell {
+    padding: 2px;
+    border-radius: 1.5rem;
+    background: linear-gradient(
+      135deg,
+      rgba(197, 165, 90, 0.25) 0%,
+      rgba(197, 165, 90, 0.06) 40%,
+      rgba(197, 165, 90, 0.2) 100%
+    );
+  }
+
+  /* Inner container */
+  .sp__inner {
+    background: var(--navy);
+    border-radius: calc(1.5rem - 2px);
+    padding: var(--space-2xl) var(--space-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2xl);
+    border: 1px solid rgba(197, 165, 90, 0.06);
+  }
+
+  .sp__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-sm);
+    flex: 1;
+  }
+
+  .sp__value {
+    font-family: var(--font-headline);
+    font-weight: 800;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 60%, #E8CC80 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .sp__label {
+    font-size: 0.78rem;
+    color: var(--gray-400);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+  }
+
+  .sp__divider {
+    width: 1px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .sp__inner {
+      flex-wrap: wrap;
+      gap: var(--space-xl);
+      padding: var(--space-xl);
+    }
+
+    .sp__stat {
+      flex: 0 0 calc(50% - var(--space-lg));
+    }
+
+    .sp__divider {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sp__stat {
+      flex: 0 0 100%;
+    }
+  }
+</style>

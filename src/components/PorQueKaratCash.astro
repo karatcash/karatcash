@@ -1,5 +1,5 @@
 ---
-// PorQueKaratCash — Bento grid de diferenciadores (dark)
+// PorQueKaratCash — Bento grid with visual richness and double-bezel hover
 ---
 
 <section class="section section--dark pqk">
@@ -12,7 +12,7 @@
 
     <div class="pqk__bento">
 
-      <!-- Large card — Professional Appraisal -->
+      <!-- Large card — Professional Appraisal (with jeweler bg) -->
       <article class="bento-card bento-card--large gs-reveal">
         <img
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKy9TJQ_KtHuBuu6yJ7GGTR2uzTpEDMs5eG6xL7TEl2g6PkpMmW7Ff5Q4vqJKcMIbSqdx8WL5rUgzZmxJkIZKL7IhHWlEPc1NBuOWpIIjgL7iZET9ldD4HCzN2uiG4Zv73YTCQvY_skVZZhSJHos21SngGYMJXPR4s-0WuERvO13FypOtLlCgKj8ei_S2x96zcNnThzOeTPL-Ks3fPU8hOzTL_aEmCh8RpPbtLs8NBpAcjcXxOekkcLbUS2W1DPvYnRz76fC6-T3w"
@@ -33,6 +33,7 @@
 
       <!-- Gold card — We Buy All Types of Gold -->
       <article class="bento-card bento-card--gold gs-reveal">
+        <img src="/images/gold-coins.svg" alt="" class="bento-card__deco-svg" aria-hidden="true" />
         <span class="material-symbols-outlined bento-card__icon" aria-hidden="true">diamond</span>
         <h3 class="bento-card__title">We Buy All Types of Gold</h3>
         <p class="bento-card__desc">
@@ -42,6 +43,7 @@
 
       <!-- Card — Total Security -->
       <article class="bento-card gs-reveal">
+        <img src="/images/shield-check.svg" alt="" class="bento-card__bg-pattern" aria-hidden="true" />
         <span class="material-symbols-outlined bento-card__icon" aria-hidden="true">shield</span>
         <h3 class="bento-card__title">Total Security</h3>
         <p class="bento-card__desc">
@@ -51,6 +53,7 @@
 
       <!-- Card — Live Pricing -->
       <article class="bento-card gs-reveal">
+        <img src="/images/gold-texture.svg" alt="" class="bento-card__bg-pattern" aria-hidden="true" />
         <span class="material-symbols-outlined bento-card__icon" aria-hidden="true">trending_up</span>
         <h3 class="bento-card__title">Live Pricing</h3>
         <p class="bento-card__desc">
@@ -69,6 +72,7 @@
 
       <!-- Card — Instant Payment -->
       <article class="bento-card gs-reveal">
+        <img src="/images/gold-bar-pattern.svg" alt="" class="bento-card__bg-pattern" aria-hidden="true" />
         <span class="material-symbols-outlined bento-card__icon" aria-hidden="true">bolt</span>
         <h3 class="bento-card__title">Instant Payment</h3>
         <p class="bento-card__desc">
@@ -102,7 +106,7 @@
     gap: var(--space-lg);
   }
 
-  /* Base card */
+  /* Base card — with double-bezel hover */
   .bento-card {
     position: relative;
     background-color: var(--navy);
@@ -114,15 +118,34 @@
     gap: var(--space-md);
     overflow: hidden;
     transition:
-      border-color 250ms ease,
-      transform 250ms ease,
-      box-shadow 250ms ease;
+      border-color 700ms cubic-bezier(0.32, 0.72, 0, 1),
+      transform 700ms cubic-bezier(0.32, 0.72, 0, 1),
+      box-shadow 700ms cubic-bezier(0.32, 0.72, 0, 1);
   }
 
   .bento-card:hover {
-    border-color: rgba(197, 165, 90, 0.35);
+    border-color: rgba(197, 165, 90, 0.4);
     transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    box-shadow:
+      0 12px 40px rgba(0, 0, 0, 0.3),
+      inset 0 0 0 1px rgba(197, 165, 90, 0.12);
+  }
+
+  /* Background pattern images for cards */
+  .bento-card__bg-pattern {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 100px;
+    height: 100px;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
+    transition: opacity 700ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .bento-card:hover .bento-card__bg-pattern {
+    opacity: 0.08;
   }
 
   /* Large card spans 2 rows on the left */
@@ -150,6 +173,11 @@
     opacity: 0.35;
     filter: grayscale(1);
     z-index: 0;
+    transition: opacity 700ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .bento-card--large:hover .bento-card__bg-img {
+    opacity: 0.45;
   }
 
   .bento-card__bg-overlay {
@@ -211,6 +239,23 @@
     color: rgba(26, 31, 43, 0.78);
   }
 
+  /* Floating decoration SVG for gold card */
+  .bento-card__deco-svg {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    width: 120px;
+    height: 120px;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 0;
+    transition: opacity 700ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .bento-card--gold:hover .bento-card__deco-svg {
+    opacity: 0.2;
+  }
+
   /* Accent card (slightly lighter) */
   .bento-card--accent {
     background-color: var(--navy-light);
@@ -218,6 +263,8 @@
 
   /* Icon */
   .bento-card__icon {
+    position: relative;
+    z-index: 1;
     font-size: 2rem;
     color: var(--gold);
     font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 32;
@@ -238,6 +285,8 @@
 
   /* Title */
   .bento-card__title {
+    position: relative;
+    z-index: 1;
     font-size: 1.05rem;
     font-weight: 700;
     color: var(--white);
@@ -251,6 +300,8 @@
 
   /* Description */
   .bento-card__desc {
+    position: relative;
+    z-index: 1;
     font-size: 0.88rem;
     color: var(--gray-400);
     line-height: 1.7;
