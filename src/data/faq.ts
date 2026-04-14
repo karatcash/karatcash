@@ -1,47 +1,47 @@
 export interface FaqItem {
-  pregunta: string;
-  respuesta: string;
+  question: string;
+  answer: string;
 }
 
 export const faqs: FaqItem[] = [
   {
-    pregunta: '¿Qué tipos de oro compran?',
-    respuesta:
-      'Compramos todo tipo de oro: joyería (anillos, cadenas, aretes, pulseras), monedas de oro, lingotes, piezas dentales y oro roto o dañado. Aceptamos quilates del 10k al 24k. Si no estás seguro de qué tienes, tráelo y lo evaluamos frente a ti sin ningún compromiso.',
+    question: 'What types of gold do you buy?',
+    answer:
+      'We buy all types of gold: jewelry (rings, chains, earrings, bracelets), gold coins, bullion, dental gold, and broken or damaged pieces. We accept karats from 10k to 24k. If you\'re not sure what you have, bring it in and we\'ll evaluate it in front of you with no obligation.',
   },
   {
-    pregunta: '¿Cómo calculan el precio que me ofrecen?',
-    respuesta:
-      'Usamos una fórmula transparente: precio spot del oro en ese momento × peso en gramos × porcentaje de pureza según el quilataje. Todo el proceso lo hacemos frente a ti — te mostramos la báscula, el resultado del test de pureza y el precio spot en vivo. No hay números ocultos.',
+    question: 'How do you calculate the price you offer?',
+    answer:
+      'We use a transparent formula: current spot price of gold × weight in grams × purity percentage based on karat. We do the entire process in front of you — we show you the scale, the purity test result, and the live spot price. No hidden numbers.',
   },
   {
-    pregunta: '¿Dónde nos reunimos para hacer la transacción?',
-    respuesta:
-      'Nos encontramos en un lugar público y seguro que tú elijas en el área de Phoenix — una cafetería, el lobby de un banco, un centro comercial. Nunca te pedimos que vayas a un lugar privado. La seguridad y tu comodidad son nuestra prioridad.',
+    question: 'Where do we meet for the transaction?',
+    answer:
+      'We meet at a public, safe location of your choosing in the Phoenix area — a coffee shop, bank lobby, or shopping center. We never ask you to go to a private location. Your safety and comfort are our priority.',
   },
   {
-    pregunta: '¿Cuánto tiempo tarda todo el proceso?',
-    respuesta:
-      'La evaluación y el pago toman entre 10 y 20 minutos. Pesamos tu oro, verificamos la pureza con nuestro kit de prueba y calculamos la oferta al instante. Si aceptas, el pago es inmediato — no hay que esperar ni volver otro día.',
+    question: 'How long does the whole process take?',
+    answer:
+      'The evaluation and payment take between 10 and 20 minutes. We weigh your gold, verify purity with our test kit, and calculate the offer on the spot. If you accept, payment is immediate — no waiting or coming back another day.',
   },
   {
-    pregunta: '¿Cómo me pagan?',
-    respuesta:
-      'Pagamos en efectivo o por transferencia bancaria, al momento de la transacción. Tú decides cuál prefieres. No hay cheques que esperar ni demoras de ningún tipo. El dinero es tuyo en cuanto cerramos el trato.',
+    question: 'How do I get paid?',
+    answer:
+      'We pay in cash, Zelle, or bank transfer, at the time of the transaction. You choose which you prefer. No checks to wait for, no delays of any kind. The money is yours as soon as we close the deal.',
   },
   {
-    pregunta: '¿Qué pasa si no acepto la oferta?',
-    respuesta:
-      'No pasa absolutamente nada. La evaluación es completamente gratuita y sin compromiso. Si el precio no te convence, te llevas tus piezas de vuelta sin ningún costo ni presión. Queremos que te vayas satisfecho, con o sin venta.',
+    question: 'What if I don\'t accept the offer?',
+    answer:
+      'Absolutely nothing happens. The evaluation is completely free and no-obligation. If the price doesn\'t work for you, you take your pieces back at no cost and with no pressure. We want you to leave satisfied, with or without a sale.',
   },
   {
-    pregunta: '¿Necesito traer identificación?',
-    respuesta:
-      'Sí, es un requisito legal en el estado de Arizona para todas las transacciones de compra de metales preciosos. Necesitas una identificación oficial con foto — licencia de conducir, pasaporte, matrícula consular u otra ID gubernamental válida.',
+    question: 'Do I need to bring an ID?',
+    answer:
+      'Yes, it is a legal requirement in the state of Arizona for all precious metal purchase transactions. You need a valid government-issued photo ID — driver\'s license, passport, or other valid government ID.',
   },
   {
-    pregunta: '¿Compran oro roto o dañado?',
-    respuesta:
-      'Sí, con mucho gusto. El valor del oro está en su peso y pureza, no en la forma ni el estado de la pieza. Un anillo roto, una cadena enredada o un arrete sin par valen exactamente lo mismo que su equivalente en buen estado. No descartes nada sin preguntar primero.',
+    question: 'Do you buy broken or damaged gold?',
+    answer:
+      'Yes, absolutely. The value of gold is in its weight and purity, not the shape or condition of the piece. A broken ring, a tangled chain, or a single earring are worth exactly the same as their counterpart in good condition. Don\'t throw anything out without asking first.',
   },
 ];

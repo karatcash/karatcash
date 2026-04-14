@@ -6,11 +6,11 @@ import { faqs } from '../data/faq';
   {faqs.map((item, index) => (
     <details class="faq__item" id={`faq-${index}`}>
       <summary class="faq__summary">
-        <span class="faq__question">{item.pregunta}</span>
+        <span class="faq__question">{item.question}</span>
         <span class="faq__indicator" aria-hidden="true">+</span>
       </summary>
       <div class="faq__body">
-        <p class="faq__answer">{item.respuesta}</p>
+        <p class="faq__answer">{item.answer}</p>
       </div>
     </details>
   ))}

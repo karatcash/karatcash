@@ -13,21 +13,21 @@ const { compact = false } = Astro.props;
 
       <!-- LEFT: Info -->
       <div class="calc-info gs-reveal">
-        <span class="label">PRECIO EN VIVO</span>
-        <h2 class="calc-info__title">Calculadora de Oro</h2>
+        <span class="label">LIVE PRICE</span>
+        <h2 class="calc-info__title">Gold Calculator</h2>
         <p class="calc-info__desc">
-          Ingresa el peso de tu oro y sus kilates para obtener una estimación instantánea basada en el precio spot del mercado.
+          Use our tool to get an instant estimate of your gold's value based on the real-time global market.
         </p>
 
         {!compact && (
           <div class="calc-spot-box">
             <div class="calc-spot-box__inner">
               <span class="calc-spot-box__price" id="calc-spot-price">—</span>
-              <span class="calc-spot-box__unit">USD por onza troy</span>
+              <span class="calc-spot-box__unit">USD per troy ounce</span>
             </div>
             <div class="calc-spot-box__live">
               <span class="calc-spot-box__dot" aria-hidden="true"></span>
-              <span>Precio en tiempo real</span>
+              <span>Real-time pricing</span>
             </div>
           </div>
         )}
@@ -46,14 +46,14 @@ const { compact = false } = Astro.props;
 
         <!-- Weight input -->
         <div class="calc-field">
-          <label class="calc-field__label" for="calc-weight">Peso de tu oro (gramos)</label>
+          <label class="calc-field__label" for="calc-weight">Weight of your gold (grams)</label>
           <div class="calc-field__input-wrap">
             <input
               id="calc-weight"
               type="number"
               min="0.1"
               step="0.1"
-              placeholder="Ej: 10.5"
+              placeholder="E.g.: 10.5"
               class="calc-field__input"
               inputmode="decimal"
               autocomplete="off"
@@ -64,7 +64,7 @@ const { compact = false } = Astro.props;
 
         <!-- Karat selector -->
         <div class="calc-field">
-          <span class="calc-field__label">Kilates de tu oro</span>
+          <span class="calc-field__label">Gold karat</span>
           <div class="calc-karats">
             <button class="calc-karat-btn" data-karat="10" type="button">10k</button>
             <button class="calc-karat-btn is-active" data-karat="14" type="button">14k</button>
@@ -76,7 +76,7 @@ const { compact = false } = Astro.props;
         <!-- Result -->
         <div id="calc-result-wrapper" class="calc-result" style="display: none;">
           <div class="calc-result__inner">
-            <span class="calc-result__label">Valor estimado</span>
+            <span class="calc-result__label">Estimated value</span>
             <div class="calc-result__amount">
               <span class="calc-result__value" id="calc-result">$0</span>
               <span class="calc-result__currency">USD</span>

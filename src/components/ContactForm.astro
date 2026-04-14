@@ -1,19 +1,19 @@
 ---
-// ContactForm — Formulario de contacto con redirección a WhatsApp
+// ContactForm — Contact form with WhatsApp redirect
 ---
 
 <form id="contact-form" class="contact-form" novalidate>
 
   <div class="form-field">
     <label class="form-label" for="cf-nombre">
-      Nombre <span class="form-required" aria-label="requerido">*</span>
+      Name <span class="form-required" aria-label="required">*</span>
     </label>
     <input
       id="cf-nombre"
       class="form-input"
       type="text"
       name="nombre"
-      placeholder="Tu nombre completo"
+      placeholder="Your full name"
       required
       autocomplete="name"
     />
@@ -21,7 +21,7 @@
 
   <div class="form-field">
     <label class="form-label" for="cf-telefono">
-      Teléfono <span class="form-required" aria-label="requerido">*</span>
+      Phone <span class="form-required" aria-label="required">*</span>
     </label>
     <input
       id="cf-telefono"
@@ -35,27 +35,27 @@
   </div>
 
   <div class="form-field">
-    <label class="form-label" for="cf-piezas">¿Qué tienes para vender?</label>
+    <label class="form-label" for="cf-piezas">What do you have to sell?</label>
     <select id="cf-piezas" class="form-input form-select" name="piezas">
-      <option value="">Selecciona una opción...</option>
-      <option value="Anillos">Anillos</option>
-      <option value="Cadenas/Collares">Cadenas / Collares</option>
-      <option value="Pulseras">Pulseras</option>
-      <option value="Aretes">Aretes</option>
-      <option value="Monedas">Monedas</option>
-      <option value="Varias piezas">Varias piezas</option>
-      <option value="Otro">Otro</option>
+      <option value="">Select an option...</option>
+      <option value="Rings">Rings</option>
+      <option value="Chains / Necklaces">Chains / Necklaces</option>
+      <option value="Bracelets">Bracelets</option>
+      <option value="Earrings">Earrings</option>
+      <option value="Coins">Coins</option>
+      <option value="Multiple pieces">Multiple pieces</option>
+      <option value="Other">Other</option>
     </select>
   </div>
 
   <div class="form-field">
-    <label class="form-label" for="cf-zona">¿En qué zona estás?</label>
+    <label class="form-label" for="cf-zona">What area are you in?</label>
     <input
       id="cf-zona"
       class="form-input"
       type="text"
       name="zona"
-      placeholder="Ej: Mesa, Tempe..."
+      placeholder="E.g.: Mesa, Tempe..."
       autocomplete="address-level2"
     />
   </div>
@@ -65,23 +65,23 @@
     type="submit"
     class="btn btn--primary contact-form__submit"
   >
-    Enviar y contactar por WhatsApp &rarr;
+    Send &amp; Contact via WhatsApp &rarr;
   </button>
 
 </form>
 
-<!-- Mensaje de éxito (oculto inicialmente) -->
+<!-- Success message (hidden initially) -->
 <div id="contact-success" class="contact-success" style="display:none;" role="alert" aria-live="polite">
   <div class="contact-success__icon" aria-hidden="true">&#10003;</div>
-  <h3 class="contact-success__title">¡Mensaje enviado!</h3>
+  <h3 class="contact-success__title">Message sent!</h3>
   <p class="contact-success__text">
-    Te abrimos WhatsApp para terminar el contacto. Si no se abrió automáticamente,
+    We opened WhatsApp to complete your contact. If it didn't open automatically,
     <a
-      href="https://wa.me/16231234567?text=Hola%2C%20quiero%20vender%20mi%20oro."
+      href="https://wa.me/16231234567?text=Hello%2C%20I%20want%20to%20sell%20my%20gold."
       target="_blank"
       rel="noopener noreferrer"
       class="contact-success__link"
-    >haz clic aquí</a>.
+    >click here</a>.
   </p>
 </div>
 

@@ -12,19 +12,19 @@ export function initContactForm() {
     const telefono = formData.get('telefono') as string;
 
     if (!nombre?.trim() || !telefono?.trim()) {
-      alert('Por favor completa al menos tu nombre y teléfono.');
+      alert('Please fill in at least your name and phone number.');
       return;
     }
 
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Enviando...';
+    submitBtn.textContent = 'Sending...';
 
     const mensaje = [
-      'Hola, quiero vender mi oro.',
-      'Nombre: ' + nombre,
-      'Teléfono: ' + telefono,
-      formData.get('piezas') ? 'Piezas: ' + formData.get('piezas') : '',
-      formData.get('zona') ? 'Zona: ' + formData.get('zona') : '',
+      'Hello, I want to sell my gold.',
+      'Name: ' + nombre,
+      'Phone: ' + telefono,
+      formData.get('piezas') ? 'Items: ' + formData.get('piezas') : '',
+      formData.get('zona') ? 'Area: ' + formData.get('zona') : '',
     ].filter(Boolean).join('\n');
 
     const whatsappUrl = 'https://wa.me/16231234567?text=' + encodeURIComponent(mensaje);

@@ -7,23 +7,23 @@ import { ciudades } from '../data/ciudades';
   <div class="container">
 
     <div class="cobertura__header gs-reveal">
-      <span class="label">ÁREA DE SERVICIO</span>
-      <h2 class="cobertura__title">Servimos todo el Valle de Phoenix</h2>
+      <span class="label">SERVICE AREA</span>
+      <h2 class="cobertura__title">Serving the entire Phoenix Valley</h2>
       <p class="cobertura__subtitle">
-        No hay oficina que visitar — nosotros vamos a ti. Nos encontramos en un lugar seguro y conveniente donde tú estés en todo el área metropolitana.
+        We travel anywhere in the Phoenix metro area to meet you in a safe, convenient location.
       </p>
     </div>
 
-    <div class="cobertura__pills gs-reveal" role="list" aria-label="Ciudades con servicio">
+    <div class="cobertura__pills gs-reveal" role="list" aria-label="Cities we serve">
       {ciudades.map((ciudad) => (
         <span class="cobertura__pill" role="listitem">{ciudad}</span>
       ))}
-      <span class="cobertura__pill cobertura__pill--more" role="listitem">y más&hellip;</span>
+      <span class="cobertura__pill cobertura__pill--more" role="listitem">and more&hellip;</span>
     </div>
 
     <p class="cobertura__note gs-reveal">
       <span class="material-symbols-outlined cobertura__note-icon" aria-hidden="true">location_on</span>
-      ¿No ves tu ciudad? Contáctanos — probablemente podemos llegar.
+      Don't see your city? Contact us — we can probably get there.
     </p>
 
   </div>

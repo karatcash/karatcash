@@ -2,10 +2,10 @@
 const pathname = Astro.url.pathname;
 
 const links = [
-  { href: '/',               label: 'Inicio' },
-  { href: '/como-funciona',  label: 'Cómo Funciona' },
-  { href: '/calculadora',    label: 'Calculadora' },
-  { href: '/sobre-nosotros', label: 'Nosotros' },
+  { href: '/',               label: 'Home' },
+  { href: '/como-funciona',  label: 'How It Works' },
+  { href: '/calculadora',    label: 'Calculator' },
+  { href: '/sobre-nosotros', label: 'About' },
 ];
 
 function isActive(href: string): boolean {
@@ -18,19 +18,19 @@ function isActive(href: string): boolean {
   <div class="nav__inner">
 
     <!-- Brand -->
-    <a href="/" class="nav__brand" aria-label="KaratCash — Inicio">
+    <a href="/" class="nav__brand" aria-label="KaratCash — Home">
       <img
-        src="/logo.webp"
-        alt="KaratCash logo"
-        width="40"
-        height="40"
+        src="/icon.svg"
+        alt="KaratCash"
+        width="36"
+        height="36"
         class="nav__logo"
       />
       <span class="nav__brand-name">KARAT CASH</span>
     </a>
 
     <!-- Desktop Links -->
-    <nav class="nav__links" aria-label="Navegación principal">
+    <nav class="nav__links" aria-label="Main navigation">
       {links.map((link) => (
         <a
           href={link.href}
@@ -44,14 +44,14 @@ function isActive(href: string): boolean {
 
     <!-- Desktop CTA -->
     <a href="/contacto" class="btn btn--primary nav__cta">
-      Vender mi oro
+      Sell Your Gold
     </a>
 
     <!-- Mobile Hamburger -->
     <button
       class="nav__hamburger"
       id="nav-hamburger"
-      aria-label="Abrir menú"
+      aria-label="Open menu"
       aria-expanded="false"
       aria-controls="nav-mobile"
     >
@@ -65,7 +65,7 @@ function isActive(href: string): boolean {
 
 <!-- Mobile Menu -->
 <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
-  <nav class="nav-mobile__links" aria-label="Menú móvil">
+  <nav class="nav-mobile__links" aria-label="Mobile menu">
     {links.map((link) => (
       <a
         href={link.href}
@@ -76,7 +76,7 @@ function isActive(href: string): boolean {
       </a>
     ))}
     <a href="/contacto" class="btn btn--primary nav-mobile__cta">
-      Vender mi oro
+      Sell Your Gold
     </a>
   </nav>
 </div>
@@ -116,9 +116,8 @@ function isActive(href: string): boolean {
   }
 
   .nav__logo {
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius-sm);
+    width: 36px;
+    height: 36px;
     object-fit: contain;
   }
 
