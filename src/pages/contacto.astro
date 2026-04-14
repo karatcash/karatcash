@@ -4,28 +4,28 @@ import ContactForm from '../components/ContactForm.astro';
 ---
 
 <Base
-  title="Contacto"
-  description="Contáctanos por WhatsApp, teléfono o formulario. Atendemos todo el Valle de Phoenix de lunes a sábado, 9am–7pm. Servicio 100% en español."
+  title="Contact"
+  description="Contact us via WhatsApp, phone, or form. Serving the entire Phoenix Valley, Monday to Saturday, 9am–7pm."
 >
 
   <!-- HERO DARK -->
   <section class="hero-contacto section--dark">
     <div class="hero-contacto__glow" aria-hidden="true"></div>
     <div class="container hero-contacto__container">
-      <span class="label gs-reveal">ESTAMOS PARA AYUDARTE</span>
-      <h1 class="hero-contacto__title gs-reveal">Contáctanos</h1>
+      <span class="label gs-reveal">WE'RE HERE TO HELP</span>
+      <h1 class="hero-contacto__title gs-reveal">Contact Us</h1>
       <p class="hero-contacto__subtitle gs-reveal">
-        Elige la forma que te quede más cómoda.
+        Choose whichever way is most convenient for you.
       </p>
     </div>
   </section>
 
-  <!-- CONTENIDO LIGHT -->
+  <!-- MAIN CONTENT LIGHT -->
   <section class="section section--light contacto-main">
     <div class="container">
       <div class="contacto-grid">
 
-        <!-- COLUMNA IZQUIERDA — Opciones de contacto -->
+        <!-- LEFT COLUMN — Contact options -->
         <div class="contacto-options">
 
           <!-- WhatsApp -->
@@ -34,7 +34,7 @@ import ContactForm from '../components/ContactForm.astro';
             target="_blank"
             rel="noopener noreferrer"
             class="option-card gs-reveal"
-            aria-label="Contáctanos por WhatsApp"
+            aria-label="Message us on WhatsApp"
           >
             <div class="option-card__icon-wrap option-card__icon-wrap--green">
               <svg class="option-card__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -43,57 +43,57 @@ import ContactForm from '../components/ContactForm.astro';
             </div>
             <div class="option-card__body">
               <h3 class="option-card__title">WhatsApp</h3>
-              <p class="option-card__desc">Escríbenos ahora, respondemos rápido</p>
+              <p class="option-card__desc">Message us now, we respond fast</p>
             </div>
             <span class="material-symbols-outlined option-card__arrow" aria-hidden="true">arrow_forward</span>
           </a>
 
-          <!-- Llamar -->
+          <!-- Call -->
           <a
             href="tel:+16231234567"
             class="option-card gs-reveal"
-            aria-label="Llámanos al (623) 123-4567"
+            aria-label="Call us at (623) 123-4567"
           >
             <div class="option-card__icon-wrap option-card__icon-wrap--blue">
               <span class="material-symbols-outlined option-card__icon" aria-hidden="true">phone</span>
             </div>
             <div class="option-card__body">
-              <h3 class="option-card__title">Llamar ahora</h3>
+              <h3 class="option-card__title">Call us at (623) 123-4567</h3>
               <p class="option-card__desc">(623) 123-4567</p>
             </div>
             <span class="material-symbols-outlined option-card__arrow" aria-hidden="true">arrow_forward</span>
           </a>
 
-          <!-- Horario -->
+          <!-- Hours -->
           <div class="option-card option-card--static gs-reveal">
             <div class="option-card__icon-wrap option-card__icon-wrap--gold">
               <span class="material-symbols-outlined option-card__icon" aria-hidden="true">schedule</span>
             </div>
             <div class="option-card__body">
-              <h3 class="option-card__title">Horario</h3>
-              <p class="option-card__desc">Lunes a Sábado: 9am – 7pm</p>
-              <p class="option-card__desc">Domingo: con cita previa</p>
+              <h3 class="option-card__title">Hours</h3>
+              <p class="option-card__desc">Monday to Saturday: 9am – 7pm</p>
+              <p class="option-card__desc">Sunday: By appointment</p>
             </div>
           </div>
 
-          <!-- Área de servicio -->
+          <!-- Service area -->
           <div class="option-card option-card--static gs-reveal">
             <div class="option-card__icon-wrap option-card__icon-wrap--gray">
               <span class="material-symbols-outlined option-card__icon" aria-hidden="true">location_on</span>
             </div>
             <div class="option-card__body">
-              <h3 class="option-card__title">Área de servicio</h3>
-              <p class="option-card__desc">Todo el Valle de Phoenix</p>
+              <h3 class="option-card__title">Service Area</h3>
+              <p class="option-card__desc">All of Phoenix Valley</p>
             </div>
           </div>
 
         </div>
 
-        <!-- COLUMNA DERECHA — Formulario -->
+        <!-- RIGHT COLUMN — Form -->
         <div class="contacto-form-card gs-reveal">
-          <h2 class="contacto-form-card__title">Envíanos un mensaje</h2>
+          <h2 class="contacto-form-card__title">Send Us a Message</h2>
           <p class="contacto-form-card__subtitle">
-            Completa el formulario y te contactaremos por WhatsApp para coordinar la cita.
+            Fill out the form and we'll contact you via WhatsApp to schedule the appointment.
           </p>
           <ContactForm />
         </div>

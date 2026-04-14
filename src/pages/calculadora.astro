@@ -4,17 +4,17 @@ import GoldCalculator from '../components/GoldCalculator.astro';
 ---
 
 <Base
-  title="Calculadora de Oro en Vivo"
-  description="Calcula el valor de tu oro en segundos. Precio spot en tiempo real, selector de kilates y resultado inmediato. Gratis, sin compromiso."
+  title="Live Gold Calculator"
+  description="Calculate your gold's value in seconds. Real-time spot price, karat selector, and instant results. Free, no obligation."
 >
 
   <!-- HERO -->
   <section class="calc-hero section section--dark">
     <div class="container calc-hero__container">
-      <span class="label">HERRAMIENTA GRATUITA</span>
-      <h1 class="calc-hero__title">Calculadora de<br /><span class="calc-hero__title-highlight">Oro en Vivo</span></h1>
+      <span class="label">FREE TOOL</span>
+      <h1 class="calc-hero__title">Live Gold<br /><span class="calc-hero__title-highlight">Calculator</span></h1>
       <p class="calc-hero__subtitle">
-        Descubre cuánto vale tu oro ahora mismo. Usamos el precio spot del mercado actualizado para darte una estimación real en segundos.
+        Find out how much your gold is worth right now. We use the updated market spot price to give you a real estimate in seconds.
       </p>
     </div>
   </section>
@@ -26,27 +26,27 @@ import GoldCalculator from '../components/GoldCalculator.astro';
   <section class="edu-section section section--light">
     <div class="container edu-container">
 
-      <h2 class="edu-section__title">¿Cómo se calcula el valor?</h2>
+      <h2 class="edu-section__title">How Is the Value Calculated?</h2>
 
-      <!-- Precio spot -->
+      <!-- Spot price -->
       <div class="edu-block gs-reveal">
         <h3 class="edu-block__title">
           <span class="material-symbols-outlined edu-block__icon" aria-hidden="true">trending_up</span>
-          ¿Qué es el precio spot?
+          What is the spot price?
         </h3>
         <p class="edu-block__text">
-          El precio spot del oro es el valor de mercado del oro puro (24 kilates) en este momento exacto, cotizado en dólares por onza troy. Este precio cambia constantemente de lunes a viernes según la oferta y demanda global. KaratCash usa este precio como base para calcular lo que te pagamos.
+          The gold spot price is the current market value of pure gold (24 karats) at this exact moment, quoted in dollars per troy ounce. This price changes constantly Monday through Friday based on global supply and demand. KaratCash uses this price as the basis for calculating what we pay you.
         </p>
       </div>
 
-      <!-- Kilates -->
+      <!-- Karats -->
       <div class="edu-block gs-reveal">
         <h3 class="edu-block__title">
           <span class="material-symbols-outlined edu-block__icon" aria-hidden="true">diamond</span>
-          ¿Qué son los kilates?
+          What are karats?
         </h3>
         <p class="edu-block__text">
-          Los kilates indican el porcentaje de oro puro en una joya. Una pieza de 24 kilates es oro casi puro; una de 10 kilates contiene menos oro y más metales de relleno.
+          Karats indicate the percentage of pure gold in a piece of jewelry. A 24-karat piece is nearly pure gold; a 10-karat piece contains less gold and more filler metals.
         </p>
         <div class="edu-karats">
           <div class="edu-karat-row">
@@ -54,50 +54,50 @@ import GoldCalculator from '../components/GoldCalculator.astro';
             <div class="edu-karat-row__bar">
               <div class="edu-karat-row__fill" style="width: 41.67%"></div>
             </div>
-            <span class="edu-karat-row__pct">41.7% oro</span>
+            <span class="edu-karat-row__pct">41.7% gold</span>
           </div>
           <div class="edu-karat-row">
             <span class="edu-karat-row__k">14k</span>
             <div class="edu-karat-row__bar">
               <div class="edu-karat-row__fill" style="width: 58.33%"></div>
             </div>
-            <span class="edu-karat-row__pct">58.3% oro</span>
+            <span class="edu-karat-row__pct">58.3% gold</span>
           </div>
           <div class="edu-karat-row">
             <span class="edu-karat-row__k">18k</span>
             <div class="edu-karat-row__bar">
               <div class="edu-karat-row__fill" style="width: 75%"></div>
             </div>
-            <span class="edu-karat-row__pct">75.0% oro</span>
+            <span class="edu-karat-row__pct">75.0% gold</span>
           </div>
           <div class="edu-karat-row">
             <span class="edu-karat-row__k">24k</span>
             <div class="edu-karat-row__bar">
               <div class="edu-karat-row__fill" style="width: 99.9%"></div>
             </div>
-            <span class="edu-karat-row__pct">99.9% oro</span>
+            <span class="edu-karat-row__pct">99.9% gold</span>
           </div>
         </div>
       </div>
 
-      <!-- La fórmula -->
+      <!-- The Formula -->
       <div class="edu-block gs-reveal">
         <h3 class="edu-block__title">
           <span class="material-symbols-outlined edu-block__icon" aria-hidden="true">calculate</span>
-          La fórmula
+          The Formula
         </h3>
         <p class="edu-block__text">
-          El cálculo es directo y transparente. Tomamos el peso de tu pieza, el precio actual del oro por gramo, y la pureza según los kilates:
+          The calculation is straightforward and transparent. We take the weight of your piece, the current gold price per gram, and the purity based on the karat:
         </p>
         <div class="edu-formula-box">
-          <span class="edu-formula">Valor = Peso (g) &times; Precio por gramo &times; Pureza</span>
+          <span class="edu-formula">Value = Weight (g) &times; Price per gram &times; Purity</span>
         </div>
 
-        <!-- Ejemplo -->
+        <!-- Example -->
         <div class="edu-example">
-          <p class="edu-example__label">Ejemplo práctico</p>
+          <p class="edu-example__label">Practical Example</p>
           <p class="edu-example__text">
-            Una cadena de <strong>10 gramos</strong> de <strong>14 kilates</strong>, con el oro a <strong>$109 por gramo</strong>:
+            A chain of <strong>10 grams</strong> of <strong>14 karats</strong>, with gold at <strong>$109 per gram</strong>:
           </p>
           <div class="edu-example__calc">
             <span class="edu-example__step">10 g &times; $109 &times; 0.5833</span>
@@ -113,15 +113,15 @@ import GoldCalculator from '../components/GoldCalculator.astro';
   <!-- DARK CTA -->
   <section class="calc-cta-section section section--dark">
     <div class="container calc-cta-container">
-      <span class="label">SIGUIENTE PASO</span>
-      <h2 class="calc-cta-section__title">¿Te gustó el estimado?</h2>
+      <span class="label">NEXT STEP</span>
+      <h2 class="calc-cta-section__title">Like the estimate?</h2>
       <p class="calc-cta-section__subtitle">
-        Contáctanos y te damos una cotización final en minutos. Sin compromiso, sin costo, 100% en español.
+        Contact us and we'll give you a final quote in minutes. No obligation, no cost, completely free.
       </p>
       <div class="calc-cta-section__actions">
-        <a href="/contacto" class="btn btn--primary">Contactar ahora &rarr;</a>
+        <a href="/contacto" class="btn btn--primary">Contact Us Now &rarr;</a>
         <a href="https://wa.me/16025551234" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
-          WhatsApp directo
+          WhatsApp Direct
         </a>
       </div>
     </div>
