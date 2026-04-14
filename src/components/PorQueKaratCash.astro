@@ -14,6 +14,13 @@
 
       <!-- Large card — Professional Appraisal -->
       <article class="bento-card bento-card--large gs-reveal">
+        <img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKy9TJQ_KtHuBuu6yJ7GGTR2uzTpEDMs5eG6xL7TEl2g6PkpMmW7Ff5Q4vqJKcMIbSqdx8WL5rUgzZmxJkIZKL7IhHWlEPc1NBuOWpIIjgL7iZET9ldD4HCzN2uiG4Zv73YTCQvY_skVZZhSJHos21SngGYMJXPR4s-0WuERvO13FypOtLlCgKj8ei_S2x96zcNnThzOeTPL-Ks3fPU8hOzTL_aEmCh8RpPbtLs8NBpAcjcXxOekkcLbUS2W1DPvYnRz76fC6-T3w"
+          alt=""
+          class="bento-card__bg-img"
+          loading="lazy"
+        />
+        <div class="bento-card__bg-overlay"></div>
         <span class="material-symbols-outlined bento-card__icon" aria-hidden="true">verified</span>
         <div class="bento-card__content">
           <h3 class="bento-card__title">Professional Appraisal</h3>
@@ -131,6 +138,36 @@
       var(--navy) 60%,
       rgba(26, 31, 43, 0.9) 100%
     );
+  }
+
+  /* Background image for large card */
+  .bento-card__bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+    filter: grayscale(1);
+    z-index: 0;
+  }
+
+  .bento-card__bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      160deg,
+      var(--navy-light) 0%,
+      rgba(45, 52, 66, 0.85) 50%,
+      rgba(26, 31, 43, 0.75) 100%
+    );
+    z-index: 1;
+  }
+
+  .bento-card--large .bento-card__icon,
+  .bento-card--large .bento-card__content {
+    position: relative;
+    z-index: 2;
   }
 
   /* Gold accent decoration for large card */

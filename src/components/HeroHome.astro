@@ -2,53 +2,70 @@
 // HeroHome — sección principal de la landing page
 ---
 
-<section class="hero section--dark">
+<section class="hero section--dark bg-image-section">
+  <!-- Background image -->
+  <img
+    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIg0rAHgGbsuFsMrMYZDicDuCxWgGZ6hYS0l9MoOOc5M6F2UnIixcXnUQYd1S8XRtLg6m2TmkmantqiS6qtJOBqkoPgCcA5OxU9eq1ofA5zL8npszU-ORRzO11Y4mKCC9FkMbzWijwcmAyh7obb_juv3B08_Rz2nicpL5IZUbuO6AhrJBEhXmSdE6PSAIxNRadZwp9mquct0aLzrxxbXOQ093p79eo_H2hjm7wYModV3ZfxN8iqbYQmlrM_erju-tR_tDYAn4PyB8"
+    alt=""
+    class="bg-image-section__img"
+    style="opacity: 0.15; filter: grayscale(1);"
+    loading="eager"
+  />
+  <!-- Dark overlay with gradient -->
+  <div class="bg-image-section__overlay" style="background: linear-gradient(90deg, var(--navy-deep) 30%, rgba(26,31,43,0.7) 70%, rgba(26,31,43,0.4) 100%);"></div>
+
+  <!-- Floating decorative elements -->
+  <img src="/images/gold-ring.svg" alt="" class="deco-float deco-float--gold hero__deco-ring" aria-hidden="true" />
+  <img src="/images/gold-chain.svg" alt="" class="deco-float deco-float--gold hero__deco-chain" aria-hidden="true" />
+
   <div class="hero__glow" aria-hidden="true"></div>
-  <div class="container hero__container">
+  <div class="bg-image-section__content">
+    <div class="container hero__container">
 
-    <span class="label hero__label">GOLD BUYERS IN ALL OF PHOENIX</span>
+      <span class="label hero__label">GOLD BUYERS IN ALL OF PHOENIX</span>
 
-    <h1 class="hero__title">
-      Gold prices are at<br />
-      <span class="hero__title-highlight">all-time highs</span>
-    </h1>
+      <h1 class="hero__title">
+        Gold prices are at<br />
+        <span class="hero__title-highlight">all-time highs</span>
+      </h1>
 
-    <p class="hero__subtitle">
-      That ring, that chain, those earrings you never wear — they're worth more than ever.
-      We'll show you how much and pay you on the spot.
-    </p>
+      <p class="hero__subtitle">
+        That ring, that chain, those earrings you never wear — they're worth more than ever.
+        We'll show you how much and pay you on the spot.
+      </p>
 
-    <div class="hero__actions">
-      <a href="/contacto" class="btn btn--primary">
-        Get Your Free Quote &rarr;
-      </a>
-      <a href="/calculadora" class="btn btn--outline">
-        See Today's Gold Price
-      </a>
+      <div class="hero__actions">
+        <a href="/contacto" class="btn btn--primary">
+          Get Your Free Quote &rarr;
+        </a>
+        <a href="/calculadora" class="btn btn--outline">
+          See Today's Gold Price
+        </a>
+      </div>
+
+      <div class="hero__trust">
+        <div class="hero__trust-separator" aria-hidden="true"></div>
+        <ul class="hero__badges" role="list">
+          <li class="hero__badge">
+            <span class="hero__check" aria-hidden="true">✓</span>
+            Immediate Payment
+          </li>
+          <li class="hero__badge">
+            <span class="hero__check" aria-hidden="true">✓</span>
+            Safe Public Location
+          </li>
+          <li class="hero__badge">
+            <span class="hero__check" aria-hidden="true">✓</span>
+            All of Phoenix Valley
+          </li>
+          <li class="hero__badge">
+            <span class="hero__check" aria-hidden="true">✓</span>
+            100% Transparent Process
+          </li>
+        </ul>
+      </div>
+
     </div>
-
-    <div class="hero__trust">
-      <div class="hero__trust-separator" aria-hidden="true"></div>
-      <ul class="hero__badges" role="list">
-        <li class="hero__badge">
-          <span class="hero__check" aria-hidden="true">✓</span>
-          Immediate Payment
-        </li>
-        <li class="hero__badge">
-          <span class="hero__check" aria-hidden="true">✓</span>
-          Safe Public Location
-        </li>
-        <li class="hero__badge">
-          <span class="hero__check" aria-hidden="true">✓</span>
-          All of Phoenix Valley
-        </li>
-        <li class="hero__badge">
-          <span class="hero__check" aria-hidden="true">✓</span>
-          100% Transparent Process
-        </li>
-      </ul>
-    </div>
-
   </div>
 </section>
 
@@ -167,6 +184,23 @@
     font-size: 0.65rem;
     font-weight: 700;
     flex-shrink: 0;
+  }
+
+  /* Floating decorative SVGs */
+  .hero__deco-ring {
+    width: 180px;
+    height: 180px;
+    top: 15%;
+    right: 5%;
+    opacity: 0.07;
+  }
+
+  .hero__deco-chain {
+    width: 140px;
+    height: 140px;
+    bottom: 10%;
+    right: 12%;
+    opacity: 0.05;
   }
 
   @media (max-width: 640px) {

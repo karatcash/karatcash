@@ -8,14 +8,24 @@ import Base from '../layouts/Base.astro';
 >
 
   <!-- HERO DARK -->
-  <section class="hero-nosotros section--dark">
+  <section class="hero-nosotros section--dark bg-image-section">
+    <img
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIg0rAHgGbsuFsMrMYZDicDuCxWgGZ6hYS0l9MoOOc5M6F2UnIixcXnUQYd1S8XRtLg6m2TmkmantqiS6qtJOBqkoPgCcA5OxU9eq1ofA5zL8npszU-ORRzO11Y4mKCC9FkMbzWijwcmAyh7obb_juv3B08_Rz2nicpL5IZUbuO6AhrJBEhXmSdE6PSAIxNRadZwp9mquct0aLzrxxbXOQ093p79eo_H2hjm7wYModV3ZfxN8iqbYQmlrM_erju-tR_tDYAn4PyB8"
+      alt=""
+      class="bg-image-section__img"
+      style="opacity: 0.12; filter: grayscale(1);"
+      loading="eager"
+    />
+    <div class="bg-image-section__overlay" style="background: linear-gradient(180deg, var(--navy-deep) 20%, rgba(26,31,43,0.75) 60%, var(--navy-deep) 100%);"></div>
     <div class="hero-nosotros__glow" aria-hidden="true"></div>
-    <div class="container hero-nosotros__container">
-      <span class="label gs-reveal">OUR STORY</span>
-      <h1 class="hero-nosotros__title gs-reveal">
-        We believe selling your gold<br />
-        <span class="hero-nosotros__title-gold">should be simple and fair</span>
-      </h1>
+    <div class="bg-image-section__content">
+      <div class="container hero-nosotros__container">
+        <span class="label gs-reveal">OUR STORY</span>
+        <h1 class="hero-nosotros__title gs-reveal">
+          We believe selling your gold<br />
+          <span class="hero-nosotros__title-gold">should be simple and fair</span>
+        </h1>
+      </div>
     </div>
   </section>
 

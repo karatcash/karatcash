@@ -8,6 +8,7 @@ const { compact = false } = Astro.props;
 ---
 
 <section class={`calc-section section section--dark ${compact ? 'calc-section--compact' : ''}`}>
+  <div class="calc-section__texture" aria-hidden="true"></div>
   <div class="container">
     <div class="calc-layout">
 
@@ -110,6 +111,24 @@ const { compact = false } = Astro.props;
   /* ---- Section ---- */
   .calc-section {
     background-color: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .calc-section__texture {
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/gold-bar-pattern.svg');
+    background-repeat: repeat;
+    background-size: 200px;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .calc-section > .container {
+    position: relative;
+    z-index: 1;
   }
 
   .calc-section--compact {

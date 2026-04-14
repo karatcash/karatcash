@@ -73,7 +73,8 @@ import FaqAccordion from '../components/FaqAccordion.astro';
   <!-- =============================================
        3. STEP 2 — WE MEET (dark)
        ============================================= -->
-  <section class="section section--dark cf-step cf-step--dark">
+  <section class="section section--dark cf-step cf-step--dark cf-step--deco">
+    <img src="/images/gold-ring.svg" alt="" class="deco-float deco-float--gold cf-deco-scale" aria-hidden="true" />
     <div class="container cf-step__container cf-step__container--reverse">
 
       <div class="cf-step__number-col gs-reveal-right">
@@ -161,7 +162,8 @@ import FaqAccordion from '../components/FaqAccordion.astro';
   <!-- =============================================
        5. WHAT DO WE BUY? — Karat cards (dark)
        ============================================= -->
-  <section class="section section--dark cf-karats">
+  <section class="section section--dark cf-karats cf-step--deco">
+    <img src="/images/gold-chain.svg" alt="" class="deco-float deco-float--gold cf-deco-shield" aria-hidden="true" />
     <div class="container">
 
       <div class="cf-karats__header gs-reveal">
@@ -722,6 +724,30 @@ import FaqAccordion from '../components/FaqAccordion.astro';
   .cf-cta__btn-icon {
     font-size: 1.1rem;
     font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+  }
+
+  /* =============================================
+     DECORATIVE ELEMENTS
+     ============================================= */
+  .cf-step--deco {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cf-deco-scale {
+    width: 160px;
+    height: 160px;
+    top: 10%;
+    right: 3%;
+    opacity: 0.06;
+  }
+
+  .cf-deco-shield {
+    width: 140px;
+    height: 140px;
+    bottom: 8%;
+    left: 3%;
+    opacity: 0.05;
   }
 
   /* =============================================
