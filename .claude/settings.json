@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$CLAUDE_FILE_PATH\" | grep -qE '\\.env($|\\.)'; then echo 'BLOQUEADO: No editar archivos .env directamente. Usa .env.example como plantilla.' >&2; exit 1; fi"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Ping.aiff"
+          }
+        ]
+      }
+    ]
+  }
+}
