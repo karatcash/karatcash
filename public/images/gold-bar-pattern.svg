@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <pattern id="bar-tile" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse" patternTransform="rotate(-30)">
+      <!-- Gold bar / ingot shape — trapezoidal top, rectangular base -->
+      <g opacity="0.08">
+        <!-- Bar 1 -->
+        <polygon points="8,14 52,14 56,22 4,22" fill="#C5A55A"/>
+        <rect x="4" y="22" width="52" height="26" rx="1" fill="#C5A55A"/>
+        <polygon points="4,48 56,48 52,52 8,52" fill="#C5A55A"/>
+        <!-- Surface highlight line -->
+        <line x1="8" y1="18" x2="52" y2="18" stroke="#D4B96A" stroke-width="1" opacity="0.6"/>
+      </g>
+      <g opacity="0.05">
+        <!-- Bar 2 (offset) -->
+        <polygon points="68,74 112,74 116,82 64,82" fill="#D4B96A"/>
+        <rect x="64" y="82" width="52" height="26" rx="1" fill="#D4B96A"/>
+        <polygon points="64,108 116,108 112,112 68,112" fill="#D4B96A"/>
+        <line x1="68" y1="78" x2="112" y2="78" stroke="#C5A55A" stroke-width="1" opacity="0.6"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="400" height="400" fill="url(#bar-tile)"/>
+</svg>

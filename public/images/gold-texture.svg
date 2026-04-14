@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <pattern id="texture-tile" x="0" y="0" width="400" height="400" patternUnits="userSpaceOnUse">
+
+      <!-- Wavy organic lines — horizontal flow -->
+      <path d="M-20,40 Q40,28 100,40 Q160,52 220,40 Q280,28 340,40 Q380,48 420,40"
+            fill="none" stroke="#C5A55A" stroke-width="1.5" opacity="0.12"/>
+      <path d="M-20,80 Q60,68 120,80 Q180,92 240,80 Q300,68 360,80 Q390,88 420,80"
+            fill="none" stroke="#D4B96A" stroke-width="1" opacity="0.10"/>
+      <path d="M-20,120 Q50,108 110,120 Q170,132 230,120 Q290,108 350,120 Q385,128 420,120"
+            fill="none" stroke="#C5A55A" stroke-width="1.5" opacity="0.11"/>
+      <path d="M-20,160 Q45,148 105,160 Q165,172 225,160 Q285,148 345,160 Q388,168 420,160"
+            fill="none" stroke="#D4B96A" stroke-width="1" opacity="0.10"/>
+      <path d="M-20,200 Q55,188 115,200 Q175,212 235,200 Q295,188 355,200 Q388,208 420,200"
+            fill="none" stroke="#C5A55A" stroke-width="1.5" opacity="0.12"/>
+      <path d="M-20,240 Q48,228 108,240 Q168,252 228,240 Q288,228 348,240 Q386,248 420,240"
+            fill="none" stroke="#D4B96A" stroke-width="1" opacity="0.10"/>
+      <path d="M-20,280 Q52,268 112,280 Q172,292 232,280 Q292,268 352,280 Q387,288 420,280"
+            fill="none" stroke="#C5A55A" stroke-width="1.5" opacity="0.11"/>
+      <path d="M-20,320 Q58,308 118,320 Q178,332 238,320 Q298,308 358,320 Q389,328 420,320"
+            fill="none" stroke="#D4B96A" stroke-width="1" opacity="0.10"/>
+      <path d="M-20,360 Q46,348 106,360 Q166,372 226,360 Q286,348 346,360 Q385,368 420,360"
+            fill="none" stroke="#C5A55A" stroke-width="1.5" opacity="0.12"/>
+
+      <!-- Diagonal organic strokes -->
+      <path d="M20,-10 Q60,60 40,120 Q20,180 60,240 Q100,300 80,360 Q70,390 90,420"
+            fill="none" stroke="#C5A55A" stroke-width="1" opacity="0.08"/>
+      <path d="M100,-10 Q140,60 120,120 Q100,180 140,240 Q180,300 160,360 Q150,390 170,420"
+            fill="none" stroke="#D4B96A" stroke-width="1.5" opacity="0.09"/>
+      <path d="M200,-10 Q240,60 220,120 Q200,180 240,240 Q280,300 260,360 Q250,390 270,420"
+            fill="none" stroke="#C5A55A" stroke-width="1" opacity="0.08"/>
+      <path d="M300,-10 Q340,60 320,120 Q300,180 340,240 Q380,300 360,360 Q350,390 370,420"
+            fill="none" stroke="#D4B96A" stroke-width="1.5" opacity="0.09"/>
+
+      <!-- Scattered organic blobs / shapes -->
+      <ellipse cx="80" cy="90" rx="28" ry="12" transform="rotate(20 80 90)"
+               fill="#C5A55A" opacity="0.08"/>
+      <ellipse cx="240" cy="160" rx="22" ry="9" transform="rotate(-15 240 160)"
+               fill="#D4B96A" opacity="0.10"/>
+      <ellipse cx="340" cy="300" rx="30" ry="11" transform="rotate(25 340 300)"
+               fill="#C5A55A" opacity="0.08"/>
+      <ellipse cx="140" cy="320" rx="18" ry="8" transform="rotate(-10 140 320)"
+               fill="#D4B96A" opacity="0.09"/>
+      <ellipse cx="320" cy="80" rx="24" ry="10" transform="rotate(30 320 80)"
+               fill="#C5A55A" opacity="0.08"/>
+
+      <!-- Micro dots scattered -->
+      <circle cx="60" cy="200" r="3" fill="#C5A55A" opacity="0.12"/>
+      <circle cx="180" cy="340" r="2.5" fill="#D4B96A" opacity="0.10"/>
+      <circle cx="280" cy="120" r="3" fill="#C5A55A" opacity="0.11"/>
+      <circle cx="360" cy="200" r="2" fill="#D4B96A" opacity="0.12"/>
+      <circle cx="130" cy="60" r="2.5" fill="#C5A55A" opacity="0.10"/>
+    </pattern>
+  </defs>
+
+  <rect width="400" height="400" fill="url(#texture-tile)"/>
+</svg>

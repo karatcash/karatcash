@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+  <defs>
+    <linearGradient id="link-grad-h" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8D08A"/>
+      <stop offset="40%" stop-color="#D4B96A"/>
+      <stop offset="100%" stop-color="#9A7D3A"/>
+    </linearGradient>
+    <linearGradient id="link-grad-v" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9A7D3A"/>
+      <stop offset="40%" stop-color="#C5A55A"/>
+      <stop offset="100%" stop-color="#E8D08A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Chain link 1 — horizontal oval -->
+  <ellipse cx="52" cy="50" rx="30" ry="16" fill="none" stroke="url(#link-grad-h)" stroke-width="9" stroke-linecap="round"/>
+  <!-- Inner highlight -->
+  <ellipse cx="52" cy="50" rx="30" ry="16" fill="none" stroke="#F5E8B0" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+
+  <!-- Chain link 2 — vertical oval, interlocked -->
+  <ellipse cx="100" cy="50" rx="14" ry="26" fill="none" stroke="url(#link-grad-v)" stroke-width="9" stroke-linecap="round"/>
+  <ellipse cx="100" cy="50" rx="14" ry="26" fill="none" stroke="#F5E8B0" stroke-width="2" opacity="0.4"/>
+
+  <!-- Chain link 3 — horizontal oval -->
+  <ellipse cx="150" cy="50" rx="30" ry="16" fill="none" stroke="url(#link-grad-h)" stroke-width="9" stroke-linecap="round"/>
+  <ellipse cx="150" cy="50" rx="30" ry="16" fill="none" stroke="#F5E8B0" stroke-width="2" opacity="0.4"/>
+
+  <!-- Chain link 4 — vertical oval -->
+  <ellipse cx="198" cy="50" rx="14" ry="26" fill="none" stroke="url(#link-grad-v)" stroke-width="9" stroke-linecap="round"/>
+  <ellipse cx="198" cy="50" rx="14" ry="26" fill="none" stroke="#F5E8B0" stroke-width="2" opacity="0.4"/>
+
+  <!-- Chain link 5 — horizontal oval -->
+  <ellipse cx="248" cy="50" rx="30" ry="16" fill="none" stroke="url(#link-grad-h)" stroke-width="9" stroke-linecap="round"/>
+  <ellipse cx="248" cy="50" rx="30" ry="16" fill="none" stroke="#F5E8B0" stroke-width="2" opacity="0.4"/>
+
+  <!-- Overlap masks — front halves of vertical links cover horizontal links -->
+  <!-- Link 2 front half -->
+  <path d="M86,50 Q86,24 100,24 Q114,24 114,50" fill="none" stroke="url(#link-grad-v)" stroke-width="9"/>
+  <path d="M86,50 Q86,24 100,24 Q114,24 114,50" fill="none" stroke="#F5E8B0" stroke-width="2" opacity="0.4"/>
+
+  <!-- Link 4 front half -->
+  <path d="M184,50 Q184,24 198,24 Q212,24 212,50" fill="none" stroke="url(#link-grad-v)" stroke-width="9"/>
+  <path d="M184,50 Q184,24 198,24 Q212,24 212,50" fill="none" stroke="#F5E8B0" stroke-width="2" opacity="0.4"/>
+</svg>

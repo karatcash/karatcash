@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="coin-face" x1="20%" y1="15%" x2="80%" y2="85%">
+      <stop offset="0%" stop-color="#F0DC96"/>
+      <stop offset="35%" stop-color="#D4B96A"/>
+      <stop offset="75%" stop-color="#C5A55A"/>
+      <stop offset="100%" stop-color="#A88840"/>
+    </linearGradient>
+    <linearGradient id="coin-edge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C5A55A"/>
+      <stop offset="50%" stop-color="#8A6E28"/>
+      <stop offset="100%" stop-color="#C5A55A"/>
+    </linearGradient>
+    <linearGradient id="coin-face-2" x1="25%" y1="20%" x2="75%" y2="80%">
+      <stop offset="0%" stop-color="#E8D080"/>
+      <stop offset="50%" stop-color="#C5A55A"/>
+      <stop offset="100%" stop-color="#9A7D3A"/>
+    </linearGradient>
+    <radialGradient id="coin-sheen" cx="35%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="#FFF5CC" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#D4B96A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Coin 3 (bottom / back) -->
+  <!-- Edge -->
+  <ellipse cx="105" cy="160" rx="62" ry="14" fill="url(#coin-edge)"/>
+  <!-- Face -->
+  <ellipse cx="105" cy="148" rx="62" ry="32" fill="url(#coin-face-2)"/>
+  <!-- Rim -->
+  <ellipse cx="105" cy="148" rx="62" ry="32" fill="none" stroke="#8A6E28" stroke-width="2.5"/>
+  <!-- Inner ring detail -->
+  <ellipse cx="105" cy="148" rx="52" ry="26" fill="none" stroke="#D4B96A" stroke-width="1" opacity="0.5"/>
+  <!-- Center mark -->
+  <ellipse cx="105" cy="148" rx="12" ry="6" fill="none" stroke="#D4B96A" stroke-width="1.5" opacity="0.6"/>
+  <!-- Sheen -->
+  <ellipse cx="105" cy="148" rx="62" ry="32" fill="url(#coin-sheen)"/>
+
+  <!-- Coin 2 (middle) -->
+  <ellipse cx="100" cy="118" rx="62" ry="14" fill="url(#coin-edge)"/>
+  <ellipse cx="100" cy="106" rx="62" ry="32" fill="url(#coin-face)"/>
+  <ellipse cx="100" cy="106" rx="62" ry="32" fill="none" stroke="#8A6E28" stroke-width="2.5"/>
+  <ellipse cx="100" cy="106" rx="52" ry="26" fill="none" stroke="#D4B96A" stroke-width="1" opacity="0.5"/>
+  <ellipse cx="100" cy="106" rx="12" ry="6" fill="none" stroke="#E8D08A" stroke-width="1.5" opacity="0.6"/>
+  <ellipse cx="100" cy="106" rx="62" ry="32" fill="url(#coin-sheen)"/>
+
+  <!-- Coin 1 (top / front) -->
+  <ellipse cx="95" cy="76" rx="62" ry="14" fill="url(#coin-edge)"/>
+  <ellipse cx="95" cy="64" rx="62" ry="32" fill="url(#coin-face)"/>
+  <ellipse cx="95" cy="64" rx="62" ry="32" fill="none" stroke="#8A6E28" stroke-width="2.5"/>
+  <ellipse cx="95" cy="64" rx="52" ry="26" fill="none" stroke="#D4B96A" stroke-width="1" opacity="0.5"/>
+  <!-- Decorative star center -->
+  <ellipse cx="95" cy="64" rx="12" ry="6" fill="#D4B96A" opacity="0.3"/>
+  <line x1="95" y1="58" x2="95" y2="70" stroke="#E8D08A" stroke-width="1.5" opacity="0.6"/>
+  <line x1="89" y1="64" x2="101" y2="64" stroke="#E8D08A" stroke-width="1.5" opacity="0.6"/>
+  <ellipse cx="95" cy="64" rx="62" ry="32" fill="url(#coin-sheen)"/>
+</svg>

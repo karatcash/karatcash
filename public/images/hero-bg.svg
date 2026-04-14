@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <!-- Hero background: abstract geometric composition — very subtle, behind content -->
+
+  <!-- Large concentric arcs — upper right anchor -->
+  <circle cx="1580" cy="-60" r="320" fill="none" stroke="#C5A55A" stroke-width="1" opacity="0.04"/>
+  <circle cx="1580" cy="-60" r="480" fill="none" stroke="#C5A55A" stroke-width="1" opacity="0.035"/>
+  <circle cx="1580" cy="-60" r="640" fill="none" stroke="#D4B96A" stroke-width="1.5" opacity="0.03"/>
+  <circle cx="1580" cy="-60" r="800" fill="none" stroke="#C5A55A" stroke-width="1" opacity="0.025"/>
+  <circle cx="1580" cy="-60" r="960" fill="none" stroke="#D4B96A" stroke-width="0.5" opacity="0.03"/>
+
+  <!-- Secondary arc cluster — lower left -->
+  <circle cx="180" cy="900" r="280" fill="none" stroke="#C5A55A" stroke-width="1" opacity="0.04"/>
+  <circle cx="180" cy="900" r="440" fill="none" stroke="#D4B96A" stroke-width="1" opacity="0.03"/>
+  <circle cx="180" cy="900" r="600" fill="none" stroke="#C5A55A" stroke-width="0.5" opacity="0.025"/>
+
+  <!-- Diagonal gold lines — sweeping across composition -->
+  <line x1="-100" y1="280" x2="2020" y2="540" stroke="#C5A55A" stroke-width="0.8" opacity="0.05"/>
+  <line x1="-100" y1="320" x2="2020" y2="580" stroke="#D4B96A" stroke-width="0.5" opacity="0.04"/>
+  <line x1="-100" y1="600" x2="2020" y2="860" stroke="#C5A55A" stroke-width="0.8" opacity="0.04"/>
+  <line x1="-100" y1="180" x2="2020" y2="440" stroke="#D4B96A" stroke-width="0.5" opacity="0.03"/>
+
+  <!-- Cross diagonals — other direction -->
+  <line x1="2020" y1="200" x2="-100" y2="700" stroke="#C5A55A" stroke-width="0.5" opacity="0.04"/>
+  <line x1="2020" y1="350" x2="-100" y2="850" stroke="#D4B96A" stroke-width="0.8" opacity="0.03"/>
+
+  <!-- Geometric gold bar shapes — parallelograms -->
+  <!-- Large bar — upper center -->
+  <polygon points="680,60 920,60 940,120 700,120" fill="#C5A55A" opacity="0.04"/>
+  <!-- Medium bar — mid right -->
+  <polygon points="1380,380 1540,380 1556,430 1396,430" fill="#D4B96A" opacity="0.05"/>
+  <!-- Small bar — lower left -->
+  <polygon points="220,760 360,760 372,800 232,800" fill="#C5A55A" opacity="0.04"/>
+  <!-- Thin bar — upper left -->
+  <polygon points="120,140 280,140 290,168 130,168" fill="#D4B96A" opacity="0.035"/>
+  <!-- Wide bar — lower center right -->
+  <polygon points="1100,900 1380,900 1396,940 1116,940" fill="#C5A55A" opacity="0.04"/>
+
+  <!-- Small accent rectangles -->
+  <rect x="840" y="820" width="120" height="32" rx="2" transform="rotate(-15 840 820)" fill="#C5A55A" opacity="0.04"/>
+  <rect x="440" y="200" width="80" height="22" rx="2" transform="rotate(-15 440 200)" fill="#D4B96A" opacity="0.035"/>
+  <rect x="1640" y="640" width="100" height="28" rx="2" transform="rotate(-15 1640 640)" fill="#C5A55A" opacity="0.04"/>
+
+  <!-- Subtle dot cluster — center area -->
+  <circle cx="960" cy="540" r="3" fill="#C5A55A" opacity="0.05"/>
+  <circle cx="980" cy="520" r="2" fill="#D4B96A" opacity="0.04"/>
+  <circle cx="940" cy="560" r="2" fill="#C5A55A" opacity="0.04"/>
+  <circle cx="1000" cy="555" r="1.5" fill="#D4B96A" opacity="0.05"/>
+  <circle cx="920" cy="530" r="1.5" fill="#C5A55A" opacity="0.04"/>
+
+  <!-- Corner accent — top left -->
+  <line x1="0" y1="0" x2="180" y2="180" stroke="#C5A55A" stroke-width="1" opacity="0.04"/>
+  <line x1="0" y1="40" x2="140" y2="180" stroke="#D4B96A" stroke-width="0.5" opacity="0.035"/>
+
+  <!-- Corner accent — bottom right -->
+  <line x1="1920" y1="1080" x2="1740" y2="900" stroke="#C5A55A" stroke-width="1" opacity="0.04"/>
+  <line x1="1920" y1="1040" x2="1780" y2="900" stroke="#D4B96A" stroke-width="0.5" opacity="0.035"/>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="shield-grad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#D4B96A"/>
+      <stop offset="100%" stop-color="#C5A55A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Shield shape — outer -->
+  <path d="M50,8 L88,22 L88,52 Q88,76 50,94 Q12,76 12,52 L12,22 Z"
+        fill="none" stroke="url(#shield-grad)" stroke-width="3.5" stroke-linejoin="round"/>
+
+  <!-- Shield shape — inner fill subtle -->
+  <path d="M50,8 L88,22 L88,52 Q88,76 50,94 Q12,76 12,52 L12,22 Z"
+        fill="#C5A55A" opacity="0.06"/>
+
+  <!-- Inner shield border -->
+  <path d="M50,16 L81,27 L81,52 Q81,70 50,85 Q19,70 19,52 L19,27 Z"
+        fill="none" stroke="#C5A55A" stroke-width="1" opacity="0.3" stroke-linejoin="round"/>
+
+  <!-- Checkmark — green, bold -->
+  <polyline points="32,50 44,63 68,36"
+            fill="none" stroke="#2D8F5E" stroke-width="5.5"
+            stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Small decorative corner dots -->
+  <circle cx="50" cy="14" r="2" fill="#C5A55A" opacity="0.5"/>
+  <circle cx="82" cy="25" r="1.5" fill="#C5A55A" opacity="0.4"/>
+  <circle cx="18" cy="25" r="1.5" fill="#C5A55A" opacity="0.4"/>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="ring-grad" cx="42%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#E8D08A"/>
+      <stop offset="35%" stop-color="#D4B96A"/>
+      <stop offset="70%" stop-color="#C5A55A"/>
+      <stop offset="100%" stop-color="#9A7D3A"/>
+    </radialGradient>
+    <radialGradient id="ring-inner-shadow" cx="50%" cy="50%" r="50%">
+      <stop offset="60%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#7A6030" stop-opacity="0.4"/>
+    </radialGradient>
+    <radialGradient id="sheen" cx="35%" cy="30%" r="40%">
+      <stop offset="0%" stop-color="#F5E8B0" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#D4B96A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Ring outer shape — donut -->
+  <!-- Outer circle filled -->
+  <circle cx="100" cy="110" r="72" fill="url(#ring-grad)"/>
+  <!-- Inner cutout -->
+  <circle cx="100" cy="110" r="46" fill="#1A1F2B"/>
+  <!-- Inner shadow ring -->
+  <circle cx="100" cy="110" r="46" fill="none" stroke="#7A6030" stroke-width="6" opacity="0.35"/>
+
+  <!-- Top band / facet highlight — simulates the flat top of a band ring -->
+  <path d="M58,68 Q100,48 142,68 L138,80 Q100,62 62,80 Z" fill="#E8D08A" opacity="0.7"/>
+
+  <!-- Side facets -->
+  <path d="M28,110 Q28,82 58,68 L62,80 Q36,92 36,110 Z" fill="#B8943E" opacity="0.6"/>
+  <path d="M172,110 Q172,82 142,68 L138,80 Q164,92 164,110 Z" fill="#C5A55A" opacity="0.5"/>
+
+  <!-- Sheen overlay -->
+  <circle cx="100" cy="110" r="72" fill="url(#sheen)"/>
+
+  <!-- Edge highlight at bottom -->
+  <path d="M36,130 Q100,148 164,130 L164,136 Q100,156 36,136 Z" fill="#9A7D3A" opacity="0.4"/>
+
+  <!-- Subtle engraved line on ring band -->
+  <ellipse cx="100" cy="110" rx="58" ry="58" fill="none" stroke="#D4B96A" stroke-width="1" opacity="0.3"/>
+  <ellipse cx="100" cy="110" rx="52" ry="52" fill="none" stroke="#E8D08A" stroke-width="0.5" opacity="0.25"/>
+</svg>
